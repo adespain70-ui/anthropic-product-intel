@@ -128,18 +128,20 @@ Append a new entry at the top of `intel/changelog.md` (below the comment line):
 
 ---
 
-### Step 8: Commit Changes via Claude Code
+### Step 8: Commit Changes via Claude Code (PR Workflow)
 
-Invoke Claude Code to handle the git operations locally. This keeps everything within Cowork + GitHub + Claude Code, with no external services.
+Invoke Claude Code to handle the git operations locally. Changes are pushed to a dated branch and opened as a PR for review — never pushed directly to main.
 
 Claude Code will:
 1. Clone the repo: `https://github.com/adespain70-ui/anthropic-product-intel.git`
 2. Navigate to the repo directory
-3. Update the intel files locally (you'll provide the content from Steps 1-7 above)
-4. Stage changed files with `git add`
-5. Commit with message: `chore: daily intel update {TODAY'S DATE}` (or `chore: daily check {TODAY'S DATE} — no changes` if nothing changed)
-6. Push to main branch with `git push origin main`
-7. Exit cleanly
+3. Create a new branch: `daily-update-{TODAY'S DATE}` (e.g., `daily-update-2026-05-14`)
+4. Update the intel files locally (you'll provide the content from Steps 1-7 above)
+5. Stage changed files with `git add`
+6. Commit with message: `chore: daily intel update {TODAY'S DATE}` (or `chore: daily check {TODAY'S DATE} — no changes` if nothing changed)
+7. Push the branch: `git push origin daily-update-{TODAY'S DATE}`
+8. Open a PR: `gh pr create --title "chore: daily intel update {TODAY'S DATE}" --base main --head daily-update-{TODAY'S DATE} --body "Automated daily update. Review before merging."`
+9. Report the PR URL
 
 **Instruction for invoking Claude Code:**
 
@@ -147,7 +149,7 @@ Launch Claude Code with the following context:
 
 ```
 Repository: https://github.com/adespain70-ui/anthropic-product-intel
-Task: Update intel files and commit to GitHub
+Task: Update intel files and open a PR to GitHub (do NOT push to main directly)
 
 Files to update (if changed):
 - intel/pricing.md
@@ -161,13 +163,15 @@ Summary of changes found today:
 
 What to do:
 1. Clone the repo locally
-2. Make the file updates described above
-3. Commit with: chore: daily intel update {TODAY'S DATE}
-4. Push to main
-5. Report completion
+2. Create branch: daily-update-{TODAY'S DATE}
+3. Make the file updates described above
+4. Commit with: chore: daily intel update {TODAY'S DATE}
+5. Push the branch (not main): git push origin daily-update-{TODAY'S DATE}
+6. Open a PR to main: gh pr create --title "chore: daily intel update {TODAY'S DATE}" --base main --head daily-update-{TODAY'S DATE} --body "Automated daily update. Review before merging."
+7. Report the PR URL — do not merge
 ```
 
-Once Claude Code completes the push, the task is finished and your GitHub repo will be updated.
+Once Claude Code opens the PR, review the diff and merge manually. This gives you a human checkpoint between the automated scrape and live skill content.
 
 ---
 
