@@ -6,11 +6,24 @@
 
 ---
 
+## Overview: Fully Automated Workflow
+
+This task runs entirely within your Cowork + GitHub + Claude Code ecosystem:
+
+1. **Cowork** (Scheduled Task) — Scrapes Anthropic sources using Firecrawl and web_fetch
+2. **Cowork** (Scheduled Task) — Compares findings against current intel files
+3. **Claude Code** (Invoked from Task) — Handles git clone, file updates, commit, and push
+4. **GitHub** — Receives the commit and stores updated intel files
+
+No external services. No manual intervention. Fully automated.
+
+---
+
 ## Task Instructions for Cowork
 
 You are the maintainer of the `anthropic-product-intel` GitHub repo. Your job is to run
 a daily update that keeps the intel files accurate and current. Work methodically through
-each step below.
+each step below. Steps 1-7 happen in Cowork. Step 8 invokes Claude Code to handle the git operations.
 
 ---
 
@@ -115,16 +128,46 @@ Append a new entry at the top of `intel/changelog.md` (below the comment line):
 
 ---
 
-### Step 8: Commit to GitHub
+### Step 8: Commit Changes via Claude Code
 
-Using the GitHub MCP connector:
+Invoke Claude Code to handle the git operations locally. This keeps everything within Cowork + GitHub + Claude Code, with no external services.
 
-1. For each file that changed: stage the updated file
-2. Commit with message: `chore: daily intel update {TODAY'S DATE}`
-3. Push to main branch
+Claude Code will:
+1. Clone the repo: `https://github.com/adespain70-ui/anthropic-product-intel.git`
+2. Navigate to the repo directory
+3. Update the intel files locally (you'll provide the content from Steps 1-7 above)
+4. Stage changed files with `git add`
+5. Commit with message: `chore: daily intel update {TODAY'S DATE}` (or `chore: daily check {TODAY'S DATE} — no changes` if nothing changed)
+6. Push to main branch with `git push origin main`
+7. Exit cleanly
 
-If no files changed: commit only the updated `changelog.md` with message:
-`chore: daily check {TODAY'S DATE} — no changes`
+**Instruction for invoking Claude Code:**
+
+Launch Claude Code with the following context:
+
+```
+Repository: https://github.com/adespain70-ui/anthropic-product-intel
+Task: Update intel files and commit to GitHub
+
+Files to update (if changed):
+- intel/pricing.md
+- intel/models.md
+- intel/platforms.md
+- intel/releases.md
+- intel/changelog.md
+
+Summary of changes found today:
+[Paste your findings from Steps 1-7 here]
+
+What to do:
+1. Clone the repo locally
+2. Make the file updates described above
+3. Commit with: chore: daily intel update {TODAY'S DATE}
+4. Push to main
+5. Report completion
+```
+
+Once Claude Code completes the push, the task is finished and your GitHub repo will be updated.
 
 ---
 
