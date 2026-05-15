@@ -2,12 +2,35 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-05-14
+**Last updated:** 2026-05-15
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview
 
 ---
 
 ## May 2026
+
+**May 15, 2026**
+- **PwC expanded partnership** — PwC deploying Claude Code and Cowork to hundreds of thousands of professionals globally
+  - Joint Center of Excellence established; 30,000 US professionals to be trained and certified on Claude
+  - Focus areas: agentic technology build, AI-native deal-making, enterprise function reinvention
+  - PwC launching new "Office of the CFO" business group built on Claude
+  - Production deployments across insurance underwriting (10 weeks → 10 days), mainframe modernization, HR transformation, cybersecurity
+
+**May 14, 2026**
+- **Anthropic forms $200M partnership with the Gates Foundation** — four-year commitment of grant funding, Claude credits, and technical support
+  - Covers global health (vaccine/therapy research, disease forecasting), life sciences, K-12 education, and economic mobility
+  - Collaboration with IDM (Institute for Disease Modeling) on malaria/tuberculosis treatment forecasts
+  - Focus diseases: polio, HPV, eclampsia/preeclampsia
+
+**May 13, 2026**
+- **Claude for Small Business launched** — package of connectors and ready-to-run workflows inside Cowork
+  - Connectors: Intuit QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, Microsoft 365
+  - Ships with 15 agentic workflows and 15 skills across finance, operations, sales, marketing, HR, and customer service
+  - Key workflows: payroll planning, month-end close, business pulse, invoice chasing, sales campaign, margin analysis, tax-season organizer, contract review, lead triage
+  - Partnership with PayPal on free "AI Fluency for Small Business" online course
+  - Claude SMB Tour: free half-day workshops starting May 14 in Chicago (10 spring cities)
+  - LISC Solopreneurship Accelerator: 15 solopreneurs receive seed funding + Claude credits
+  - Available as toggle install inside Claude Cowork
 
 **May 14, 2026**
 - Microsoft 365 integrations go GA: Claude in Excel, Word, PowerPoint now generally available; Claude in Outlook enters public beta
@@ -16,8 +39,10 @@
 - Microsoft 365 integrations launch date (Excel/Word/PowerPoint GA; Outlook public beta)
 
 **May 6, 2026**
-- Claude Code 5-hour rate limits doubled for all paid plans
+- Claude Code 5-hour rate limits doubled for all paid plans (Pro, Max, Team, Enterprise)
 - Peak-hour throttling removed on Pro and Max plans
+- API rate limits raised considerably for Claude Opus models
+- New compute partnership with SpaceX: 300+ MW capacity (220,000+ NVIDIA GPUs) at Colossus 1 data center
 
 ---
 

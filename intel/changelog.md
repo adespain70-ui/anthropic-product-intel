@@ -7,6 +7,15 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 ---
 
+## 2026-05-15
+
+**Updated by:** Cowork scheduled task
+**Files updated:** releases.md, pricing.md, platforms.md
+**Summary:** Added May 13–15 announcements (Claude for Small Business, Gates Foundation $200M partnership, PwC expanded partnership); corrected Pro plan price to $17/mo annual; updated platforms.md with Small Business connector details, Claude Security beta, and expanded connector list.
+**Upstream releases checked:** anthropics/anthropic-sdk-python, anthropics/anthropic-sdk-typescript, anthropics/claude-code, anthropics/model-spec, anthropics/anthropic-cookbook (GitHub atom feeds returned empty — likely rate-limited; news page and official Anthropic sources used instead)
+
+---
+
 ## 2026-05-14
 
 **Seeded by:** Anne DeSpain (manual initialization)
