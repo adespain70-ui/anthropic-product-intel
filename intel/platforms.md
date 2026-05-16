@@ -2,8 +2,8 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-05-15
-**Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com, https://claude.com/solutions/small-business
+**Last updated:** 2026-05-16
+**Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com
 
 ---
 
@@ -13,10 +13,10 @@
 |---|---|---|---|
 | **Primary use** | Conversation, writing, research, artifacts | Agentic coding across your codebase | Desktop task and file automation for knowledge workers |
 | **Interface** | Web, iOS, Android, desktop app | Terminal, VS Code, JetBrains, desktop app, web, iOS | Desktop app (macOS and Windows); mobile dispatch on Pro and Max |
-| **Tools** | Web search, artifacts, MCP apps, skills | Bash, file system, git, MCP servers, CI/CD, Claude Code skills | Local files, connectors (Slack, Chrome, QuickBooks, PayPal, HubSpot, Canva, DocuSign, etc.), computer use (research preview) |
+| **Tools** | Web search, artifacts, MCP apps, skills | Bash, file system, git, MCP servers, CI/CD, Claude Code skills | Local files, connectors (Slack, Chrome, etc.), computer use (research preview) |
 | **Subagents** | No | Yes (parallel sub-agents, background agents) | Yes (parallel sub-agents for complex tasks) |
 | **Scheduled tasks** | No | No | Yes (via /schedule; desktop app must stay open) |
-| **Who it's for** | General use, all skill levels | Software developers | Non-technical knowledge workers: analysts, ops, legal, finance, researchers, small business owners |
+| **Who it's for** | General use, all skill levels | Software developers | Non-technical knowledge workers: analysts, ops, legal, finance, researchers |
 | **Plan required** | Any (Free has limits) | Pro, Max, Team Premium, or Enterprise | Pro, Max, Team (Standard or Premium), or Enterprise |
 | **Key differentiator** | Projects, artifacts, MCP connectors, skills | CLAUDE.md context files, Agent Teams, 1M context on Max+ | Plugins, scheduled tasks, Projects with memory, mobile dispatch |
 
@@ -37,7 +37,7 @@
 - Extended reasoning models (Pro+)
 - Remote MCP connectors (Pro+)
 
-**Microsoft 365 integrations (GA as of May 2026):**
+**Microsoft 365 integrations (GA as of May 14, 2026):**
 - Claude in Excel (GA)
 - Claude in Word (GA)
 - Claude in PowerPoint (GA)
@@ -67,7 +67,7 @@
 **Plans:** Pro ($20/mo), Max 5x ($100/mo), Max 20x ($200/mo), Team Premium ($100/seat), Enterprise
 Note: Standard Team seats do NOT include Claude Code. Premium seats required.
 
-**Rate limits (May 2026):** 5-hour rate limits doubled for all paid plans; peak-hour throttling removed on Pro and Max. API rate limits for Opus models also raised considerably.
+**Rate limits (May 2026):** 5-hour rate limits doubled for all paid plans; peak-hour throttling removed on Pro and Max.
 
 **Install:** `npm install -g @anthropic-ai/claude-code` (requires Node.js)
 **Docs:** https://code.claude.com/docs/en/overview
@@ -88,7 +88,7 @@ Note: Standard Team seats do NOT include Claude Code. Premium seats required.
 - Mobile dispatch: Pro and Max users can send task commands from Claude mobile app while desktop runs the work
 - Computer use: screen control in research preview (screenshot-based; slower than direct tool access)
 
-**Connectors available:** Slack, Chrome, local filesystem folders, QuickBooks, PayPal, HubSpot, Canva, DocuSign (via Claude for Small Business plugin), Google Workspace, Microsoft 365, and growing
+**Connectors available:** Slack, Chrome, local filesystem folders, and growing
 
 **Human oversight model:** Cowork shows the plan before acting and waits for approval before consequential steps. You control which folders and connectors it can access. You can steer or redirect mid-task.
 
@@ -105,48 +105,25 @@ Cowork consumes usage limits faster than standard chat.
 
 ---
 
-## Claude for Small Business (launched May 13, 2026)
+## Claude Platform on AWS (launched May 11, 2026)
 
-**Access:** Toggle install inside Claude Cowork
+**Access:** Via AWS endpoints using AWS billing and IAM authentication
 
-Claude for Small Business is a plugin bundle of connectors and ready-to-run agentic workflows designed for small business owners who need Claude inside the tools they already use.
+**What it is:** Anthropic-managed infrastructure accessible through AWS — distinct from Amazon Bedrock (which is AWS-managed). Claude Platform on AWS brings the full first-party API feature set to AWS customers without requiring a separate Anthropic account.
 
-**Connectors:**
-- **Intuit QuickBooks** — payroll planning, month-end close, cash flow, reconciliation, tax prep
-- **PayPal** — settlements, invoicing, disputes, refunds
-- **HubSpot** — lead triage, customer pulse, campaign attribution
-- **Canva** — content generation for social and email campaigns
-- **DocuSign** — send contracts for signature, track status, file executed copies
-- Google Workspace and Microsoft 365 (via existing integrations)
+**Supported features:**
+- Full Messages API
+- Files API
+- Message Batches API
+- Claude Managed Agents
+- Agent Skills
+- Code execution
+- Tool use
 
-**15 agentic workflows include:**
-- Plan payroll with confidence
-- Close the month with fewer errors
-- Get a business pulse (cash position, sales trend, pipeline, commitments)
-- Run a campaign (analysis → strategy → Canva assets → HubSpot send)
-- Chase overdue invoices
-- Analyze margins by product
-- Prepare for tax season
-- Review contracts
-- Triage leads
+**Authentication:** AWS IAM (no separate Anthropic API key required)
+**Billing:** Through AWS account
 
-**15 skills** cover repeatable tasks owners identified as their biggest time drains.
-
-**Trust model:** Owner initiates all tasks; approves plans before execution; existing permissions in connected tools are respected; no training on data by default (Team/Enterprise).
-
-**Learning resources:**
-- Free "AI Fluency for Small Business" course (with PayPal): https://anthropic.skilljar.com/ai-fluency-for-small-businesses
-- Claude SMB Tour: free half-day workshops in 10 US cities starting May 14, 2026 (Chicago, Tulsa, Dallas, Hamilton Township, Baton Rouge, Birmingham, Salt Lake City, Baltimore, San Jose, Indianapolis)
-
-**More info:** https://claude.com/solutions/small-business
-
----
-
-## Claude Security (beta)
-
-A dedicated security product available on Enterprise plans. Targets incident response acceleration, agentic vulnerability operations, and code review automation. PwC production deployments report security response times reduced from hours to minutes.
-
-**Access:** Enterprise plan only (contact sales)
+**Docs:** https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws
 
 ---
 
