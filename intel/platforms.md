@@ -2,7 +2,7 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-05-16
+**Last updated:** 2026-05-21
 **Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com
 
 ---
@@ -16,9 +16,9 @@
 | **Tools** | Web search, artifacts, MCP apps, skills | Bash, file system, git, MCP servers, CI/CD, Claude Code skills | Local files, connectors (Slack, Chrome, etc.), computer use (research preview) |
 | **Subagents** | No | Yes (parallel sub-agents, background agents) | Yes (parallel sub-agents for complex tasks) |
 | **Scheduled tasks** | No | No | Yes (via /schedule; desktop app must stay open) |
-| **Who it's for** | General use, all skill levels | Software developers | Non-technical knowledge workers: analysts, ops, legal, finance, researchers |
+| **Who it's for** | General use, all skill levels | Software developers | Non-technical knowledge workers: analysts, ops, legal, finance, researchers, small business owners |
 | **Plan required** | Any (Free has limits) | Pro, Max, Team Premium, or Enterprise | Pro, Max, Team (Standard or Premium), or Enterprise |
-| **Key differentiator** | Projects, artifacts, MCP connectors, skills | CLAUDE.md context files, Agent Teams, 1M context on Max+ | Plugins, scheduled tasks, Projects with memory, mobile dispatch |
+| **Key differentiator** | Projects, artifacts, MCP connectors, skills | CLAUDE.md context files, Agent Teams, 1M context on Max+ | Plugins, scheduled tasks, Projects with memory, mobile dispatch, Claude for Small Business |
 
 ---
 
@@ -37,7 +37,7 @@
 - Extended reasoning models (Pro+)
 - Remote MCP connectors (Pro+)
 
-**Microsoft 365 integrations (GA as of May 14, 2026):**
+**Microsoft 365 integrations (GA as of May 7, 2026):**
 - Claude in Excel (GA)
 - Claude in Word (GA)
 - Claude in PowerPoint (GA)
@@ -64,10 +64,12 @@
 - Effort levels: control reasoning depth (`low` / `medium` / `high` / `xhigh`)
 - `opusplan` alias: Opus for planning, auto-switches to Sonnet for execution
 
+**SDK note (May 2026):** Anthropic acquired Stainless (May 18, 2026), the company that has generated every official Anthropic SDK since the API launched. Stainless produces SDKs (TypeScript, Python, Go, Java, and more) from OpenAPI specs, along with CLIs and MCP servers. This acquisition deepens Claude Platform's SDK and MCP server capabilities.
+
 **Plans:** Pro ($20/mo), Max 5x ($100/mo), Max 20x ($200/mo), Team Premium ($100/seat), Enterprise
 Note: Standard Team seats do NOT include Claude Code. Premium seats required.
 
-**Rate limits (May 2026):** 5-hour rate limits doubled for all paid plans; peak-hour throttling removed on Pro and Max.
+**Rate limits (May 2026):** 5-hour rate limits doubled for all paid plans (effective May 6, 2026); peak-hour throttling removed on Pro and Max. Substantial API rate limit increase for Claude Opus models.
 
 **Install:** `npm install -g @anthropic-ai/claude-code` (requires Node.js)
 **Docs:** https://code.claude.com/docs/en/overview
@@ -88,7 +90,16 @@ Note: Standard Team seats do NOT include Claude Code. Premium seats required.
 - Mobile dispatch: Pro and Max users can send task commands from Claude mobile app while desktop runs the work
 - Computer use: screen control in research preview (screenshot-based; slower than direct tool access)
 
-**Connectors available:** Slack, Chrome, local filesystem folders, and growing
+**Claude for Small Business (launched May 13, 2026):**
+- Toggle-install plugin available inside Claude Cowork
+- 15 ready-to-run agentic workflows + 15 skills covering finance, operations, sales, marketing, HR, and customer service
+- Connectors: QuickBooks, PayPal, HubSpot, Canva, DocuSign
+- Key workflows: plan payroll, close the month, business pulse, run a campaign, chase invoices, margin analyzer, contract review, lead triage, content strategy, tax-season organizer, and more
+- Human-in-the-loop: user approves the plan; can run end-to-end when ready
+- Free AI Fluency course (via PayPal partnership): https://anthropic.skilljar.com/ai-fluency-for-small-businesses
+- Solutions page: https://claude.com/solutions/small-business
+
+**Connectors available:** Slack, Chrome, local filesystem folders, QuickBooks, PayPal, HubSpot, Canva, DocuSign (via Claude for Small Business), and growing
 
 **Human oversight model:** Cowork shows the plan before acting and waits for approval before consequential steps. You control which folders and connectors it can access. You can steer or redirect mid-task.
 
@@ -105,28 +116,6 @@ Cowork consumes usage limits faster than standard chat.
 
 ---
 
-## Claude Platform on AWS (launched May 11, 2026)
-
-**Access:** Via AWS endpoints using AWS billing and IAM authentication
-
-**What it is:** Anthropic-managed infrastructure accessible through AWS — distinct from Amazon Bedrock (which is AWS-managed). Claude Platform on AWS brings the full first-party API feature set to AWS customers without requiring a separate Anthropic account.
-
-**Supported features:**
-- Full Messages API
-- Files API
-- Message Batches API
-- Claude Managed Agents
-- Agent Skills
-- Code execution
-- Tool use
-
-**Authentication:** AWS IAM (no separate Anthropic API key required)
-**Billing:** Through AWS account
-
-**Docs:** https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws
-
----
-
 ## Cowork vs Claude Code
 
 | | Cowork | Claude Code |
@@ -140,3 +129,12 @@ Cowork consumes usage limits faster than standard chat.
 | **Computer use** | Yes (research preview) | No |
 
 Both share the same underlying agentic architecture.
+
+---
+
+## Claude Design (Anthropic Labs)
+
+**Launched:** April 17, 2026
+**Access:** https://www.anthropic.com/news/claude-design-anthropic-labs (Anthropic Labs product)
+
+A new Anthropic Labs product for creating polished visual work: designs, prototypes, slides, one-pagers, and more. Collaborative with Claude. Separate from Claude Cowork.
