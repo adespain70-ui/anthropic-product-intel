@@ -2,74 +2,70 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-05-21
+**Last updated:** 2026-05-24
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview
 
 ---
 
 ## May 2026
 
+**May 22, 2026**
+- **Project Glasswing: Initial Update** — First progress report published on the multi-org cybersecurity initiative (AWS, Anthropic, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks)
+
 **May 19, 2026**
-- **"Widening the conversation on frontier AI"** — Anthropic policy/governance announcement on frontier AI discourse
-- **KPMG global alliance** — Claude integrated into KPMG's Digital Gateway platform; available to all 276,000+ KPMG employees globally
+- **KPMG global alliance** — Claude integrated into KPMG's Digital Gateway platform, available to all 276,000+ employees
+- **"Widening the conversation on frontier AI"** — Anthropic policy/position piece published
 
 **May 18, 2026**
-- **Anthropic acquires Stainless** — Stainless (founded 2022) generated every official Anthropic SDK since the start of the API; specializes in SDKs, CLIs, and MCP servers from OpenAPI specs across TypeScript, Python, Go, Java, and more. Acquisition deepens Claude Platform's developer experience and agent connectivity.
+- **Anthropic acquires Stainless** — Stainless (founded 2022) has powered generation of all official Anthropic SDKs; acquisition extends Claude Platform's developer experience and agent connectivity tooling (SDKs, CLIs, MCP servers across TypeScript, Python, Go, Java, and more)
 
 **May 14, 2026**
-- **PwC expanded partnership** — PwC deploying Claude Code and Cowork to U.S. teams first, expanding to global workforce; joint Center of Excellence; 30,000 PwC professionals to be trained and certified on Claude
-- **Anthropic + Gates Foundation $200M partnership** — announced May 14, 2026
-- Microsoft 365 integrations go GA: Claude in Excel, Word, PowerPoint now generally available; Claude in Outlook enters public beta
+- **PwC expanded partnership** — Claude Code and Cowork rollout to U.S. teams first, then global workforce; joint Center of Excellence; 30,000 PwC professionals to be trained and certified
+- **Gates Foundation partnership** — Anthropic forms $200M partnership with the Gates Foundation
+- **Microsoft 365 integrations go GA:** Claude in Excel, Word, PowerPoint now generally available; Claude in Outlook enters public beta
 
 **May 13, 2026**
-- **Claude for Small Business launched** — 15 ready-to-run agentic workflows + 15 skills available via Claude Cowork (toggle install)
-  - Connectors: QuickBooks (payroll, month-end close, cash flow, tax prep), PayPal (settlements, invoicing, disputes, refunds), HubSpot (lead triage, campaigns, customer pulse), Canva (content generation and publishing), DocuSign (contract send, track, file)
-  - Key workflows: plan payroll, close the month, run a campaign, chase invoices, business pulse, margin analyzer, contract review, lead triage, content strategy, tax-season organizer, and more
-  - Partner: PayPal "AI Fluency for Small Business" free online course
-  - Claude SMB Tour: free half-day workshops in Chicago, Tulsa, Dallas, Hamilton Township, Baton Rouge, Birmingham, Salt Lake City, Baltimore, San Jose, Indianapolis
-  - Source: https://www.anthropic.com/news/claude-for-small-business
+- **Claude for Small Business launched** — Toggle-install package of connectors and workflows inside tools small businesses already use: QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, Microsoft 365. Ships with 15 ready-to-run agentic workflows and 15 skills across finance, operations, sales, marketing, HR, and customer service. Available via Claude Cowork (Pro and above).
+  - **AI Fluency for Small Business** — Free online course (in partnership with PayPal); available on-demand
+  - **Claude SMB Tour** — Free half-day live workshops in 10+ cities starting May 14 in Chicago
 
 **May 7, 2026**
 - Microsoft 365 integrations launch date (Excel/Word/PowerPoint GA; Outlook public beta)
 
 **May 6, 2026**
-- **SpaceX compute partnership** — Anthropic signed agreement for all compute at SpaceX Colossus 1 data center: 300+ megawatts, 220,000+ NVIDIA GPUs. Also exploring orbital AI compute with SpaceX.
-- Claude Code 5-hour rate limits doubled for all paid plans (Pro, Max, Team, Enterprise)
+- Claude Code 5-hour rate limits doubled for all paid plans
 - Peak-hour throttling removed on Pro and Max plans
-- API rate limits raised considerably for Claude Opus models
 
 **May 5, 2026**
-- **Agents for financial services** — Anthropic announcement on agentic AI for financial services sector
+- **Agents for financial services** — Anthropic announces agentic AI solutions targeting financial services industry
 
 **May 4, 2026**
-- **Enterprise AI services company** — New venture announced with Blackstone, Hellman & Friedman, and Goldman Sachs to build enterprise AI services company
+- **Enterprise AI services company** — Announced new enterprise AI services venture with Blackstone, Hellman & Friedman, and Goldman Sachs
 
 ---
 
 ## April 2026
 
-**April 28, 2026**
-- **Claude for Creative Work** — Anthropic announcement on creative capabilities
-
 **April 23, 2026**
 - Default model for Enterprise pay-as-you-go and Anthropic API users changed to Opus 4.7
 
 **April 17, 2026**
-- **Claude Design by Anthropic Labs launched** — new product for creating polished visual work (designs, prototypes, slides, one-pagers); collaborative with Claude
+- **Claude Design launched** (Anthropic Labs) — New product for creating polished visual work: designs, prototypes, slides, one-pagers; built on Claude collaboration
 
 **April 16, 2026**
 - **Claude Opus 4.7 launched** — Anthropic's new flagship model
   - Step-change improvement in agentic coding over Opus 4.6
-  - 3x vision resolution
+  - 3x vision resolution (up to 2,576px long edge / ~3.75 megapixels)
   - Self-verification capability
   - New `xhigh` effort level
   - Adaptive Thinking (replaces extended thinking toggle)
   - 70% CursorBench coding score (vs 58% for Opus 4.6)
   - Same pricing as Opus 4.6 ($5/$25 per 1M tokens)
   - Requires Claude Code v2.1.111+
+  - Cyber safeguards: auto-detects and blocks prohibited cybersecurity uses; Cyber Verification Program for legitimate security professionals
 
 **April 7, 2026**
-- **Project Glasswing** — Cybersecurity initiative with AWS, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks to secure critical software. Includes Mythos Preview model (invite-only).
+- **Project Glasswing announced** — Multi-org initiative to secure critical software infrastructure
 
 **April 2026**
 - Managed Agents memory enters public beta (`managed-agents-2026-04-01` header)

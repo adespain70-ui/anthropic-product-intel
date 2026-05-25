@@ -9,12 +9,12 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 <!-- Cowork appends new entries at the top, below this comment line -->
 
-## 2026-05-21
+## 2026-05-24
 
 **Updated by:** Cowork scheduled task
-**Files updated:** releases.md, platforms.md, pricing.md
-**Summary:** Added 7 announcements since May 14 (Stainless acquisition, Claude for Small Business launch, KPMG alliance, PwC partnership, Gates Foundation deal, SpaceX compute deal, enterprise AI services company); documented Claude for Small Business in platforms.md; corrected Pro annual price to $17/mo ($200/yr) from ~$16.67/mo; added prompt caching and platform feature pricing detail to pricing.md; added Claude Design (Anthropic Labs) to platforms.md. No new models launched.
-**Upstream releases checked:** anthropics/anthropic-sdk-python, anthropics/anthropic-sdk-typescript, anthropics/claude-code, anthropics/model-spec, anthropics/anthropic-cookbook (atom feeds returned empty — likely client-rendered; checked news page and platform docs directly)
+**Files updated:** releases.md, pricing.md, platforms.md
+**Summary:** Added 10 announcements from May 14–22 (Claude for Small Business, Stainless acquisition, KPMG alliance, PwC partnership, Gates Foundation partnership, Glasswing update, finance agents, enterprise AI services company); corrected Pro plan price to $17/mo annual ($200/yr); added prompt caching table and platform feature pricing to pricing.md; added Claude for Small Business section, Claude Design, Claude Security, Stainless/SDK section to platforms.md; added /ultrareview and auto mode details to Claude Code section.
+**Upstream releases checked:** anthropics/anthropic-sdk-python, anthropics/anthropic-sdk-typescript, anthropics/claude-code, anthropics/model-spec, anthropics/anthropic-cookbook (atom feeds returned empty — client-rendered pages; content verified via anthropic.com/news and claude.com/pricing instead)
 
 ---
 
