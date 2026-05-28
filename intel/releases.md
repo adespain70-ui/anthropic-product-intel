@@ -2,32 +2,40 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-05-24
+**Last updated:** 2026-05-28
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview
 
 ---
 
 ## May 2026
 
+**May 27, 2026**
+- **Anthropic opens Milan office** — European expansion to support Italian enterprise, research, and developer communities
+
+**May 26, 2026**
+- **KiYoung Choi appointed Representative Director of Korea** — ahead of planned Seoul office opening
+
 **May 22, 2026**
-- **Project Glasswing: Initial Update** — First progress report published on the multi-org cybersecurity initiative (AWS, Anthropic, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks)
+- **Project Glasswing: Initial update** — status update on the cross-industry AI safety initiative; members include AWS, Anthropic, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks
 
 **May 19, 2026**
-- **KPMG global alliance** — Claude integrated into KPMG's Digital Gateway platform, available to all 276,000+ employees
-- **"Widening the conversation on frontier AI"** — Anthropic policy/position piece published
+- **KPMG strategic alliance** — Claude integrated across KPMG's Digital Gateway platform and available to all 276,000+ employees globally
+- **Widening the conversation on frontier AI** — policy and governance update from Anthropic
 
 **May 18, 2026**
-- **Anthropic acquires Stainless** — Stainless (founded 2022) has powered generation of all official Anthropic SDKs; acquisition extends Claude Platform's developer experience and agent connectivity tooling (SDKs, CLIs, MCP servers across TypeScript, Python, Go, Java, and more)
+- **Anthropic acquires Stainless** — Stainless has generated all official Anthropic SDKs since the API launched; acquisition extends Claude's SDK and MCP server tooling capabilities; Stainless turns API specs into SDKs across TypeScript, Python, Go, Java, and more
 
 **May 14, 2026**
-- **PwC expanded partnership** — Claude Code and Cowork rollout to U.S. teams first, then global workforce; joint Center of Excellence; 30,000 PwC professionals to be trained and certified
-- **Gates Foundation partnership** — Anthropic forms $200M partnership with the Gates Foundation
-- **Microsoft 365 integrations go GA:** Claude in Excel, Word, PowerPoint now generally available; Claude in Outlook enters public beta
+- **PwC expanded partnership** — PwC deploying Claude Code and Cowork starting with US teams, expanding globally; joint Center of Excellence established; 30,000 PwC professionals to be trained and certified on Claude; PwC global workforce of hundreds of thousands
+- **Gates Foundation $200M partnership** — Anthropic and the Gates Foundation partner on a $200 million initiative
+- Microsoft 365 integrations go GA: Claude in Excel, Word, PowerPoint now generally available; Claude in Outlook enters public beta
 
 **May 13, 2026**
-- **Claude for Small Business launched** — Toggle-install package of connectors and workflows inside tools small businesses already use: QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, Microsoft 365. Ships with 15 ready-to-run agentic workflows and 15 skills across finance, operations, sales, marketing, HR, and customer service. Available via Claude Cowork (Pro and above).
-  - **AI Fluency for Small Business** — Free online course (in partnership with PayPal); available on-demand
-  - **Claude SMB Tour** — Free half-day live workshops in 10+ cities starting May 14 in Chicago
+- **Claude for Small Business launched** — Cowork plugin with 15 ready-to-run agentic workflows and 15 skills; integrates QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, Microsoft 365; targets the 44% of US GDP and ~half of private-sector employment represented by small businesses
+  - Includes: payroll planning, monthly close, business pulse, campaign runner, invoice chaser, margin analyzer, contract reviewer, lead triager, tax-season organizer, and more
+  - Partnership with PayPal on free "AI Fluency for Small Business" online course
+  - Claude SMB Tour: free half-day workshops in 10+ US cities starting May 14 in Chicago
+  - CDFI partnerships: Accion Opportunity Fund, Community Reinvestment Fund USA, Pacific Community Ventures
 
 **May 7, 2026**
 - Microsoft 365 integrations launch date (Excel/Word/PowerPoint GA; Outlook public beta)
@@ -36,12 +44,6 @@
 - Claude Code 5-hour rate limits doubled for all paid plans
 - Peak-hour throttling removed on Pro and Max plans
 
-**May 5, 2026**
-- **Agents for financial services** — Anthropic announces agentic AI solutions targeting financial services industry
-
-**May 4, 2026**
-- **Enterprise AI services company** — Announced new enterprise AI services venture with Blackstone, Hellman & Friedman, and Goldman Sachs
-
 ---
 
 ## April 2026
@@ -49,23 +51,18 @@
 **April 23, 2026**
 - Default model for Enterprise pay-as-you-go and Anthropic API users changed to Opus 4.7
 
-**April 17, 2026**
-- **Claude Design launched** (Anthropic Labs) — New product for creating polished visual work: designs, prototypes, slides, one-pagers; built on Claude collaboration
-
-**April 16, 2026**
+**April 16–17, 2026**
 - **Claude Opus 4.7 launched** — Anthropic's new flagship model
   - Step-change improvement in agentic coding over Opus 4.6
-  - 3x vision resolution (up to 2,576px long edge / ~3.75 megapixels)
+  - 3x vision resolution
   - Self-verification capability
   - New `xhigh` effort level
   - Adaptive Thinking (replaces extended thinking toggle)
   - 70% CursorBench coding score (vs 58% for Opus 4.6)
+  - 128K max output (synchronous); 300K on Message Batches API
   - Same pricing as Opus 4.6 ($5/$25 per 1M tokens)
   - Requires Claude Code v2.1.111+
-  - Cyber safeguards: auto-detects and blocks prohibited cybersecurity uses; Cyber Verification Program for legitimate security professionals
-
-**April 7, 2026**
-- **Project Glasswing announced** — Multi-org initiative to secure critical software infrastructure
+- **Claude Design by Anthropic Labs launched** (April 17) — new Anthropic Labs product for creating visual work (designs, prototypes, slides, one-pagers) collaboratively with Claude
 
 **April 2026**
 - Managed Agents memory enters public beta (`managed-agents-2026-04-01` header)
@@ -90,7 +87,8 @@
   - Improved agentic search vs Sonnet 4.5
   - 1M token context window (GA)
   - Extended thinking support
-  - 128K max output
+  - Adaptive Thinking support
+  - 64K max output
   - $3/$15 per 1M tokens
   - Preferred over Sonnet 4.5 by 70% of developers
 
@@ -105,6 +103,7 @@
 - Anthropic closed $30B Series G at $380B post-money valuation
 - Annualized revenue reached ~$14B (up from $3B mid-2025)
 - Claude 3 Opus retired; weights preserved; "Claude's Corner" Substack launched
+- **"Claude is a space to think"** — Anthropic announces Claude will remain ad-free
 
 ---
 
@@ -116,6 +115,7 @@
   - 64K max output
   - 97 tokens/second
   - $1/$5 per 1M tokens
+  - Extended thinking supported
   - Targets high-volume, low-latency use cases
 
 ---
@@ -144,3 +144,4 @@ The Cowork scheduled task checks these Anthropic GitHub repos for new releases a
 - https://github.com/anthropics/anthropic-cookbook
 
 Release feed pattern: `https://github.com/anthropics/<repo>/releases.atom`
+Note: GitHub atom feeds returned empty during the 2026-05-28 run; check manually if SDK version tracking is needed.

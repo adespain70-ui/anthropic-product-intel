@@ -2,7 +2,7 @@
 
 # Claude Models — Anthropic Product Intel
 
-**Last updated:** 2026-05-14
+**Last updated:** 2026-05-28
 **Source:** https://platform.claude.com/docs/en/about-claude/models/overview
 
 ---
@@ -11,9 +11,9 @@
 
 | Model | API Model ID | Tier | Context Window | Max Output | Best For |
 |---|---|---|---|---|---|
-| Claude Opus 4.7 | `claude-opus-4-7` | Flagship | 1M tokens | 64K tokens | Complex reasoning, agentic coding, architecture decisions, large codebase analysis |
+| Claude Opus 4.7 | `claude-opus-4-7` | Flagship | 1M tokens | 128K tokens | Complex reasoning, agentic coding, architecture decisions, large codebase analysis |
 | Claude Opus 4.6 | `claude-opus-4-6` | Previous flagship | 1M tokens | 64K tokens | Graduate-level reasoning, computer use, research-grade analysis |
-| Claude Sonnet 4.6 | `claude-sonnet-4-6` | Balanced | 1M tokens | 128K tokens | Daily driver for dev, writing, analysis, enterprise API; best value |
+| Claude Sonnet 4.6 | `claude-sonnet-4-6` | Balanced | 1M tokens | 64K tokens | Daily driver for dev, writing, analysis, enterprise API; best value |
 | Claude Haiku 4.5 | `claude-haiku-4-5-20251001` | Fast/Efficient | 200K tokens | 64K tokens | High-volume classification, routing, summarization, simple code edits |
 | Claude Mythos Preview | Invite-only | Research | 1M tokens | — | Defensive cybersecurity (Project Glasswing; no self-serve signup) |
 
@@ -46,6 +46,8 @@
 - New `xhigh` effort level (default for Opus 4.7 in Claude Code)
 - Adaptive Thinking (model decides whether to think; replaces extended thinking toggle)
 - 70% CursorBench coding score vs 58% for Opus 4.6
+- Max output: 128K tokens (synchronous API); 300K tokens on Message Batches API with `output-300k-2026-03-24` beta header
+- Reliable knowledge cutoff: January 2026; training data cutoff: January 2026
 - Requires Claude Code v2.1.111 or later (`claude update` to upgrade)
 - Default for Enterprise pay-as-you-go and Anthropic API users as of April 23, 2026
 
@@ -54,8 +56,10 @@
 - SWE-bench Verified: 79.6% (within 1.2 points of Opus 4.6)
 - Improved agentic search performance vs Sonnet 4.5
 - Extended thinking supported
+- Adaptive Thinking supported
 - 1M context window (GA, standard pricing)
-- 128K max output (higher than Opus)
+- Max output: 64K tokens (synchronous API); 300K tokens on Message Batches API with `output-300k-2026-03-24` beta header
+- Reliable knowledge cutoff: August 2025; training data cutoff: January 2026
 - Preferred over Sonnet 4.5 by 70% of developers in evaluations
 
 ### Claude Haiku 4.5 (launched October 15, 2025)
@@ -63,7 +67,9 @@
 - 200K context window (not 1M)
 - 64K max output
 - SWE-bench coding average: 73.3%
+- Extended thinking supported
 - Significantly cheaper than Sonnet for high-volume use cases
+- Knowledge cutoff: February 2025; training data cutoff: July 2025
 
 ---
 

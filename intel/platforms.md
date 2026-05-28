@@ -2,23 +2,23 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-05-24
-**Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com, https://claude.com/solutions/small-business
+**Last updated:** 2026-05-28
+**Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com, https://www.anthropic.com/news/claude-for-small-business
 
 ---
 
 ## Platform Comparison
 
-| | Claude.ai (Chat) | Claude Code | Cowork |
-|---|---|---|---|
-| **Primary use** | Conversation, writing, research, artifacts | Agentic coding across your codebase | Desktop task and file automation for knowledge workers |
-| **Interface** | Web, iOS, Android, desktop app | Terminal, VS Code, JetBrains, desktop app, web, iOS | Desktop app (macOS and Windows); mobile dispatch on Pro and Max |
-| **Tools** | Web search, artifacts, MCP apps, skills | Bash, file system, git, MCP servers, CI/CD, Claude Code skills | Local files, connectors (Slack, Chrome, etc.), computer use (research preview) |
-| **Subagents** | No | Yes (parallel sub-agents, background agents) | Yes (parallel sub-agents for complex tasks) |
-| **Scheduled tasks** | No | No | Yes (via /schedule; desktop app must stay open) |
-| **Who it's for** | General use, all skill levels | Software developers | Non-technical knowledge workers: analysts, ops, legal, finance, researchers |
-| **Plan required** | Any (Free has limits) | Pro, Max, Team Premium, or Enterprise | Pro, Max, Team (Standard or Premium), or Enterprise |
-| **Key differentiator** | Projects, artifacts, MCP connectors, skills | CLAUDE.md context files, Agent Teams, 1M context on Max+ | Plugins, scheduled tasks, Projects with memory, mobile dispatch |
+| | Claude.ai (Chat) | Claude Code | Cowork | Claude for Small Business |
+|---|---|---|---|---|
+| **Primary use** | Conversation, writing, research, artifacts | Agentic coding across your codebase | Desktop task and file automation for knowledge workers | Pre-built agentic workflows for small business owners inside their existing tools |
+| **Interface** | Web, iOS, Android, desktop app | Terminal, VS Code, JetBrains, desktop app, web, iOS | Desktop app (macOS and Windows); mobile dispatch on Pro and Max | Cowork plugin (toggle install); integrates with QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, Microsoft 365 |
+| **Tools** | Web search, artifacts, MCP apps, skills | Bash, file system, git, MCP servers, CI/CD, Claude Code skills | Local files, connectors (Slack, Chrome, etc.), computer use (research preview) | Business connectors: QuickBooks, PayPal, HubSpot, Canva, DocuSign, Google Workspace, Microsoft 365 |
+| **Subagents** | No | Yes (parallel sub-agents, background agents) | Yes (parallel sub-agents for complex tasks) | Yes (task-specific agentic workflows) |
+| **Scheduled tasks** | No | No | Yes (via /schedule; desktop app must stay open) | Yes (via Cowork) |
+| **Who it's for** | General use, all skill levels | Software developers | Non-technical knowledge workers: analysts, ops, legal, finance, researchers | Small business owners managing finance, ops, sales, marketing, HR, and customer service |
+| **Plan required** | Any (Free has limits) | Pro, Max, Team Premium, or Enterprise | Pro, Max, Team (Standard or Premium), or Enterprise | Pro, Max, Team, or Enterprise (runs inside Cowork) |
+| **Key differentiator** | Projects, artifacts, MCP connectors, skills | CLAUDE.md context files, Agent Teams, 1M context on Max+ | Plugins, scheduled tasks, Projects with memory, mobile dispatch | 15 ready-to-run workflows; 15 skills; purpose-built for payroll, invoicing, campaigns, monthly close |
 
 ---
 
@@ -63,10 +63,8 @@
 - Extended context: 1M tokens on Max, Team Premium, Enterprise (Claude Code v2.1.111+ required for Opus 4.7)
 - Effort levels: control reasoning depth (`low` / `medium` / `high` / `xhigh`)
 - `opusplan` alias: Opus for planning, auto-switches to Sonnet for execution
-- `/ultrareview` slash command: dedicated review session for bugs and design issues (Pro and Max users get 3 free ultrareviews)
-- Auto mode (Max users): Claude makes decisions autonomously for fewer interruptions on longer tasks
 
-**Plans:** Pro ($20/mo), Max 5x ($100/mo), Max 20x ($200/mo), Team Premium ($100/seat), Enterprise
+**Plans:** Pro ($20/mo), Max 5x ($100/mo), Max 20x ($200+/mo), Team Premium ($100/seat), Enterprise
 Note: Standard Team seats do NOT include Claude Code. Premium seats required.
 
 **Rate limits (May 2026):** 5-hour rate limits doubled for all paid plans; peak-hour throttling removed on Pro and Max.
@@ -107,50 +105,32 @@ Cowork consumes usage limits faster than standard chat.
 
 ---
 
-## Claude for Small Business
+## Claude for Small Business (launched May 13, 2026)
 
-**Access:** Toggle install inside Claude Cowork; available on Pro and above
+**Access:** Toggle install inside Claude Cowork > connect business tools
 
-**Launched:** May 13, 2026
+**What it is:** A Cowork plugin that puts Claude inside the tools small businesses already use, with 15 ready-to-run agentic workflows and 15 skills covering the most common owner tasks.
 
-**What it is:** A package of connectors and ready-to-run agentic workflows built for small business owners, running inside the tools they already use.
-
-**Connectors:**
+**Connected tools:**
+- **Intuit QuickBooks** — payroll planning, monthly close, cash flow, tax season prep, reconciliation
 - **PayPal** — settlements, invoicing, disputes, refunds
-- **Intuit QuickBooks** — payroll planning, monthly close, cash-flow, tax prep, reconciliation
 - **HubSpot** — lead triage, customer pulse, campaign attribution
-- **Canva** — content generation for all channels; collaborate, publish, track performance
-- **DocuSign** — send contracts, track status, file executed copies
-- Google Workspace and Microsoft 365 also supported
+- **Canva** — content generation, on-brand design, publish and track
+- **DocuSign** — contract send, status tracking, executed copy filing
+- **Google Workspace** — Drive, Docs, Sheets integration
+- **Microsoft 365** — Office integration
 
-**15 ready-to-run workflows include:**
-- Payroll planning (QuickBooks + PayPal settlement reconciliation)
-- Month-end close (books vs. settlements reconciliation + plain-English P&L + close packet for accountant)
-- Business pulse (cash position, sales trend, pipeline, calendar, watch list)
-- Campaign execution (strategy + Canva assets + HubSpot send)
-- Invoice chaser, margin analyzer, tax-season organizer, contract reviewer, lead triager, and more
+**Key workflows:**
+- Plan payroll with confidence (QuickBooks + PayPal)
+- Close the month with fewer errors (reconciliation + P&L narrative + accountant export)
+- Get a business pulse on a schedule (cash, sales, pipeline, commitments on one page)
+- Run a marketing campaign (revenue analysis → HubSpot strategy → Canva assets → send)
+- Invoice chaser, margin analyzer, lead triager, contract reviewer, tax-season organizer, and more
 
-**Trust model:** Every workflow is initiated by the owner; approval required before anything sends, posts, or pays. Existing permissions from connected tools are honored. No model training on data (Team/Enterprise plans by default).
+**Trust model:** You initiate every task; Claude shows the plan first; your existing tool permissions are respected; data not used for model training on Team and Enterprise plans.
 
-**AI Fluency for Small Business:** Free on-demand course in partnership with PayPal (https://anthropic.skilljar.com/ai-fluency-for-small-businesses)
-
-**Claude SMB Tour:** Free half-day live workshops in 10+ U.S. cities; Chicago, Tulsa, Dallas, Hamilton Township, Baton Rouge, Birmingham, Salt Lake City, Baltimore, San Jose, Indianapolis (spring 2026)
-
----
-
-## Claude Design (Anthropic Labs)
-
-**Launched:** April 17, 2026
-
-A new Anthropic Labs product for creating polished visual work — designs, prototypes, slides, one-pagers — through collaboration with Claude. Separate from main Claude products; available at https://www.anthropic.com/news/claude-design-anthropic-labs.
-
----
-
-## Claude Security
-
-**Access:** Available as an add-on to Enterprise plans (currently in beta)
-
-Cybersecurity-focused product announced as part of Project Glasswing. Provides Claude capabilities for defensive security operations. Details at https://claude.com/product/claude-security.
+**Plans:** Runs inside Cowork — requires Pro, Max, Team, or Enterprise
+**Learn more:** https://claude.com/solutions/small-business
 
 ---
 
@@ -167,16 +147,3 @@ Cybersecurity-focused product announced as part of Project Glasswing. Provides C
 | **Computer use** | Yes (research preview) | No |
 
 Both share the same underlying agentic architecture.
-
----
-
-## SDK & Developer Tooling
-
-**Stainless acquisition (May 18, 2026):** Anthropic acquired Stainless, which has generated all official Anthropic SDKs since the earliest days of the API. Stainless turns API specs into SDKs across TypeScript, Python, Go, Java, and more, and also generates CLIs and MCP servers. The acquisition is aimed at advancing Claude's ability to connect to data and tools.
-
-**Official SDKs:**
-- Python: `pip install anthropic`
-- TypeScript/Node: `npm install @anthropic-ai/sdk`
-- Go, Java: available via Stainless-powered generation
-
-**MCP (Model Context Protocol):** Anthropic-created open standard for agent connectivity; enables Claude to connect to external tools, databases, and APIs. MCP server generation is a core Stainless capability now in-house at Anthropic.

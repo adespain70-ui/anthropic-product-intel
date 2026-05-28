@@ -9,12 +9,12 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 <!-- Cowork appends new entries at the top, below this comment line -->
 
-## 2026-05-24
+## 2026-05-28
 
 **Updated by:** Cowork scheduled task
-**Files updated:** releases.md, pricing.md, platforms.md
-**Summary:** Added 10 announcements from May 14–22 (Claude for Small Business, Stainless acquisition, KPMG alliance, PwC partnership, Gates Foundation partnership, Glasswing update, finance agents, enterprise AI services company); corrected Pro plan price to $17/mo annual ($200/yr); added prompt caching table and platform feature pricing to pricing.md; added Claude for Small Business section, Claude Design, Claude Security, Stainless/SDK section to platforms.md; added /ultrareview and auto mode details to Claude Code section.
-**Upstream releases checked:** anthropics/anthropic-sdk-python, anthropics/anthropic-sdk-typescript, anthropics/claude-code, anthropics/model-spec, anthropics/anthropic-cookbook (atom feeds returned empty — client-rendered pages; content verified via anthropic.com/news and claude.com/pricing instead)
+**Files updated:** models.md, pricing.md, platforms.md, releases.md
+**Summary:** Corrected Opus 4.7 max output to 128K (was 64K) and Sonnet 4.6 to 64K (was 128K); corrected Pro annual price to $17/mo ($200/yr); added Haiku 4.5 extended thinking support; added Adaptive Thinking to Sonnet 4.6; added Claude for Small Business platform section; added May 2026 releases: Claude for Small Business launch, Stainless acquisition, PwC partnership, Gates Foundation partnership, KPMG alliance, Project Glasswing update, Milan office, Korea appointment, Claude Design launch.
+**Upstream releases checked:** anthropics/anthropic-sdk-python (feed empty), anthropics/anthropic-sdk-typescript (feed empty), anthropics/claude-code (feed empty), anthropics/model-spec (feed empty), anthropics/anthropic-cookbook (feed empty) — GitHub atom feeds returned no content; anthropic.com/news checked directly.
 
 ---
 
