@@ -2,7 +2,7 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-05-29
+**Last updated:** 2026-06-01
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview
 
 ---
@@ -10,50 +10,40 @@
 ## May 2026
 
 **May 28, 2026**
-- **Claude Opus 4.8 launched** — new flagship model
-  - Improvements across coding, agentic tasks, and professional work vs Opus 4.7
-  - ~4x less likely than Opus 4.7 to allow code flaws to pass unremarked (honesty)
-  - 84% on Online-Mind2Web (computer-use/browser-agent; highest scored)
-  - First model to break 10% overall on Legal Agent Benchmark all-pass standard
-  - Only model to complete every case on Databricks Super-Agent benchmark
+- **Claude Opus 4.8 launched** — Anthropic's new flagship model
+  - Improved benchmarks over Opus 4.7 across coding, agentic tasks, reasoning, and professional work
+  - ~4x less likely than Opus 4.7 to allow code flaws to pass unremarked (improved honesty)
+  - 84% on Online-Mind2Web browser agent benchmark (beats Opus 4.7 and GPT-5.5)
+  - First model to break 10% on Legal Agent Benchmark all-pass standard
+  - Adaptive Thinking (no extended thinking toggle); effort defaults to `high`
+  - Fast mode: 2.5x speed at 2x pricing ($10/$50 per 1M tokens); 3x cheaper than fast mode for prior models
+  - Max output: 128K tokens (sync); 300K via Message Batches API
+  - Knowledge cutoff: Jan 2026
   - API model string: `claude-opus-4-8`
-  - Standard pricing unchanged: $5/$25 per 1M tokens
-  - Fast mode: 2.5× speed at $10/$50 per 1M tokens (3x cheaper than previous fast mode)
-  - Defaults to `high` effort
-- **Effort control launched** in claude.ai and Cowork (all plans)
-  - Slider alongside model selector; levels: low/medium/high/extra/max
-  - Lower effort = faster + slower rate limit drain; higher effort = better quality
-- **Dynamic Workflows launched** in Claude Code (research preview)
-  - Available on Enterprise, Team, and Max plans
-  - Hundreds of parallel sub-agents per session; model verifies outputs
+  - Pricing unchanged: $5/$25 per 1M tokens (standard)
+- **Dynamic workflows launched** (Claude Code, research preview)
+  - Hundreds of parallel subagents per session; model plans, executes, and self-verifies
   - Supports codebase-scale migrations end-to-end
-- **Messages API: system entries in messages array**
-  - Developers can now include `system` role entries inside the `messages` array
-  - Enables mid-task instruction updates without breaking prompt cache
+  - Available on Enterprise, Team, and Max plans
+- **Effort control in claude.ai and Cowork**
+  - Users can set effort level via UI control alongside the model selector
+  - Available on all paid plans
+- **Messages API: system entries inside messages array**
+  - Developers can update Claude's instructions mid-task without breaking prompt cache or routing through a user turn
 - **Anthropic raises $65B Series H** at $965B post-money valuation
-  - Led by Altimeter Capital, Dragoneer, Greenoaks, Sequoia Capital
-  - Run-rate revenue crossed $47B earlier in May 2026
-  - Expanded compute agreements: Amazon (5 GW), Google/Broadcom (5 GW TPU), SpaceX Colossus
+
+**May 19, 2026**
+- KPMG integrates Claude across its core business and workforce of 276,000+ in strategic alliance
+
+**May 18, 2026**
+- Anthropic acquires Stainless (SDK infrastructure company)
 
 **May 27, 2026**
 - Anthropic opens Milan office (sixth European office)
 
-**May 26, 2026**
-- KiYoung Choi appointed Representative Director of Anthropic Korea ahead of Seoul office opening
-
-**May 22, 2026**
-- Project Glasswing initial update published
-
-**May 19, 2026**
-- KPMG integrates Claude across workforce of 276,000+ in strategic alliance
-- "Widening the conversation on frontier AI" announcement
-
-**May 18, 2026**
-- Anthropic acquires Stainless (API tooling company)
-
 **May 14, 2026**
 - Microsoft 365 integrations go GA: Claude in Excel, Word, PowerPoint now generally available; Claude in Outlook enters public beta
-- PwC expanded partnership announced
+- PwC expands partnership to deploy Claude for technology, deals, and enterprise functions
 
 ---
 
@@ -63,10 +53,11 @@
 - Default model for Enterprise pay-as-you-go and Anthropic API users changed to Opus 4.7
 
 **April 17, 2026**
-- Claude Design by Anthropic Labs launched — visual collaboration product for designs, prototypes, slides, one-pagers
+- **Claude Design launched** (Anthropic Labs)
+  - New Anthropic Labs product for creating polished visual work: designs, prototypes, slides, one-pagers
 
 **April 16, 2026**
-- **Claude Opus 4.7 launched** — previous flagship model
+- **Claude Opus 4.7 launched** — Anthropic's flagship at the time
   - Step-change improvement in agentic coding over Opus 4.6
   - 3x vision resolution
   - Self-verification capability
@@ -76,10 +67,13 @@
   - Same pricing as Opus 4.6 ($5/$25 per 1M tokens)
   - Requires Claude Code v2.1.111+
 
+**April 7, 2026**
+- Project Glasswing announced — coalition including AWS, Anthropic, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks to secure critical software
+
 **April 2026**
 - Managed Agents memory enters public beta (`managed-agents-2026-04-01` header)
 - Rate Limits API launched: admins can programmatically query org and workspace rate limits
-- Data residency controls launched: specify inference geography via `inference_geo` parameter; US-only at 1.1x pricing for post-Feb 2026 models
+- Data residency controls launched: `inference_geo` parameter; US-only at 1.1x pricing for post-Feb 2026 models
 
 ---
 
@@ -98,8 +92,8 @@
 - **Claude Sonnet 4.6 launched**
   - Improved agentic search vs Sonnet 4.5
   - 1M token context window (GA)
-  - Extended thinking support
-  - 128K max output
+  - Extended thinking support; Adaptive thinking support
+  - 64K max output
   - $3/$15 per 1M tokens
   - Preferred over Sonnet 4.5 by 70% of developers
 
@@ -111,12 +105,12 @@
   - Claude in PowerPoint launched
 
 **February 4, 2026**
-- Anthropic announces ad-free policy: Claude products will remain ad-free
+- Anthropic announces Claude will remain ad-free permanently
 
 **February 2026**
 - Anthropic closed $30B Series G at $380B post-money valuation
 - Annualized revenue reached ~$14B (up from $3B mid-2025)
-- Claude 3 Opus retired; weights preserved; "Claude's Corner" Substack launched
+- Claude 3 Opus retired; weights preserved
 
 ---
 
@@ -143,7 +137,7 @@
 - Sonnet 4 → Sonnet 4.6
 - Opus 4 → Opus 4.8
 
-**Upcoming (near-term):** Mythos-class models expected to move beyond Project Glasswing research preview "in the coming weeks" per Anthropic's May 28 announcement.
+**Coming soon:** Mythos-class models for general release. Anthropic working on cyber safeguards; expects to bring Mythos-class to all customers "in the coming weeks" (per May 28, 2026 announcement).
 
 ---
 
@@ -158,4 +152,3 @@ The Cowork scheduled task checks these Anthropic GitHub repos for new releases a
 - https://github.com/anthropics/anthropic-cookbook
 
 Release feed pattern: `https://github.com/anthropics/<repo>/releases.atom`
-Note: GitHub atom feeds are blocked from Cowork's web fetch tool; releases are tracked via anthropic.com/news and platform release notes instead.
