@@ -2,7 +2,7 @@
 
 # Claude Pricing — Anthropic Product Intel
 
-**Last updated:** 2026-06-01
+**Last updated:** 2026-06-07
 **Source:** https://claude.com/pricing (always verify live)
 
 ---
@@ -53,6 +53,10 @@
 **Discounts:**
 - Batch API (Message Batches): 50% discount
 - Data residency (US-only inference): 1.1x pricing for post-Feb 2026 models
+
+**Billing note (June 2, 2026):** Requests that return `stop_reason: "refusal"` with no generated output are no longer billed.
+
+**Limited-time promo (as of June 2026):** $1,000 in Claude Code and Claude Cowork credits for every seat that activates by July 2 (Team/Enterprise; see https://claude.com/opus-enterprise-promo).
 
 **Claude Platform features (additional costs):**
 - Managed Agents: $0.08/session-hour active runtime

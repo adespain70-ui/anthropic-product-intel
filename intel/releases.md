@@ -2,12 +2,34 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-06-01
+**Last updated:** 2026-06-07
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview
 
 ---
 
+## June 2026
+
+**June 5, 2026**
+- **Claude Opus 4.1 deprecated** (`claude-opus-4-1-20250805`) — API retirement scheduled for August 5, 2026; migrate to Opus 4.8
+
+**June 3, 2026**
+- Introducing the Services Track and Partner Hub of the Claude Partner Network
+- Policy report: "What we learned mapping a year's worth of AI-enabled cyber threats" (MITRE ATT&CK)
+
+**June 2, 2026**
+- Advisor tool now supports a `max_tokens` parameter to cap advisor-model output per call
+- Billing change: requests returning `stop_reason: "refusal"` with no generated output are no longer billed
+- Expanding Project Glasswing to ~150 new organizations in 15+ countries
+
+**June 1, 2026**
+- Anthropic confidentially submits draft S-1 to the SEC
+
+---
+
 ## May 2026
+
+**May 29, 2026**
+- Managed Agents webhooks, multiagent orchestration, and self-hosted sandboxes now available on Claude Platform on AWS
 
 **May 28, 2026**
 - **Claude Opus 4.8 launched** — Anthropic's new flagship model
@@ -132,10 +154,12 @@
 |---|---|---|
 | Claude Sonnet 4 (`claude-sonnet-4-20250514`) | API retirement | June 15, 2026 |
 | Claude Opus 4 (`claude-opus-4-20250514`) | API retirement | June 15, 2026 |
+| Claude Opus 4.1 (`claude-opus-4-1-20250805`) | API retirement | August 5, 2026 |
+| Fast mode for Opus 4.6 | Removal | ~30 days after May 28, 2026 launch |
 
 **Recommended migrations:**
 - Sonnet 4 → Sonnet 4.6
-- Opus 4 → Opus 4.8
+- Opus 4 / Opus 4.1 → Opus 4.8
 
 **Coming soon:** Mythos-class models for general release. Anthropic working on cyber safeguards; expects to bring Mythos-class to all customers "in the coming weeks" (per May 28, 2026 announcement).
 
@@ -145,10 +169,14 @@
 
 The Cowork scheduled task checks these Anthropic GitHub repos for new releases and changelogs:
 
-- https://github.com/anthropics/anthropic-sdk-python
-- https://github.com/anthropics/anthropic-sdk-typescript
-- https://github.com/anthropics/claude-code
-- https://github.com/anthropics/model-spec
-- https://github.com/anthropics/anthropic-cookbook
+- https://github.com/anthropics/anthropic-sdk-python (latest: v0.107.0, 2026-06-06)
+- https://github.com/anthropics/anthropic-sdk-typescript (latest: sdk-v0.102.0, 2026-06-06)
+- https://github.com/anthropics/claude-code (latest: v2.1.168, 2026-06-06)
+- https://github.com/anthropics/model-spec (releases.atom returns 404 — no published releases feed)
+- https://github.com/anthropics/anthropic-cookbook (redirects to anthropics/claude-cookbooks; no published releases)
 
 Release feed pattern: `https://github.com/anthropics/<repo>/releases.atom`
+
+**Recent SDK highlights (late May–early June 2026):** Both the Python and TypeScript SDKs added `claude-opus-4-8` support and mid-conversation system blocks, then marked Opus 4.1 deprecated (June 5) and added Managed Agents self-hosted sandbox types. The TypeScript SDK added client middleware support.
+
+**Recent Claude Code highlights (v2.1.158–v2.1.168):** Auto mode extended to Bedrock/Vertex/Foundry for Opus 4.7 and 4.8; the dynamic-workflow trigger keyword renamed from `workflow` to `ultracode`; added `fallbackModel` setting (up to three fallbacks), `/plugin list`, `requiredMinimumVersion`/`requiredMaximumVersion` managed settings, and `/effort` default persistence; numerous background-agent, security, and reliability fixes.

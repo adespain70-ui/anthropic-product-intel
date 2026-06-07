@@ -2,7 +2,7 @@
 
 # Claude Models — Anthropic Product Intel
 
-**Last updated:** 2026-06-01
+**Last updated:** 2026-06-07
 **Source:** https://platform.claude.com/docs/en/about-claude/models/overview
 
 ---
@@ -101,13 +101,14 @@
 
 | Model | Status |
 |---|---|
+| Claude Opus 4.1 (`claude-opus-4-1-20250805`) | Deprecated June 5, 2026; API retirement August 5, 2026 (migrate to Opus 4.8) |
 | Claude Sonnet 4 (`claude-sonnet-4-20250514`) | Deprecated; API retirement June 15, 2026 |
 | Claude Opus 4 (`claude-opus-4-20250514`) | Deprecated; API retirement June 15, 2026 |
 | Claude Sonnet 3.7 | Retired (upgrade to Sonnet 4.6) |
 | Claude Haiku 3.5 | Retired (upgrade to Haiku 4.5) |
 | Claude Haiku 3 | Retired April 20, 2026 (upgrade to Haiku 4.5) |
 
-**Migrate from Sonnet 4 → Sonnet 4.6 and Opus 4 → Opus 4.7/4.8 before June 15, 2026.**
+**Migrate from Sonnet 4 → Sonnet 4.6 and Opus 4 / Opus 4.1 → Opus 4.8 before their retirement dates.**
 
 ---
 
@@ -141,6 +142,6 @@ The `opusplan` alias uses Opus for planning mode and auto-switches to Sonnet for
 
 | Model | Claude API | AWS Bedrock | Vertex AI |
 |---|---|---|---|
-| Opus 4.8 | `claude-opus-4-8` | `anthropic.claude-opus-4-83` | `claude-opus-4-8` |
+| Opus 4.8 | `claude-opus-4-8` | `anthropic.claude-opus-4-8` | `claude-opus-4-8` |
 | Sonnet 4.6 | `claude-sonnet-4-6` | `anthropic.claude-sonnet-4-6` | `claude-sonnet-4-6` |
 | Haiku 4.5 | `claude-haiku-4-5-20251001` | `anthropic.claude-haiku-4-5-20251001-v1:0` | `claude-haiku-4-5@20251001` |
