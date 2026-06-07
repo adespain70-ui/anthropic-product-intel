@@ -29,10 +29,18 @@ each step below. Steps 1-7 happen in Cowork. Step 8 invokes Claude Code to handl
 
 ### Step 1: Check What Changed Yesterday
 
-Pull the changelog to understand what was last updated and when:
+Pull the changelog to understand what was last updated and when. Use the GitHub API URL
+(not raw.githubusercontent.com) to bypass CDN caching and always get the real HEAD:
 
 ```
-web_fetch("https://raw.githubusercontent.com/adespain70-ui/anthropic-product-intel/main/intel/changelog.md")
+web_fetch("https://api.github.com/repos/adespain70-ui/anthropic-product-intel/contents/intel/changelog.md")
+```
+
+The response is JSON with a `content` field (base64-encoded). Decode it to read the changelog.
+Alternatively, use Firecrawl to avoid the CDN issue:
+
+```
+firecrawl_scrape(url="https://raw.githubusercontent.com/adespain70-ui/anthropic-product-intel/main/intel/changelog.md", formats=["markdown"])
 ```
 
 Note the date of the last entry. You are updating for today: {TODAY'S DATE}.
@@ -54,13 +62,17 @@ If a headline looks significant, fetch that individual article.
 
 ### Step 3: Check Upstream GitHub Release Feeds
 
-Fetch each of these atom feeds and look for new entries since yesterday:
+Fetch each of these atom feeds and look for new entries since yesterday.
 
-- https://github.com/anthropics/anthropic-sdk-python/releases.atom
-- https://github.com/anthropics/anthropic-sdk-typescript/releases.atom
-- https://github.com/anthropics/claude-code/releases.atom
-- https://github.com/anthropics/model-spec/releases.atom
-- https://github.com/anthropics/anthropic-cookbook/releases.atom
+**Use Firecrawl for all feeds** — plain `web_fetch` returns empty content for GitHub atom URLs:
+
+```
+firecrawl_scrape(url="https://github.com/anthropics/anthropic-sdk-python/releases.atom", formats=["markdown"])
+firecrawl_scrape(url="https://github.com/anthropics/anthropic-sdk-typescript/releases.atom", formats=["markdown"])
+firecrawl_scrape(url="https://github.com/anthropics/claude-code/releases.atom", formats=["markdown"])
+firecrawl_scrape(url="https://github.com/anthropics/model-spec/releases.atom", formats=["markdown"])
+firecrawl_scrape(url="https://github.com/anthropics/anthropic-cookbook/releases.atom", formats=["markdown"])
+```
 
 For each new release found: note the repo, tag/version, date, and a one-line summary of what changed.
 
