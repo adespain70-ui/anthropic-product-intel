@@ -2,7 +2,7 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-06-01
+**Last updated:** 2026-06-07
 **Sources:** https://claude.com/, https://claude.com/product/cowork, https://platform.claude.com/docs/en/overview, https://support.claude.com
 
 ---
@@ -143,7 +143,8 @@ Both share the same underlying agentic architecture.
 
 Key API features (as of June 2026):
 - **Messages API:** System entries accepted inside the messages array — update Claude's instructions mid-task without breaking prompt cache or routing through a user turn
-- **Managed Agents:** Build and deploy agents at scale; memory in public beta (`managed-agents-2026-04-01` header)
+- **Managed Agents:** Build and deploy agents at scale; memory in public beta (`managed-agents-2026-04-01` header). Webhooks, multiagent orchestration, and self-hosted sandboxes are also available on Claude Platform on AWS (GA May 29, 2026)
+- **Billing:** Requests returning `stop_reason: "refusal"` with no generated output are not billed (June 2, 2026)
 - **Batch API:** 50% discount; Opus 4.8/4.7/4.6 and Sonnet 4.6 support up to 300K output tokens via `output-300k-2026-03-24` beta header
 - **Rate Limits API:** Admins can programmatically query org and workspace rate limits
 - **Data residency:** `inference_geo` parameter to specify US-only inference (1.1x pricing)
