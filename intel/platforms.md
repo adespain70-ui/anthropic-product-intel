@@ -2,8 +2,8 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-06-07
-**Sources:** https://claude.com/, https://claude.com/product/cowork, https://platform.claude.com/docs/en/overview, https://support.claude.com
+**Last updated:** 2026-06-11
+**Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com, https://claude.com/solutions/small-business
 
 ---
 
@@ -13,13 +13,13 @@
 |---|---|---|---|
 | **Primary use** | Conversation, writing, research, artifacts | Agentic coding across your codebase | Desktop task and file automation for knowledge workers |
 | **Interface** | Web, iOS, Android, desktop app | Terminal, VS Code, JetBrains, desktop app, web, iOS | Desktop app (macOS and Windows); mobile dispatch on Pro and Max |
-| **Tools** | Web search, artifacts, MCP apps, skills | Bash, file system, git, MCP servers, CI/CD, Claude Code skills | Local files, connectors (Slack, Chrome, etc.), computer use (research preview) |
-| **Subagents** | No | Yes (parallel sub-agents, background agents, dynamic workflows) | Yes (parallel sub-agents for complex tasks) |
+| **Tools** | Web search, artifacts, MCP apps, skills | Bash, file system, git, MCP servers, CI/CD, skills, dynamic workflows | Local files, connectors (Slack, Chrome, QuickBooks, PayPal, HubSpot, Canva, DocuSign, etc.), computer use (research preview) |
+| **Subagents** | No | Yes (parallel sub-agents; can nest up to 5 levels deep; background agents) | Yes (parallel sub-agents for complex tasks) |
 | **Scheduled tasks** | No | No | Yes (via /schedule; desktop app must stay open) |
-| **Effort control** | Yes (all paid plans) | Yes (`low`/`medium`/`high`/`xhigh`/`max`) | Yes (all paid plans) |
-| **Who it's for** | General use, all skill levels | Software developers | Non-technical knowledge workers: analysts, ops, legal, finance, researchers |
-| **Plan required** | Any (Free has limits) | Pro, Max, Team Premium, or Enterprise | Pro, Max, Team (Standard or Premium), or Enterprise |
-| **Key differentiator** | Projects, artifacts, MCP connectors, skills | CLAUDE.md context files, Dynamic Workflows, 1M context on Max+ | Plugins, scheduled tasks, Projects with memory, mobile dispatch |
+| **Effort control** | Yes (alongside model selector; all plans) | Yes (`low`/`medium`/`high`/`xhigh`) | Yes (alongside model selector; all plans) |
+| **Who it's for** | General use, all skill levels | Software developers | Non-technical knowledge workers: analysts, ops, legal, finance, researchers, small business owners |
+| **Plan required** | Any (Free has limits) | Pro, Max, Team, or Enterprise | Pro, Max, Team, or Enterprise |
+| **Key differentiator** | Projects, artifacts, MCP connectors, skills | CLAUDE.md context files, dynamic workflows, Agent Teams, 1M context on Max+ | Plugins, scheduled tasks, Projects with memory, mobile dispatch, computer use |
 
 ---
 
@@ -34,15 +34,11 @@
 - Skills: reusable workflow instructions installed per account
 - Web search, deep research mode, image generation (via tools)
 - Memory: stores key facts across conversations (enabled in Settings)
-- Google Workspace integration (Pro+)
-- Extended reasoning models (Pro+)
-- Remote MCP connectors (Pro+)
-- Effort control: users can choose effort level per response (all paid plans)
+- **Effort control (launched May 28, 2026):** a control alongside the model selector lets users choose how much effort Claude puts into a response; higher effort thinks more deeply, lower effort responds faster and uses limits more slowly. Available on all plans
+- Voice mode, incognito chats, user preferences
 
-**Microsoft 365 integrations (GA as of May 7, 2026):**
-- Claude in Excel (GA)
-- Claude in Word (GA)
-- Claude in PowerPoint (GA)
+**Microsoft 365 integrations (GA as of May 14, 2026):**
+- Claude in Excel, Word, PowerPoint (GA)
 - Claude in Outlook (public beta)
 
 **Context window:** 200K tokens standard; skills and MCP connectors load additional context
@@ -58,23 +54,22 @@
 **Key features:**
 - Terminal-native agentic coding: reads, writes, executes code across your entire codebase
 - CLAUDE.md context files: persistent project-level instructions
-- Agent Teams: spawn parallel sub-agents for complex multi-file tasks
+- **Dynamic workflows (research preview, launched May 28, 2026):** Claude plans the work, runs hundreds of parallel subagents in a single session, then verifies its outputs before reporting back. Enables codebase-scale migrations across hundreds of thousands of lines. Available in Claude Code for Enterprise, Team, and Max plans
+- Agent Teams / sub-agents: spawn parallel sub-agents; as of v2.1.172 sub-agents can spawn their own sub-agents up to 5 levels deep
 - Background agents: run tasks while you work on something else
-- **Dynamic workflows (research preview, May 2026):** run hundreds of parallel subagents in a single session; model plans, executes, and verifies before reporting back; supports codebase-scale migrations — available on Enterprise, Team, and Max plans
-- MCP server integration: connect to databases, APIs, CI/CD pipelines
+- MCP server integration: databases, APIs, CI/CD pipelines
 - Git integration: commits, PRs, branch management
-- Extended context: 1M tokens on Max, Team Premium, Enterprise (Opus 4.6+ required)
-- Effort levels: `low` / `medium` / `high` / `xhigh` / `max` — Opus 4.8 defaults to `high`
+- Extended context: 1M tokens on Max, Team Premium, Enterprise
+- Effort levels: `low` / `medium` / `high` / `xhigh`
+- `fallbackModel` setting (v2.1.166+): configure up to three fallback models tried in order when the primary is overloaded or unavailable
+- `--safe-mode` flag (v2.1.169+): start with all customizations disabled for troubleshooting
 - `opusplan` alias: Opus for planning, auto-switches to Sonnet for execution
-- Messages API: system entries now accepted inside the messages array (mid-task instruction updates without breaking prompt cache)
 
-**Plans:** Pro ($20/mo), Max 5x ($100/mo), Max 20x ($200/mo), Team Premium ($100/seat), Enterprise
-Note: Standard Team seats do NOT include Claude Code. Premium seats required.
-
-**Rate limits (May 2026):** 5-hour rate limits doubled for all paid plans; peak-hour throttling removed on Pro and Max. Limits further increased for Opus 4.8 to accommodate higher-effort usage.
+**Plans:** Pro, Max (5x/20x), Team, Enterprise. (Verify current seat-level Claude Code entitlements on the live pricing page.)
 
 **Install:** `npm install -g @anthropic-ai/claude-code` (requires Node.js)
-**Docs:** https://platform.claude.com/docs/en/overview
+**Docs:** https://code.claude.com/docs/en/overview
+**Latest version (as of 2026-06-11):** v2.1.173
 
 ---
 
@@ -90,12 +85,12 @@ Note: Standard Team seats do NOT include Claude Code. Premium seats required.
 - Plugins: bundles of skills, connectors, and sub-agents installable as a single package
 - Projects: grouped tasks with files, context, instructions, and persistent memory (memory persists within Projects only)
 - Mobile dispatch: Pro and Max users can send task commands from Claude mobile app while desktop runs the work
+- **Effort control (launched May 28, 2026):** choose how much effort Claude puts into a task, alongside the model selector
 - Computer use: screen control in research preview (screenshot-based; slower than direct tool access)
-- **Effort control (May 2026):** users can now choose how much effort Claude puts into a response via a UI control alongside the model selector
 
-**Connectors available:** Slack, Chrome, local filesystem folders, and growing
+**Connectors available:** Slack, Chrome, local filesystem folders, QuickBooks, PayPal, HubSpot, Canva, DocuSign (via Claude for Small Business plugin), Google Workspace, Microsoft 365, and growing
 
-**Human oversight model:** Cowork shows the plan before acting and waits for approval before consequential steps. You control which folders and connectors it can access. You can steer or redirect mid-task.
+**Human oversight model:** Cowork shows the plan before acting and waits for approval before consequential steps. You control which folders and connectors it can access.
 
 **Limitations:**
 - Desktop app must remain open and computer must be awake for scheduled tasks to run
@@ -103,19 +98,54 @@ Note: Standard Team seats do NOT include Claude Code. Premium seats required.
 - No session sharing between users
 - Computer use is in research preview
 
-**Plans:** Pro, Max 5x, Max 20x, Team Standard, Team Premium, Enterprise
-Cowork consumes usage limits faster than standard chat.
+**Plans:** Pro, Max (5x/20x), Team, Enterprise. Cowork consumes usage limits faster than standard chat.
 
 **Getting started:** https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
 
 ---
 
-## Claude Design (Anthropic Labs)
+## Claude for Small Business (launched May 13, 2026)
 
-**Launched:** April 17, 2026
-**Access:** Anthropic Labs product — separate from claude.ai
+**Access:** Toggle install inside Claude Cowork
 
-Claude Design lets you collaborate with Claude to create polished visual work: designs, prototypes, slides, one-pagers, and more. It is an Anthropic Labs product, meaning it is in early/experimental status.
+Claude for Small Business is a plugin bundle of connectors and ready-to-run agentic workflows designed for small business owners who need Claude inside the tools they already use.
+
+**Connectors:**
+- **Intuit QuickBooks** — payroll planning, month-end close, cash flow, reconciliation, tax prep
+- **PayPal** — settlements, invoicing, disputes, refunds
+- **HubSpot** — lead triage, customer pulse, campaign attribution
+- **Canva** — content generation for social and email campaigns
+- **DocuSign** — send contracts for signature, track status, file executed copies
+- Google Workspace and Microsoft 365 (via existing integrations)
+
+**15 agentic workflows include:**
+- Plan payroll with confidence
+- Close the month with fewer errors
+- Get a business pulse (cash position, sales trend, pipeline, commitments)
+- Run a campaign (analysis → strategy → Canva assets → HubSpot send)
+- Chase overdue invoices
+- Analyze margins by product
+- Prepare for tax season
+- Review contracts
+- Triage leads
+
+**15 skills** cover repeatable tasks owners identified as their biggest time drains.
+
+**Trust model:** Owner initiates all tasks; approves plans before execution; existing permissions in connected tools are respected; no training on data by default (Team/Enterprise).
+
+**Learning resources:**
+- Free "AI Fluency for Small Business" course (with PayPal): https://anthropic.skilljar.com/ai-fluency-for-small-businesses
+- Claude SMB Tour: free half-day workshops in 10 US cities starting May 14, 2026 (Chicago, Tulsa, Dallas, Hamilton Township, Baton Rouge, Birmingham, Salt Lake City, Baltimore, San Jose, Indianapolis)
+
+**More info:** https://claude.com/solutions/small-business
+
+---
+
+## Claude Security (beta)
+
+A dedicated security product available on Enterprise plans. Targets incident response acceleration, agentic vulnerability operations, and code review automation. PwC production deployments report security response times reduced from hours to minutes.
+
+**Access:** Enterprise plan only (contact sales)
 
 ---
 
@@ -125,31 +155,10 @@ Claude Design lets you collaborate with Claude to create polished visual work: d
 |---|---|---|
 | **Interface** | Desktop GUI app | Terminal / CLI |
 | **Who it's for** | Non-technical knowledge workers | Software developers |
-| **Primary tasks** | File management, reports, research, scheduled workflows | Coding, git, tests, CI/CD |
+| **Primary tasks** | File management, reports, research, scheduled workflows | Coding, git, tests, CI/CD, dynamic workflows |
 | **Technical requirement** | None | Comfortable with terminal |
-| **Subagents** | Yes | Yes |
-| **Dynamic workflows** | No | Yes (Enterprise/Team/Max) |
+| **Subagents** | Yes | Yes (nested up to 5 levels) |
 | **Scheduled tasks** | Yes | No |
 | **Computer use** | Yes (research preview) | No |
 
 Both share the same underlying agentic architecture.
-
----
-
-## Claude Platform (API)
-
-**Access:** https://platform.claude.com
-**Docs:** https://platform.claude.com/docs/en/intro
-
-Key API features (as of June 2026):
-- **Messages API:** System entries accepted inside the messages array — update Claude's instructions mid-task without breaking prompt cache or routing through a user turn
-- **Managed Agents:** Build and deploy agents at scale; memory in public beta (`managed-agents-2026-04-01` header). Webhooks, multiagent orchestration, and self-hosted sandboxes are also available on Claude Platform on AWS (GA May 29, 2026)
-- **Billing:** Requests returning `stop_reason: "refusal"` with no generated output are not billed (June 2, 2026)
-- **Batch API:** 50% discount; Opus 4.8/4.7/4.6 and Sonnet 4.6 support up to 300K output tokens via `output-300k-2026-03-24` beta header
-- **Rate Limits API:** Admins can programmatically query org and workspace rate limits
-- **Data residency:** `inference_geo` parameter to specify US-only inference (1.1x pricing)
-- **Service tiers:** Priority, Standard, Batch
-- **Web search:** $10/1K searches
-- **Code execution:** Sandboxed Python, 50 free hours/day/org
-
-Cloud platforms: Amazon Bedrock, Google Cloud Vertex AI, Microsoft Foundry, Claude Platform on AWS

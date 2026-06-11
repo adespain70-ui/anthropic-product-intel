@@ -2,7 +2,7 @@
 
 # Claude Models — Anthropic Product Intel
 
-**Last updated:** 2026-06-07
+**Last updated:** 2026-06-11
 **Source:** https://platform.claude.com/docs/en/about-claude/models/overview
 
 ---
@@ -11,89 +11,74 @@
 
 | Model | API Model ID | Tier | Context Window | Max Output | Best For |
 |---|---|---|---|---|---|
-| Claude Opus 4.8 | `claude-opus-4-8` | Flagship | 1M tokens | 128K tokens | Complex reasoning, agentic coding, architecture decisions, large codebase analysis, long-horizon autonomous work |
-| Claude Opus 4.7 | `claude-opus-4-7` | Previous flagship | 1M tokens | 64K tokens | Complex reasoning, agentic coding — migrate to 4.8 |
-| Claude Opus 4.6 | `claude-opus-4-6` | Previous flagship | 1M tokens | 64K tokens | Graduate-level reasoning, computer use — migrate to 4.8 |
-| Claude Sonnet 4.6 | `claude-sonnet-4-6` | Balanced | 1M tokens | 64K tokens | Daily driver for dev, writing, analysis, enterprise API; best value |
+| Claude Fable 5 | `claude-fable-5` | Frontier (Mythos-class) | 1M tokens | 128K tokens | Hardest long-horizon knowledge work and coding; state-of-the-art on nearly all benchmarks |
+| Claude Mythos 5 | Invite-only | Frontier (restricted) | 1M tokens | 128K tokens | Defensive cybersecurity and biology research; Glasswing / trusted access only |
+| Claude Opus 4.8 | `claude-opus-4-8` | Flagship (general) | 1M tokens | 64K tokens | Complex agentic coding, enterprise work, long-running tasks; Fable's fallback model |
+| Claude Sonnet 4.6 | `claude-sonnet-4-6` | Balanced | 1M tokens | 128K tokens | Daily driver for dev, writing, analysis, enterprise API; best value |
 | Claude Haiku 4.5 | `claude-haiku-4-5-20251001` | Fast/Efficient | 200K tokens | 64K tokens | High-volume classification, routing, summarization, simple code edits |
-| Claude Mythos Preview | Invite-only | Research | 1M tokens | — | Defensive cybersecurity (Project Glasswing; no self-serve signup) |
 
 ---
 
 ## Model Selection Guide
 
-**Start here:** Opus 4.8 is the new recommended flagship. Sonnet 4.6 handles 90%+ of tasks at lower cost.
+**Start here:** Sonnet 4.6 handles most everyday tasks at strong value. Step up to Opus 4.8 for complex agentic coding and enterprise work; reach for Fable 5 on the hardest long-horizon tasks.
+
+**Use Fable 5 when:**
+- Long-horizon, multi-step autonomous work (the longer/more complex the task, the larger Fable's lead)
+- Frontier software engineering, scientific research, complex knowledge work, or vision-heavy tasks
+- Note: fewer than 5% of sessions trigger a safeguard fallback to Opus 4.8 on cybersecurity, biology/chemistry, or distillation topics
 
 **Use Opus 4.8 when:**
-- Complex multi-file refactoring or large codebase architecture
-- Long-chain planning in agentic workflows
-- Maximum coding benchmark performance (beats Opus 4.7 and GPT-5.5 on Super-Agent benchmark)
-- Computer use / browser agent tasks (84% on Online-Mind2Web)
-- High-autonomy work that runs unattended for extended periods
-
-**Use Sonnet 4.6 when:**
-- Everyday coding, writing, analysis
-- Cost-sensitive workloads needing near-frontier intelligence
+- Complex agentic coding, computer use, and enterprise workflows that don't need Fable's frontier ceiling
+- You want higher honesty (~4x less likely than Opus 4.7 to let code flaws pass unremarked)
 
 **Use Haiku 4.5 when:**
 - High-volume, low-latency, cost-sensitive tasks
-- Classification, routing, customer support bots
-- Subtask execution in multi-agent workflows
+- Classification, routing, customer support bots, simple subtasks in multi-agent workflows
 
 ---
 
 ## Key Model Details
 
-### Claude Opus 4.8 (launched May 28, 2026)
-- Anthropic's most capable generally available model
-- Improved benchmarks over Opus 4.7 across coding, agentic tasks, reasoning, and professional work
-- Improved honesty: ~4x less likely than Opus 4.7 to allow code flaws to pass unremarked
-- 84% on Online-Mind2Web (browser agent benchmark; beats Opus 4.7 and GPT-5.5)
-- First model to break 10% on Legal Agent Benchmark all-pass standard
-- Highest alignment scores of any Opus model; misaligned behavior rates similar to Mythos Preview
-- Adaptive Thinking (model decides whether to think)
-- Extended thinking: No
-- Effort defaults to `high` on all surfaces (API and Claude Code)
-- Fast mode available: 2x standard pricing ($10/$50 per 1M tokens); 2.5x speed
-- Dynamic workflows (Claude Code): hundreds of parallel subagents per session (Enterprise/Team/Max)
-- Max output: 128K tokens (synchronous); 300K via Message Batches API with `output-300k-2026-03-24` beta header
-- Knowledge cutoff: Jan 2026
-- API model string: `claude-opus-4-8`
+### Claude Fable 5 / Claude Mythos 5 (launched June 9, 2026)
+- "Mythos-class" — a tier above the Opus class in capability
+- Fable 5 and Mythos 5 are the **same underlying model**; the difference is safeguards. Fable 5 is the safe, generally available version; Mythos 5 has some safeguards lifted and is restricted
+- State-of-the-art on nearly all tested benchmarks; exceptional at software engineering, knowledge work, vision, and scientific research
+- 1M token context window by default; 128K max output; always-on adaptive thinking
+- Uses the tokenizer introduced with Opus 4.7 (~30% more tokens than pre-4.7 models for the same text)
+- Safeguards: when classifiers flag cybersecurity, biology/chemistry, or distillation requests, the response falls back to Opus 4.8. More than 95% of sessions involve no fallback
+- Refusals: the Messages API returns `stop_reason: "refusal"`; you are not billed if refused before any output. Opt-in `fallbacks` parameter (beta on Claude API and Claude Platform on AWS; not on Message Batches) re-runs refused requests on another model at that model's rates
+- Pricing: $10/MTok input, $50/MTok output (less than half the price of Mythos Preview)
+- 30-day data retention required for all traffic on Mythos-class models (not used for training)
+- Mythos 5: restricted to Project Glasswing partners (cyber safeguards lifted), soon select biology researchers; broader trusted access program planned
 
-### Claude Opus 4.7 (launched April 16, 2026)
-- Step-change improvement over Opus 4.6 in agentic coding
-- 3x vision resolution vs Opus 4.6
-- Self-verification capability
-- `xhigh` effort level
-- 70% CursorBench coding score vs 58% for Opus 4.6
-- Requires Claude Code v2.1.111 or later
+### Claude Opus 4.8 (launched May 28, 2026)
+- Upgrade to the Opus class; builds on Opus 4.7 with improvements across benchmarks
+- Same price as Opus 4.7: $5/MTok input, $25/MTok output
+- Fast mode: 2.5x speed at 2x standard pricing ($10/$50), now ~3x cheaper than fast mode on previous models
+- Notably more honest: ~4x less likely than Opus 4.7 to let flaws in its own code pass unremarked
+- Defaults to high effort; supports `extra` (`xhigh`) and `max` effort levels
+- Serves as the fallback model for Fable 5 safeguarded topics
+- Launched alongside: dynamic workflows in Claude Code (research preview), effort control in claude.ai and Cowork, and mid-conversation system blocks in the Messages API
 
 ### Claude Sonnet 4.6 (launched February 17, 2026)
 - Best value in the Claude lineup
 - SWE-bench Verified: 79.6%
-- Improved agentic search performance vs Sonnet 4.5
-- Extended thinking supported; Adaptive thinking supported
-- 1M context window (GA)
-- 64K max output
-- Preferred over Sonnet 4.5 by 70% of developers in evaluations
+- 1M context window (GA, standard pricing); 128K max output
+- Extended thinking supported
 
 ### Claude Haiku 4.5 (launched October 15, 2025)
-- 97 tokens/second throughput
-- 200K context window
-- 64K max output
-- SWE-bench coding average: 73.3%
+- 97 tokens/second throughput; 200K context window; 64K max output
 - Significantly cheaper than Sonnet for high-volume use cases
-- Extended thinking supported; Adaptive thinking not supported
 
 ---
 
 ## Context Windows
 
-- **1M tokens:** Opus 4.8, Opus 4.7, Opus 4.6, Sonnet 4.6, Mythos Preview
-- **200K tokens:** Haiku 4.5, Sonnet 4.5 (deprecated), older models
-- **Note:** On Microsoft Foundry, Opus 4.8 has a 200K context window
-- **Claude Code (Max/Team Premium/Enterprise):** 1M on Opus 4.6+ at no surcharge, no beta header required (GA since March 2026)
-- **Server-side compaction** (beta): Available for Mythos Preview, Opus 4.8, Opus 4.7, Opus 4.6, Sonnet 4.6 — auto-condenses earlier conversation to extend beyond context limits
+- **1M tokens:** Fable 5, Mythos 5, Opus 4.8, Sonnet 4.6 (Opus 4.7/4.6 also 1M)
+- **200K tokens:** Haiku 4.5, older models
+- **Claude Code (Max/Team Premium/Enterprise):** 1M on Opus 4.6+ at no surcharge, no beta header (GA since March 2026)
+- **Server-side compaction** (beta): auto-condenses earlier conversation to extend beyond context limits
 
 ---
 
@@ -101,14 +86,16 @@
 
 | Model | Status |
 |---|---|
-| Claude Opus 4.1 (`claude-opus-4-1-20250805`) | Deprecated June 5, 2026; API retirement August 5, 2026 (migrate to Opus 4.8) |
+| Claude Opus 4.1 (`claude-opus-4-1`) | Deprecated (marked deprecated in SDK June 5, 2026); $15/$75 pricing |
 | Claude Sonnet 4 (`claude-sonnet-4-20250514`) | Deprecated; API retirement June 15, 2026 |
 | Claude Opus 4 (`claude-opus-4-20250514`) | Deprecated; API retirement June 15, 2026 |
 | Claude Sonnet 3.7 | Retired (upgrade to Sonnet 4.6) |
 | Claude Haiku 3.5 | Retired (upgrade to Haiku 4.5) |
 | Claude Haiku 3 | Retired April 20, 2026 (upgrade to Haiku 4.5) |
 
-**Migrate from Sonnet 4 → Sonnet 4.6 and Opus 4 / Opus 4.1 → Opus 4.8 before their retirement dates.**
+**Migrate from Sonnet 4 → Sonnet 4.6 and Opus 4 → Opus 4.8 before June 15, 2026.**
+
+Legacy models still listed on the pricing page: Opus 4.7, Opus 4.6, Opus 4.5, Opus 4.1, Opus 4, Sonnet 4.5, Sonnet 4.
 
 ---
 
@@ -120,28 +107,13 @@
 | `sonnet` | Sonnet 4.6 |
 | `haiku` | Haiku 4.5 |
 
-Note: On Bedrock, Vertex, and Foundry, aliases resolve to older versions. Use full model IDs to pin specific versions on those platforms.
+Note: On Bedrock, Vertex, and Foundry, aliases may resolve to older versions. Use full model names to pin specific versions on those platforms.
 
 ---
 
 ## Effort Levels
 
-Supported on Opus 4.8, Opus 4.7, Opus 4.6, and Sonnet 4.6.
-Levels: `low`, `medium`, `high`, `xhigh`, `max`
-- Opus 4.8 default: `high` (on all surfaces including Claude Code)
-- Opus 4.7 default in Claude Code: `xhigh`
-- Opus 4.6 and Sonnet 4.6 default: `high`
-- Higher effort = more tokens, better results; lower effort = faster responses, slower rate limit consumption
-- Effort control is also available to end users in claude.ai and Cowork via a UI control (all paid plans)
+Supported on Opus-class and newer models. Levels: `low`, `medium`, `high`, `xhigh` (Claude Code), plus user-facing effort control in claude.ai and Cowork (all plans).
+- Opus 4.8 default: high (supports `extra`/`xhigh` and `max`)
 
 The `opusplan` alias uses Opus for planning mode and auto-switches to Sonnet for execution.
-
----
-
-## Cloud Platform Model IDs
-
-| Model | Claude API | AWS Bedrock | Vertex AI |
-|---|---|---|---|
-| Opus 4.8 | `claude-opus-4-8` | `anthropic.claude-opus-4-8` | `claude-opus-4-8` |
-| Sonnet 4.6 | `claude-sonnet-4-6` | `anthropic.claude-sonnet-4-6` | `claude-sonnet-4-6` |
-| Haiku 4.5 | `claude-haiku-4-5-20251001` | `anthropic.claude-haiku-4-5-20251001-v1:0` | `claude-haiku-4-5@20251001` |

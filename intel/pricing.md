@@ -2,7 +2,7 @@
 
 # Claude Pricing — Anthropic Product Intel
 
-**Last updated:** 2026-06-07
+**Last updated:** 2026-06-11
 **Source:** https://claude.com/pricing (always verify live)
 
 ---
@@ -12,57 +12,49 @@
 | Plan | Monthly Price | Claude Code | Cowork | Notes |
 |---|---|---|---|---|
 | Free | $0 | No | No | Rolling usage limits; no credit card required |
-| Pro | $17/mo (annual, $200/yr) or $20/mo | Yes | Yes | More usage than Free; access to Research, Projects, all models |
-| Max 5x | $100/mo | Yes | Yes | 5x more usage than Pro; priority feature access; higher output limits |
-| Max 20x | $200/mo | Yes | Yes | 20x more usage than Pro; priority feature access; higher output limits |
-| Team Standard | $20/seat/mo (annual) or $25/seat/mo | No | Yes | Min 5 seats; mix Standard + Premium allowed; SSO, central billing |
-| Team Premium | $100/seat/mo (annual) or $125/seat/mo | Yes | Yes | Adds Claude Code; 5x usage vs Standard seats |
-| Enterprise | $20/seat + API usage at API rates | Yes | Yes | SSO, HIPAA, SCIM, audit logs, spend controls, custom data retention |
+| Pro | $17/mo annual ($200 up front) or $20/mo monthly | Yes | Yes | More usage than Free; includes Claude Code + Cowork |
+| Max | From $100/mo | Yes | Yes | Choose 5x or 20x more usage than Pro; priority access |
+| Team Standard | $20/seat/mo annual ($25 monthly) | Yes* | Yes | Teams of 5–150; mix Standard + Premium allowed |
+| Team Premium | $100/seat/mo annual ($125 monthly) | Yes | Yes | 5x more usage than standard seats |
+| Enterprise | $20/seat + usage at API rates (contact sales) | Yes | Yes | SSO, SCIM, audit logs, HIPAA-ready, custom retention, Claude Security (beta) |
+
+*Note: The current pricing page lists Claude Code and Cowork as included on Team (standard and premium) seats. Verify seat-level entitlements before relying on this for a specific deployment.
+
+**Fable 5 promotional access (June 2026):** Fable 5 is included on Pro, Max, Team, and seat-based Enterprise plans at no extra cost **from June 9 through June 22, 2026**. On **June 23**, Fable 5 is removed from those plans and further use requires usage credits. Anthropic intends to restore Fable 5 as a standard part of subscription plans once capacity allows. On the Claude API and consumption-based Enterprise plans, Fable 5 is fully available now.
+See: https://support.claude.com/en/articles/15424964-claude-fable-5-promotional-access
 
 **Important:** Claude paid plans and the Claude API/Console are separate products with separate billing. A Pro subscription does not include API access.
 
-**Effort control:** Available on all paid plans in claude.ai and Cowork. Higher effort = better output, more usage consumed. Lower effort = faster responses, slower rate limit consumption.
+**Extra usage:** Pro and Max subscribers can enable pay-as-you-go extra usage / usage credits after hitting plan limits.
 
-**Rate limits (May 2026):** As of May 6, 2026, Anthropic doubled Claude Code's 5-hour rate limits for every paid plan and removed peak-hour throttling on Pro and Max. Claude Code rate limits were further increased with Opus 4.8 to accommodate higher-effort usage.
-
-**Context windows on subscriptions:**
-- Standard chat (all paid plans): 200K tokens
-- Claude Code on Max, Team Premium, Enterprise: 1M tokens on Opus 4.6+ (no surcharge, no beta header)
-- Pro users: can access 1M via extra usage mechanism (not included by default)
+**Education plan:** University-wide plans available with student/faculty access, academic research/learning mode, and dedicated API credits.
 
 ---
 
 ## API Pricing (pay-per-token, separate from subscriptions)
 
-| Model | Input (per 1M tokens) | Output (per 1M tokens) |
-|---|---|---|
-| Claude Opus 4.8 | $5.00 | $25.00 |
-| Claude Opus 4.8 (fast mode) | $10.00 | $50.00 |
-| Claude Opus 4.7 | $5.00 | $25.00 |
-| Claude Opus 4.6 | $5.00 | $25.00 |
-| Claude Sonnet 4.6 | $3.00 | $15.00 |
-| Claude Haiku 4.5 | $1.00 | $5.00 |
+| Model | Input (per 1M tokens) | Output (per 1M tokens) | Cache Write | Cache Read |
+|---|---|---|---|---|
+| Claude Fable 5 | $10.00 | $50.00 | $12.50 | $1.00 |
+| Claude Opus 4.8 | $5.00 | $25.00 | $6.25 | $0.50 |
+| Claude Sonnet 4.6 | $3.00 | $15.00 | $3.75 | $0.30 |
+| Claude Haiku 4.5 | $1.00 | $5.00 | $1.25 | $0.10 |
 
-**Fast mode (Opus 4.8):** 2.5x speed at 2x standard pricing. Now 3x cheaper than fast mode was for previous models.
+Prompt-caching prices reflect 5-minute TTL; extended (1-hour) caching available separately.
 
-**Prompt caching:**
-- Write: 1.25x standard input price (5-min TTL default)
-- Read: 0.10x standard input price
-- Extended prompt caching (1-hour TTL) available — see docs
+**Legacy model API pricing (still listed):** Opus 4.7, 4.6, 4.5 at $5/$25; Opus 4.1 and Opus 4 at $15/$75; Sonnet 4.5 and Sonnet 4 at $3/$15.
 
-**Discounts:**
+**Discounts & options:**
 - Batch API (Message Batches): 50% discount
-- Data residency (US-only inference): 1.1x pricing for post-Feb 2026 models
+- Prompt caching: up to 90% cost reduction
+- US-only inference (data residency): 1.1x pricing for input and output
+- Fast mode (Opus 4.8): up to 2.5x faster at 2x standard pricing
 
-**Billing note (June 2, 2026):** Requests that return `stop_reason: "refusal"` with no generated output are no longer billed.
-
-**Limited-time promo (as of June 2026):** $1,000 in Claude Code and Claude Cowork credits for every seat that activates by July 2 (Team/Enterprise; see https://claude.com/opus-enterprise-promo).
-
-**Claude Platform features (additional costs):**
-- Managed Agents: $0.08/session-hour active runtime
-- Web search: $10/1K searches (does not include token costs)
-- Code execution: 50 free hours/day/org; $0.05/hour per container additional
-- US-only inference: 1.1x on input and output tokens
+**Claude Platform feature pricing:**
+- Managed Agents: $0.08 per session-hour for active runtime (standard token rates also apply)
+- Web search: $10 per 1K searches (plus input/output tokens)
+- Code execution: 50 free hours/day per org, then $0.05 per hour per container
+- Service tiers available: Priority, Standard, Batch
 
 **Always verify at:** https://claude.com/pricing and https://platform.claude.com/docs/en/about-claude/pricing
 
@@ -70,7 +62,8 @@
 
 ## Enterprise Notes
 
-- $20/seat base + API usage at API rates (usage-based enterprise model)
-- Includes: 500K–1M context window, HIPAA readiness, SAML SSO, domain capture, SCIM, spend controls, custom data retention, audit logs, compliance API, network-level access controls, IP allowlisting, Claude Security (beta)
-- Training on customer data disabled by default (no opt-out required)
+- Pricing model: $20/seat plus usage charged at API rates (usage scales with model and task)
+- Includes: role-based access, SCIM, audit logs, compliance API, custom data retention controls, network-level access control, IP allowlisting, HIPAA-ready offering, Claude Security (beta)
+- Self-serve Enterprise (annual billing) and sales-assisted Enterprise both available
+- Training on customer data: none by default on Team and Enterprise
 - **Contact:** https://claude.com/contact-sales
