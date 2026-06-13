@@ -7,6 +7,17 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 ---
 
+<!-- Cowork appends new entries at the top, below this comment line -->
+
+## 2026-06-13
+
+**Updated by:** Claude Code (manual run)
+**Files updated:** releases.md, models.md, pricing.md
+**Summary:** June 12 events: US government export control directive suspending all Fable 5 and Mythos 5 access; Anthropic Public Record (first wave, 51,993-person survey); TCS partnership (50K employees, 56 countries). Claude Code v2.1.174, v2.1.175, v2.1.176 released. models.md updated with prominent access suspension notice; pricing.md updated to reflect Fable 5 promo currently moot due to suspension. June 15 Sonnet 4/Opus 4 API retirement now 2 days away.
+**Upstream releases checked:** anthropics/claude-code (v2.1.174–176 confirmed), anthropic.com/news
+
+---
+
 ## 2026-06-11
 
 **Updated by:** Cowork scheduled task
@@ -24,5 +35,3 @@ Each entry notes which files changed and a one-line summary of what changed.
 **Upstream releases checked:** anthropics/anthropic-sdk-python, anthropics/claude-code, anthropics/model-spec, anthropics/anthropic-cookbook
 
 ---
-
-<!-- Cowork appends new entries at the top, below this comment line -->
