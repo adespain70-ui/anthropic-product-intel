@@ -2,8 +2,12 @@
 
 # Claude Models — Anthropic Product Intel
 
-**Last updated:** 2026-06-11
+**Last updated:** 2026-06-13
 **Source:** https://platform.claude.com/docs/en/about-claude/models/overview
+
+---
+
+> **ACCESS SUSPENSION (June 12, 2026):** The US government issued an export control directive requiring Anthropic to suspend ALL access to Fable 5 and Mythos 5 for all customers. Anthropic is complying but disputes the basis. All other models are unaffected. Use Opus 4.8 as the current top available model until access is restored.
 
 ---
 
@@ -11,9 +15,8 @@
 
 | Model | API Model ID | Tier | Context Window | Max Output | Best For |
 |---|---|---|---|---|---|
-| Claude Fable 5 | `claude-fable-5` | Frontier (Mythos-class) | 1M tokens | 128K tokens | Hardest long-horizon knowledge work and coding; state-of-the-art on nearly all benchmarks |
-| Claude Mythos 5 | Invite-only | Frontier (restricted) | 1M tokens | 128K tokens | Defensive cybersecurity and biology research; Glasswing / trusted access only |
-| Claude Opus 4.8 | `claude-opus-4-8` | Flagship (general) | 1M tokens | 64K tokens | Complex agentic coding, enterprise work, long-running tasks; Fable's fallback model |
+| Claude Fable 5 | `claude-fable-5` | Frontier (Mythos-class) — **SUSPENDED** | 1M tokens | 128K tokens | Access suspended June 12 by US government directive |
+| Claude Opus 4.8 | `claude-opus-4-8` | Flagship (general) — **Use this now** | 1M tokens | 64K tokens | Complex agentic coding, enterprise work, long-running tasks |
 | Claude Sonnet 4.6 | `claude-sonnet-4-6` | Balanced | 1M tokens | 128K tokens | Daily driver for dev, writing, analysis, enterprise API; best value |
 | Claude Haiku 4.5 | `claude-haiku-4-5-20251001` | Fast/Efficient | 200K tokens | 64K tokens | High-volume classification, routing, summarization, simple code edits |
 
@@ -21,16 +24,14 @@
 
 ## Model Selection Guide
 
-**Start here:** Sonnet 4.6 handles most everyday tasks at strong value. Step up to Opus 4.8 for complex agentic coding and enterprise work; reach for Fable 5 on the hardest long-horizon tasks.
+**Current top available model:** Opus 4.8 (Fable 5 access suspended June 12, 2026).
 
-**Use Fable 5 when:**
-- Long-horizon, multi-step autonomous work (the longer/more complex the task, the larger Fable's lead)
-- Frontier software engineering, scientific research, complex knowledge work, or vision-heavy tasks
-- Note: fewer than 5% of sessions trigger a safeguard fallback to Opus 4.8 on cybersecurity, biology/chemistry, or distillation topics
+**Start here:** Sonnet 4.6 handles most everyday tasks at strong value. Step up to Opus 4.8 for complex agentic coding and enterprise work.
 
 **Use Opus 4.8 when:**
-- Complex agentic coding, computer use, and enterprise workflows that don't need Fable's frontier ceiling
+- Complex agentic coding, computer use, and enterprise workflows
 - You want higher honesty (~4x less likely than Opus 4.7 to let code flaws pass unremarked)
+- Long-running agentic tasks (Fable 5's prior use case, now suspended)
 
 **Use Haiku 4.5 when:**
 - High-volume, low-latency, cost-sensitive tasks
@@ -40,7 +41,8 @@
 
 ## Key Model Details
 
-### Claude Fable 5 / Claude Mythos 5 (launched June 9, 2026)
+### Claude Fable 5 / Claude Mythos 5 (launched June 9, 2026; suspended June 12, 2026)
+- **Access suspended June 12, 2026** by US government export control directive. All other Anthropic models unaffected. Anthropic working to restore access; no timeline given.
 - "Mythos-class" — a tier above the Opus class in capability
 - Fable 5 and Mythos 5 are the **same underlying model**; the difference is safeguards. Fable 5 is the safe, generally available version; Mythos 5 has some safeguards lifted and is restricted
 - State-of-the-art on nearly all tested benchmarks; exceptional at software engineering, knowledge work, vision, and scientific research
