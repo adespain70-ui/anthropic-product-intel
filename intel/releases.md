@@ -2,12 +2,17 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-06-11
+**Last updated:** 2026-06-13
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview
 
 ---
 
 ## June 2026
+
+**June 12, 2026**
+- **US government directive: Fable 5 and Mythos 5 access suspended** — The US government issued an export control directive citing national security, requiring Anthropic to suspend ALL customer access to Fable 5 and Mythos 5 (not just foreign nationals) to ensure compliance. Anthropic complied but publicly disagreed with the basis, noting the identified "jailbreak" is a narrow non-universal finding also achievable with other publicly available models. All other Anthropic models unaffected. Anthropic working to restore access.
+- **Anthropic Public Record (first wave)** — Results from nationally representative survey of 51,993 Americans (fielded Nov–Dec 2025 via YouGov). Top AI hope: curing disease (48%). Top fear: job loss (64%), followed by cognitive dependency (56%) and misinformation (52%). 71% support government involvement in AI regulation (bipartisan). Only 15% trust AI companies to make decisions about AI development. Survey will be repeated regularly.
+- **TCS and Anthropic partnership** — Multi-year partnership with Tata Consultancy Services (one of world's largest tech services companies): TCS deploys Claude to 50,000 of its own employees in 56 countries; builds Claude-powered products for clients in financial services, healthcare, public sector, and other regulated industries; joins Claude Partner Network.
 
 **June 11, 2026**
 - **Introducing Claude Corps** — a national fellowship program for people early in their careers focused on extending the benefits of AI to communities across America
@@ -15,6 +20,7 @@
 
 **June 10, 2026**
 - **Policy on the AI Exponential** — Anthropic policy proposals for preparing institutions for exponential AI progress
+- **Claude Platform on AWS:** `GET /v1/environments/{id}/work` endpoint (lists pending work for self-hosted sandboxes) now available
 
 **June 9, 2026**
 - **Claude Fable 5 and Claude Mythos 5 launched** — Anthropic's next-generation "Mythos-class" models (a tier above the Opus class)
@@ -104,9 +110,12 @@
 
 ## Notable Claude Code Releases (June 2026)
 
-- **v2.1.170** (Jun 9) — added Claude Fable 5 access
-- **v2.1.172** (Jun 10) — sub-agents can spawn their own sub-agents (up to 5 levels deep); Bedrock region read from `~/.aws`; plugin marketplace search
+- **v2.1.176** (Jun 12) — session titles generated in conversation language; `footerLinksRegexes` managed setting; improved Bedrock credential caching; Remote Control fixes (disconnect codes, duplicate transcript lines, sign-in disconnects); fixed `/cd` leaving stale git branch; fixed background session search and clipboard in tmux over SSH; fixed Windows daemon ReadOnly issue
+- **v2.1.175** (Jun 12) — `enforceAvailableModels` managed setting (when enabled, `availableModels` also constrains Default model; user/project settings can't widen a managed allowlist)
+- **v2.1.174** (Jun 12) — `wheelScrollAccelerationEnabled` setting; fixed `/model` picker hiding Default's resolved model family; fixed Bedrock GovCloud `us-gov-*` inference profile prefix; fixed background sessions inheriting wrong provider env from parent shell
 - **v2.1.173** (Jun 11) — Fable 5 model-name `[1m]` suffix normalization; Windows sandbox warning fix
+- **v2.1.172** (Jun 10) — sub-agents can spawn their own sub-agents (up to 5 levels deep); Bedrock region read from `~/.aws`; plugin marketplace search
+- **v2.1.170** (Jun 9) — added Claude Fable 5 access
 - **v2.1.169** (Jun 8) — `--safe-mode` flag; `/cd` command; `disableBundledSkills` setting
 - **v2.1.166** (Jun 6) — `fallbackModel` setting (up to three fallbacks); glob support in deny rules
 - **v2.1.163** (Jun 4) — `requiredMinimumVersion`/`requiredMaximumVersion` managed settings; `/plugin list`
@@ -128,7 +137,7 @@
 | Claude Sonnet 4 (`claude-sonnet-4-20250514`) | API retirement | June 15, 2026 |
 | Claude Opus 4 (`claude-opus-4-20250514`) | API retirement | June 15, 2026 |
 
-**Recommended migrations:** Sonnet 4 → Sonnet 4.6; Opus 4 → Opus 4.8.
+**Migrate from Sonnet 4 → Sonnet 4.6 and Opus 4 → Opus 4.8 before June 15, 2026.**
 
 ---
 
