@@ -2,7 +2,7 @@
 
 # Claude Pricing — Anthropic Product Intel
 
-**Last updated:** 2026-06-11
+**Last updated:** 2026-06-13
 **Source:** https://claude.com/pricing (always verify live)
 
 ---
@@ -20,8 +20,7 @@
 
 *Note: The current pricing page lists Claude Code and Cowork as included on Team (standard and premium) seats. Verify seat-level entitlements before relying on this for a specific deployment.
 
-**Fable 5 promotional access (June 2026):** Fable 5 is included on Pro, Max, Team, and seat-based Enterprise plans at no extra cost **from June 9 through June 22, 2026**. On **June 23**, Fable 5 is removed from those plans and further use requires usage credits. Anthropic intends to restore Fable 5 as a standard part of subscription plans once capacity allows. On the Claude API and consumption-based Enterprise plans, Fable 5 is fully available now.
-See: https://support.claude.com/en/articles/15424964-claude-fable-5-promotional-access
+**Fable 5 access (June 2026):** Fable 5 was included on Pro, Max, Team, and seat-based Enterprise plans at no extra cost June 9–22, 2026. However, **all Fable 5 and Mythos 5 access has been suspended as of June 12, 2026** by a US government export control directive. The promotional window and pricing are currently moot. Anthropic is working to restore access; check https://support.claude.com/en/articles/15424964-claude-fable-5-promotional-access for updates.
 
 **Important:** Claude paid plans and the Claude API/Console are separate products with separate billing. A Pro subscription does not include API access.
 
