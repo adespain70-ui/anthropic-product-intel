@@ -9,6 +9,15 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 <!-- Cowork appends new entries at the top, below this comment line -->
 
+## 2026-06-15
+
+**Updated by:** Claude Code (manual run)
+**Files updated:** models.md, releases.md
+**Summary:** Marked Claude Sonnet 4 and Claude Opus 4 as retired (effective today, June 15, 2026). Removed the pre-retirement migration warning. Added June 15 entry to releases.md.
+**Upstream releases checked:** anthropics/claude-code (via Cowork run earlier today; no new releases since v2.1.176)
+
+---
+
 ## 2026-06-13
 
 **Updated by:** Claude Code (manual run)

@@ -2,7 +2,7 @@
 
 # Claude Models — Anthropic Product Intel
 
-**Last updated:** 2026-06-13
+**Last updated:** 2026-06-15
 **Source:** https://platform.claude.com/docs/en/about-claude/models/overview
 
 ---
@@ -84,18 +84,16 @@
 
 ---
 
-## Deprecated / Retiring Models
+## Deprecated / Retired Models
 
 | Model | Status |
 |---|---|
 | Claude Opus 4.1 (`claude-opus-4-1`) | Deprecated (marked deprecated in SDK June 5, 2026); $15/$75 pricing |
-| Claude Sonnet 4 (`claude-sonnet-4-20250514`) | Deprecated; API retirement June 15, 2026 |
-| Claude Opus 4 (`claude-opus-4-20250514`) | Deprecated; API retirement June 15, 2026 |
+| Claude Sonnet 4 (`claude-sonnet-4-20250514`) | **Retired June 15, 2026** (migrate to Sonnet 4.6) |
+| Claude Opus 4 (`claude-opus-4-20250514`) | **Retired June 15, 2026** (migrate to Opus 4.8) |
 | Claude Sonnet 3.7 | Retired (upgrade to Sonnet 4.6) |
 | Claude Haiku 3.5 | Retired (upgrade to Haiku 4.5) |
 | Claude Haiku 3 | Retired April 20, 2026 (upgrade to Haiku 4.5) |
-
-**Migrate from Sonnet 4 → Sonnet 4.6 and Opus 4 → Opus 4.8 before June 15, 2026.**
 
 Legacy models still listed on the pricing page: Opus 4.7, Opus 4.6, Opus 4.5, Opus 4.1, Opus 4, Sonnet 4.5, Sonnet 4.
 

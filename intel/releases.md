@@ -2,12 +2,15 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-06-13
+**Last updated:** 2026-06-15
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview
 
 ---
 
 ## June 2026
+
+**June 15, 2026**
+- **Claude Sonnet 4 and Opus 4 API retired** — `claude-sonnet-4-20250514` and `claude-opus-4-20250514` reached end-of-life. Migrate to Sonnet 4.6 (`claude-sonnet-4-6`) and Opus 4.8 (`claude-opus-4-8`) respectively.
 
 **June 12, 2026**
 - **US government directive: Fable 5 and Mythos 5 access suspended** — The US government issued an export control directive citing national security, requiring Anthropic to suspend ALL customer access to Fable 5 and Mythos 5 (not just foreign nationals) to ensure compliance. Anthropic complied but publicly disagreed with the basis, noting the identified "jailbreak" is a narrow non-universal finding also achievable with other publicly available models. All other Anthropic models unaffected. Anthropic working to restore access.
@@ -133,11 +136,9 @@
 
 | Model | Action | Date |
 |---|---|---|
-| Claude Opus 4.1 (`claude-opus-4-1`) | Deprecated (SDK June 5, 2026) | — |
-| Claude Sonnet 4 (`claude-sonnet-4-20250514`) | API retirement | June 15, 2026 |
-| Claude Opus 4 (`claude-opus-4-20250514`) | API retirement | June 15, 2026 |
-
-**Migrate from Sonnet 4 → Sonnet 4.6 and Opus 4 → Opus 4.8 before June 15, 2026.**
+| Claude Opus 4.1 (`claude-opus-4-1`) | Deprecated (SDK June 5, 2026) | Retirement TBD |
+| Claude Sonnet 4 (`claude-sonnet-4-20250514`) | **Retired** | June 15, 2026 |
+| Claude Opus 4 (`claude-opus-4-20250514`) | **Retired** | June 15, 2026 |
 
 ---
 
