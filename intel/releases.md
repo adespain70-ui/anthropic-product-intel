@@ -2,14 +2,25 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-06-15
+**Last updated:** 2026-06-19
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview
 
 ---
 
 ## June 2026
 
+**June 19, 2026**
+- **Claude Code v2.1.183** — auto mode blocks destructive git/IaC commands without explicit user request: `git reset --hard`, `git checkout -- .`, `git clean -fd`, `git stash drop`; `git commit --amend` blocked when commit wasn't made by the agent this session; `terraform/pulumi/cdk destroy` blocked unless user asked for the specific stack. Added `attribution.sessionUrl` setting to omit session link from commits/PRs in web and Remote Control. `/config --help` lists all `/config key=value` shorthands. Deprecated/auto-updated model warnings now shown in `-p` mode and in agent frontmatter. Fixed `thinking.disabled.display` 400 errors on subagent spawns; fixed WebSearch returning empty results in subagents; fixed background tasks killed when teammate finishes turn; fixed scheduled task/webhook triggers being treated as keyboard input in auto mode.
+
+**June 17, 2026**
+- **Claude Code v2.1.181** — `/config key=value` syntax sets any setting from the prompt (interactive, `-p`, and Remote Control). Added `sandbox.allowAppleEvents` opt-in setting; `CLAUDE_CLIENT_PRESENCE_FILE` env var suppresses mobile push notifications while at the machine. Bun runtime upgraded to 1.4. Long paragraphs now stream line-by-line. API connection drops during thinking auto-retry instead of erroring. Idle subagents auto-hide after 30s; subagent panel caps at 5 rows with scroll hints. Fixed prompt caching on custom `ANTHROPIC_BASE_URL` and Foundry (per-request attestation token regression). Fixed Write/Edit producing 0-byte or truncated files on network drives and cloud-synced folders. Fixed foreground subagents bypassing 5-level depth limit. Fixed startup crash on corrupted `.claude.json` null entries; fixed startup blocking for up to 15s on degraded network.
+- **Anthropic opens Seoul office** — new partnerships announced across the Korean AI ecosystem
+
+**June 16, 2026**
+- **Claude Code v2.1.179** — fixed mid-stream connection drops (partial responses now preserved; spinner no longer stuck). Fixed mouse-wheel scrolling in WSL2 under Windows Terminal and VS Code (regression in v2.1.172). Fixed sandbox `denyRead`/`allowRead` glob over large directory tree making Bash tool description enormous and session unusable on Linux. Improved plugin loading performance in remote sessions.
+
 **June 15, 2026**
+- **Claude Code v2.1.178** — `Tool(param:value)` syntax for permission rules to match a tool's input parameters (with `*` wildcard), e.g. `Agent(model:opus)` to block Opus subagents. Nested `.claude/skills` directories now load when working in those directories; name clashes surface as `<dir>:<name>`. Auto mode: subagent spawns now evaluated by classifier before launch. Improved `/doctor` layout. `/bug` now requires a description. Fixed nested skills being blocked by permission prompts in non-interactive runs; fixed subagent transcript dropping messages mid-turn; fixed compaction not honoring `--fallback-model`.
 - **Claude Sonnet 4 and Opus 4 API retired** — `claude-sonnet-4-20250514` and `claude-opus-4-20250514` reached end-of-life. Migrate to Sonnet 4.6 (`claude-sonnet-4-6`) and Opus 4.8 (`claude-opus-4-8`) respectively.
 
 **June 12, 2026**
@@ -113,6 +124,10 @@
 
 ## Notable Claude Code Releases (June 2026)
 
+- **v2.1.183** (Jun 19) — auto mode blocks destructive git/IaC commands; `attribution.sessionUrl`; `/config --help`; deprecated model warnings in agent frontmatter; WebSearch fix in subagents *(see June 19 entry above for full detail)*
+- **v2.1.181** (Jun 17) — `/config key=value` prompt syntax; Bun 1.4; line-by-line streaming; `CLAUDE_CLIENT_PRESENCE_FILE`; depth-limit fix for foreground subagents *(see June 17 entry above)*
+- **v2.1.179** (Jun 16) — mid-stream connection drop fix; WSL2 mouse-wheel fix; sandbox glob fix
+- **v2.1.178** (Jun 15) — `Tool(param:value)` permission syntax; nested `.claude/skills`; auto mode pre-spawn classifier
 - **v2.1.176** (Jun 12) — session titles generated in conversation language; `footerLinksRegexes` managed setting; improved Bedrock credential caching; Remote Control fixes (disconnect codes, duplicate transcript lines, sign-in disconnects); fixed `/cd` leaving stale git branch; fixed background session search and clipboard in tmux over SSH; fixed Windows daemon ReadOnly issue
 - **v2.1.175** (Jun 12) — `enforceAvailableModels` managed setting (when enabled, `availableModels` also constrains Default model; user/project settings can't widen a managed allowlist)
 - **v2.1.174** (Jun 12) — `wheelScrollAccelerationEnabled` setting; fixed `/model` picker hiding Default's resolved model family; fixed Bedrock GovCloud `us-gov-*` inference profile prefix; fixed background sessions inheriting wrong provider env from parent shell

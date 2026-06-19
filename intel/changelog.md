@@ -9,6 +9,15 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 <!-- Cowork appends new entries at the top, below this comment line -->
 
+## 2026-06-19
+
+**Updated by:** Claude Code (manual apply from Cowork scheduled task output)
+**Files updated:** releases.md, platforms.md
+**Summary:** Added Claude Code v2.1.178–v2.1.183 release notes (June 15–19): `Tool(param:value)` permission syntax, `/config key=value` prompt command, Bun 1.4, auto mode destructive-command safety, `attribution.sessionUrl`. Anthropic Seoul office announcement (June 17). Updated platforms.md latest version to v2.1.183. No new API pricing, model, or subscription changes since June 15.
+**Upstream releases checked:** anthropics/claude-code (v2.1.178–183 confirmed), anthropic.com/news (June 15–19), platform.claude.com release notes (June 15–19)
+
+---
+
 ## 2026-06-15
 
 **Updated by:** Claude Code (manual run)

@@ -2,7 +2,7 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-06-11
+**Last updated:** 2026-06-19
 **Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com, https://claude.com/solutions/small-business
 
 ---
@@ -64,12 +64,16 @@
 - `fallbackModel` setting (v2.1.166+): configure up to three fallback models tried in order when the primary is overloaded or unavailable
 - `--safe-mode` flag (v2.1.169+): start with all customizations disabled for troubleshooting
 - `opusplan` alias: Opus for planning, auto-switches to Sonnet for execution
+- `/config key=value` (v2.1.181+): set any setting from the prompt without opening `/config` menu (e.g. `/config thinking=false`, `/config effort=high`); works in interactive, `-p`, and Remote Control; `/config --help` lists all shorthands
+- `Tool(param:value)` permission rules (v2.1.178+): match a tool's input parameters in permission rules, e.g. `Agent(model:opus)` to block Opus subagents, `Bash(command:rm*)` to restrict dangerous commands
+- Auto mode safety (v2.1.183+): destructive git commands (`git reset --hard`, `git checkout -- .`, `git clean -fd`, `git stash drop`, `git commit --amend` on external commits) and IaC destroy commands (`terraform/pulumi/cdk destroy`) are blocked unless user explicitly requested them
+- Bundled Bun runtime: 1.4 (upgraded v2.1.181)
 
 **Plans:** Pro, Max (5x/20x), Team, Enterprise. (Verify current seat-level Claude Code entitlements on the live pricing page.)
 
 **Install:** `npm install -g @anthropic-ai/claude-code` (requires Node.js)
 **Docs:** https://code.claude.com/docs/en/overview
-**Latest version (as of 2026-06-11):** v2.1.173
+**Latest version (as of 2026-06-19):** v2.1.183
 
 ---
 
