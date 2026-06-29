@@ -9,6 +9,15 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 <!-- Cowork appends new entries at the top, below this comment line -->
 
+## 2026-06-28
+
+**Updated by:** Claude Code (manual apply from Cowork scheduled task output)
+**Files updated:** releases.md, platforms.md, models.md, pricing.md
+**Summary:** Three new items since June 19: Claude Tag / @Claude launched June 23 in Slack (Enterprise/Team beta); fast mode for Opus 4.7 deprecated June 25 (removal July 24); API rate limits raised June 26 (Sonnet/Haiku now match Opus; tiers renamed Start/Build/Scale). Surgical additions only — no existing content changed.
+**Upstream releases checked:** anthropic.com/news (June 20–28), platform.claude.com release notes (June 20–28)
+
+---
+
 ## 2026-06-19
 
 **Updated by:** Claude Code (manual apply from Cowork scheduled task output)

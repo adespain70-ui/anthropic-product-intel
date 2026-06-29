@@ -2,7 +2,7 @@
 
 # Claude Models — Anthropic Product Intel
 
-**Last updated:** 2026-06-15
+**Last updated:** 2026-06-28
 **Source:** https://platform.claude.com/docs/en/about-claude/models/overview
 
 ---
@@ -89,6 +89,7 @@
 | Model | Status |
 |---|---|
 | Claude Opus 4.1 (`claude-opus-4-1`) | Deprecated (marked deprecated in SDK June 5, 2026); $15/$75 pricing |
+| Claude Opus 4.7 fast mode | **Deprecated June 25, 2026** — removal July 24, 2026. Migrate to Opus 4.8 fast mode (2.5x speed at 2x standard pricing) |
 | Claude Sonnet 4 (`claude-sonnet-4-20250514`) | **Retired June 15, 2026** (migrate to Sonnet 4.6) |
 | Claude Opus 4 (`claude-opus-4-20250514`) | **Retired June 15, 2026** (migrate to Opus 4.8) |
 | Claude Sonnet 3.7 | Retired (upgrade to Sonnet 4.6) |

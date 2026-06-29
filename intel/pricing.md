@@ -2,7 +2,7 @@
 
 # Claude Pricing — Anthropic Product Intel
 
-**Last updated:** 2026-06-13
+**Last updated:** 2026-06-28
 **Source:** https://claude.com/pricing (always verify live)
 
 ---
@@ -54,6 +54,8 @@ Prompt-caching prices reflect 5-minute TTL; extended (1-hour) caching available 
 - Web search: $10 per 1K searches (plus input/output tokens)
 - Code execution: 50 free hours/day per org, then $0.05 per hour per container
 - Service tiers available: Priority, Standard, Batch
+
+**Rate limits (updated June 26, 2026):** Sonnet 4.6 and Haiku 4.5 rate limits raised to match Opus 4.8. Tiers renamed to **Start**, **Build**, and **Scale** (previously had different names). Always verify current limits at https://platform.claude.com/docs/en/about-claude/rate-limits
 
 **Always verify at:** https://claude.com/pricing and https://platform.claude.com/docs/en/about-claude/pricing
 

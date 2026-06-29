@@ -9,6 +9,15 @@
 
 ## June 2026
 
+**June 26, 2026**
+- **API rate limits raised** — Sonnet 4.6 and Haiku 4.5 rate limits raised to match Opus 4.8. Rate limit tiers renamed and consolidated: formerly named tiers replaced by **Start**, **Build**, and **Scale**. (Source: Claude Platform release notes)
+
+**June 25, 2026**
+- **Fast mode for Opus 4.7 deprecated** — Anthropic deprecated fast mode for Claude Opus 4.7. Removal date: July 24, 2026. Migrate to Opus 4.8 fast mode (2.5x speed at 2x standard pricing; ~3x cheaper per token than fast mode on Opus 4.7 was). (Source: Claude Platform release notes)
+
+**June 23, 2026**
+- **Claude Tag / @Claude launched** — `@Claude` is now available in Slack (Enterprise and Team beta). Mentioning `@Claude` in any Slack channel or DM starts a conversation without leaving Slack. Claude can see and respond to the full thread. Replaces the previous "Claude in Slack" integration. (Source: https://www.anthropic.com/news/introducing-claude-tag)
+
 **June 19, 2026**
 - **Claude Code v2.1.183** — auto mode blocks destructive git/IaC commands without explicit user request: `git reset --hard`, `git checkout -- .`, `git clean -fd`, `git stash drop`; `git commit --amend` blocked when commit wasn't made by the agent this session; `terraform/pulumi/cdk destroy` blocked unless user asked for the specific stack. Added `attribution.sessionUrl` setting to omit session link from commits/PRs in web and Remote Control. `/config --help` lists all `/config key=value` shorthands. Deprecated/auto-updated model warnings now shown in `-p` mode and in agent frontmatter. Fixed `thinking.disabled.display` 400 errors on subagent spawns; fixed WebSearch returning empty results in subagents; fixed background tasks killed when teammate finishes turn; fixed scheduled task/webhook triggers being treated as keyboard input in auto mode.
 

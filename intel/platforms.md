@@ -2,7 +2,7 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-06-19
+**Last updated:** 2026-06-28
 **Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com, https://claude.com/solutions/small-business
 
 ---
@@ -105,6 +105,21 @@
 **Plans:** Pro, Max (5x/20x), Team, Enterprise. Cowork consumes usage limits faster than standard chat.
 
 **Getting started:** https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
+
+---
+
+## Claude Tag / @Claude (launched June 23, 2026)
+
+**Access:** Available in Slack (Enterprise and Team beta)
+
+`@Claude` lets users mention Claude directly in any Slack channel or DM without leaving Slack. Claude reads the full thread and responds inline. Replaces the previous "Claude in Slack" connector.
+
+**Key details:**
+- Mention `@Claude` anywhere in Slack to start or extend a conversation
+- Claude has access to the surrounding thread for context
+- Available on Enterprise and Team plans (beta)
+
+**Source:** https://www.anthropic.com/news/introducing-claude-tag
 
 ---
 
