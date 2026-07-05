@@ -2,7 +2,7 @@
 
 # Claude Pricing — Anthropic Product Intel
 
-**Last updated:** 2026-06-28
+**Last updated:** 2026-07-04
 **Source:** https://claude.com/pricing (always verify live)
 
 ---
@@ -20,7 +20,9 @@
 
 *Note: The current pricing page lists Claude Code and Cowork as included on Team (standard and premium) seats. Verify seat-level entitlements before relying on this for a specific deployment.
 
-**Fable 5 access (June 2026):** Fable 5 was included on Pro, Max, Team, and seat-based Enterprise plans at no extra cost June 9–22, 2026. However, **all Fable 5 and Mythos 5 access has been suspended as of June 12, 2026** by a US government export control directive. The promotional window and pricing are currently moot. Anthropic is working to restore access; check https://support.claude.com/en/articles/15424964-claude-fable-5-promotional-access for updates.
+**Fable 5 access (updated July 2026):** Fable 5/Mythos 5 access, suspended June 12–30, 2026 by a US export control directive, was restored July 1, 2026. Fable 5 is included for up to 50% of weekly usage limits through July 7, 2026 on Pro, Max, Team, and select Enterprise plans; after that, usage draws from usage credits. Standard Enterprise seats have no included Fable 5 allowance without usage credits enabled.
+
+**Claude Sonnet 5 (launched June 30, 2026):** Now the default model on Free and Pro plans; also available on Max, Team, Enterprise, Claude Code, and the Claude Platform. Introductory API pricing: $2/MTok input, $10/MTok output through August 31, 2026; standard pricing $3/$15 after.
 
 **Important:** Claude paid plans and the Claude API/Console are separate products with separate billing. A Pro subscription does not include API access.
 
@@ -36,6 +38,7 @@
 |---|---|---|---|---|
 | Claude Fable 5 | $10.00 | $50.00 | $12.50 | $1.00 |
 | Claude Opus 4.8 | $5.00 | $25.00 | $6.25 | $0.50 |
+| Claude Sonnet 5 | $2.00 (intro, through Aug 31 2026; then $3.00) | $10.00 (intro, then $15.00) | $2.50 | $0.20 |
 | Claude Sonnet 4.6 | $3.00 | $15.00 | $3.75 | $0.30 |
 | Claude Haiku 4.5 | $1.00 | $5.00 | $1.25 | $0.10 |
 

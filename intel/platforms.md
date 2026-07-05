@@ -2,7 +2,7 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-06-28
+**Last updated:** 2026-07-04
 **Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com, https://claude.com/solutions/small-business
 
 ---
@@ -36,6 +36,7 @@
 - Memory: stores key facts across conversations (enabled in Settings)
 - **Effort control (launched May 28, 2026):** a control alongside the model selector lets users choose how much effort Claude puts into a response; higher effort thinks more deeply, lower effort responds faster and uses limits more slowly. Available on all plans
 - Voice mode, incognito chats, user preferences
+- **Claude Sonnet 5 (launched June 30, 2026)** is now the default model for Free and Pro plans
 
 **Microsoft 365 integrations (GA as of May 14, 2026):**
 - Claude in Excel, Word, PowerPoint (GA)
@@ -68,12 +69,17 @@
 - `Tool(param:value)` permission rules (v2.1.178+): match a tool's input parameters in permission rules, e.g. `Agent(model:opus)` to block Opus subagents, `Bash(command:rm*)` to restrict dangerous commands
 - Auto mode safety (v2.1.183+): destructive git commands (`git reset --hard`, `git checkout -- .`, `git clean -fd`, `git stash drop`, `git commit --amend` on external commits) and IaC destroy commands (`terraform/pulumi/cdk destroy`) are blocked unless user explicitly requested them
 - Bundled Bun runtime: 1.4 (upgraded v2.1.181)
+- **Claude Sonnet 5 is now the default model in Claude Code** (v2.1.197, June 30), with native 1M context and the same intro pricing as elsewhere
+- **Claude in Chrome is now generally available** (v2.1.198, July 2), out of beta
+- Subagents now run in the background by default (v2.1.198), so Claude keeps working while they run
+- Default permission mode changed from "default" to "Manual" across CLI, `--help`, VS Code, and JetBrains (v2.1.200, July 3); `AskUserQuestion` dialogs no longer auto-continue by default (opt into an idle timeout via `/config`)
+- Org admins can now set an organization default model, shown as "Org default" in `/model` (v2.1.196, June 29)
 
 **Plans:** Pro, Max (5x/20x), Team, Enterprise. (Verify current seat-level Claude Code entitlements on the live pricing page.)
 
 **Install:** `npm install -g @anthropic-ai/claude-code` (requires Node.js)
 **Docs:** https://code.claude.com/docs/en/overview
-**Latest version (as of 2026-06-19):** v2.1.183
+**Latest version (as of 2026-07-04):** v2.1.201
 
 ---
 
@@ -120,6 +126,25 @@
 - Available on Enterprise and Team plans (beta)
 
 **Source:** https://www.anthropic.com/news/introducing-claude-tag
+
+---
+
+## Claude Science (launched June 30, 2026)
+
+**Access:** Standalone app, beta on macOS and Linux, for Pro, Max, Team, and Enterprise plans (Team/Enterprise users need an admin to enable it). Also usable over SSH or an HPC login node.
+
+Claude Science is an AI workbench for scientists: a single research environment that replaces switching between PubMed, Jupyter, R, cluster terminals, and domain databases.
+
+**Key details:**
+- A generalist coordinating agent has access to 60+ curated skills/connectors for genomics, single-cell, proteomics, structural biology, cheminformatics, and more; can spin up specialist sub-agents
+- A reviewer agent checks citations and calculations and flags/corrects errors
+- Produces auditable, reproducible artifacts: figures and manuscripts ship with the exact code, environment, and message history that produced them; 3D protein structures, genome browser tracks, and chemical structures render natively
+- Manages compute on the user's own infrastructure (laptop, HPC cluster over SSH) or scales on demand via Modal; sensitive datasets don't have to leave the systems they're already on
+- Connects to NVIDIA's BioNeMo Agent Toolkit (Evo 2, Boltz-2, OpenFold3) and 60+ scientific databases (UniProt, PDB, Ensembl, ClinVar, ChEMBL, GEO, etc.)
+- Discounted Team seats available for academic/nonprofit research labs
+- Applications open through July 15, 2026 for an "AI for Science" program: up to 50 projects get up to $30,000 in Anthropic credits plus Modal compute credits; projects run Sept 1–Dec 1, 2026
+
+**Source:** https://www.anthropic.com/news/claude-science-ai-workbench
 
 ---
 

@@ -2,12 +2,33 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-06-19
+**Last updated:** 2026-07-05
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview
 
 ---
 
 ## June 2026
+
+**July 3, 2026**
+- **Claude Code v2.1.200** — default permission mode changed from "default" to "Manual" across the CLI, `--help`, VS Code, and JetBrains; `AskUserQuestion` dialogs no longer auto-continue by default (opt into an idle timeout via `/config`)
+- **Claude Code v2.1.201** — Claude Sonnet 5 sessions no longer use the mid-conversation system role for harness reminders
+
+**July 2, 2026**
+- **Claude Code v2.1.198** — Claude in Chrome is now generally available (out of beta); subagents now run in the background by default so Claude keeps working while they run; added `/dataviz` skill; background agent notifications added to `claude agents`
+- **More detail published on Fable 5's cyber safeguards and the jailbreak severity framework** — follow-up post elaborating on the classifier updates and the four-criteria jailbreak scoring framework (capability gain, breadth, ease of weaponization, discoverability) proposed with Amazon, Microsoft, and Google. (Source: https://www.anthropic.com/news/fable-safeguards-jailbreak-framework)
+
+**July 1, 2026**
+- **Claude Fable 5 and Mythos 5 access restored** — following the lifting of the June 12 export control directive on June 30, Fable 5 became available again globally (Claude Platform, Claude.ai, Claude Code, Cowork) with an improved cyber safety classifier blocking the reported bypass technique in over 99% of cases. Included for up to 50% of weekly usage limits through July 7 on Pro/Max/Team/select Enterprise, then usage credits. Mythos 5 restored for approved US Project Glasswing organizations.
+
+**June 30, 2026**
+- **Claude Sonnet 5 launched** (`claude-sonnet-5`) — Anthropic's most agentic Sonnet yet, positioned as narrowing the gap to Opus-class agentic performance at lower cost. Default model for Free and Pro; available on Max, Team, Enterprise, Claude Code, and the Claude Platform. 1M context window, 128K max output, adaptive thinking always on (no manual thinking budgets, no sampling-parameter overrides). New tokenizer (~1.0–1.35x more tokens than Sonnet 4.6 for the same text). Introductory pricing $2/$10 per MTok through August 31, 2026, then $3/$15. Ships with Opus 4.7/4.8-level cyber safeguards. Claude Code shipped Sonnet 5 as default in v2.1.197 the same day.
+- **Redeploying Fable 5 (announcement)** — Anthropic announced the export-control lift and details on the June 12 incident: an Amazon-reported technique surfaced a routine, low-risk cybersecurity task from Fable 5's safeguards; testing showed multiple other models (including Opus 4.8, GPT-5.5, Kimi K2.7) could produce comparable output. Anthropic trained an improved classifier and proposed a joint industry jailbreak-severity framework with Amazon, Microsoft, and Google, plus deeper pre-release testing collaboration with the US government. (Source: https://www.anthropic.com/news/redeploying-fable-5)
+- **Claude Science launched** — new AI workbench app for scientists (beta, macOS/Linux, Pro/Max/Team/Enterprise), integrating 60+ research tools/connectors, reproducible auditable artifacts, and on-demand compute via the user's own infrastructure or Modal. AI for Science credit program open through July 15, 2026. (Source: https://www.anthropic.com/news/claude-science-ai-workbench)
+- **Claude Managed Agents API additions** — session event streams support `event_deltas[]`; `GET /v1/sessions` supports backward pagination (`prev_page`); sessions can override agent config (model/prompt/tools/MCP/skills) per-session via `agent_with_overrides`; vault credentials support an `injection_location` setting; webhooks expanded to cover agent/deployment/deployment-run lifecycle
+
+**June 29, 2026**
+- **Fast mode for Claude Opus 4.6 removed** — requests with `speed: "fast"` to `claude-opus-4-6` now run at standard speed and standard pricing instead of erroring. Migrate to Opus 4.8 fast mode.
+- **Claude Code v2.1.196** — added support for organization default models (shown as "Org default" in `/model`); readable default session names; clickable file attachments in chat
 
 **June 26, 2026**
 - **API rate limits raised** — Sonnet 4.6 and Haiku 4.5 rate limits raised to match Opus 4.8. Rate limit tiers renamed and consolidated: formerly named tiers replaced by **Start**, **Build**, and **Scale**. (Source: Claude Platform release notes)
@@ -149,10 +170,12 @@
 
 ---
 
-## SDK Releases (June 2026)
+## SDK Releases (June–July 2026)
 
-- **anthropic-sdk-python:** v0.108.0 (Fable 5 / Mythos 5 support), v0.109.0 (Managed Agents deployments + env-var credentials), v0.109.1 (`frontier_llm` refusal category); v0.106.0 marked Opus 4.1 deprecated
-- **anthropic-sdk-typescript:** sdk v0.103.0 (Fable 5 / Mythos 5 support), v0.104.0 (Managed Agents deployments), v0.104.1 (`frontier_llm` refusal category)
+- **anthropic-sdk-python:** v0.108.0 (Fable 5 / Mythos 5 support), v0.109.0 (Managed Agents deployments + env-var credentials), v0.109.1 (`frontier_llm` refusal category); v0.106.0 marked Opus 4.1 deprecated; v0.112.0 (Jun 24, system.message streaming events); v0.113.0 (Jun 29, `20260318` web fetch/search tool support); v0.114.0 (Jun 30, `claude-sonnet-5` support); v0.115.0/v0.115.1 (Jun 30–Jul 1, Managed Agents event-delta streaming, agent overrides, reverse pagination, vault credential injection scoping, webhook events); v0.116.0 (Jul 2, `agent-memory-2026-07-22` beta header)
+- **anthropic-sdk-typescript:** sdk v0.103.0 (Fable 5 / Mythos 5 support), v0.104.0 (Managed Agents deployments), v0.104.1 (`frontier_llm` refusal category); sdk v0.106.0 (Jun 24, system.message streaming events); sdk v0.107.0 (Jun 29, `20260318` web fetch/search tools); sdk v0.108.0 (Jun 30, `claude-sonnet-5` support); sdk v0.109.0 (Jun 30, Managed Agents event/pagination/webhook features); sdk v0.110.0 (Jul 2, `agent-memory-2026-07-22` beta header). Companion `bedrock-sdk`, `aws-sdk`, and `vertex-sdk` packages track the same cadence with platform-specific fixes.
+
+**Note:** https://github.com/anthropics/model-spec has no releases published on its Releases page (checked Jul 5, 2026 — page returns 404, repo may not use GitHub Releases). https://github.com/anthropics/anthropic-cookbook has been renamed to `claude-cookbooks` and does not use GitHub Releases either; check the repo's commit history directly for updates instead of the releases feed.
 
 ---
 
@@ -160,7 +183,9 @@
 
 | Model | Action | Date |
 |---|---|---|
-| Claude Opus 4.1 (`claude-opus-4-1`) | Deprecated (SDK June 5, 2026) | Retirement TBD |
+| Claude Opus 4.6 fast mode | **Removed** | June 29, 2026 |
+| Claude Opus 4.1 (`claude-opus-4-1`) | Deprecated June 5, 2026 | API retirement August 5, 2026 |
+| Claude Opus 4.7 fast mode | Deprecated June 25, 2026 | Removal July 24, 2026 |
 | Claude Sonnet 4 (`claude-sonnet-4-20250514`) | **Retired** | June 15, 2026 |
 | Claude Opus 4 (`claude-opus-4-20250514`) | **Retired** | June 15, 2026 |
 
