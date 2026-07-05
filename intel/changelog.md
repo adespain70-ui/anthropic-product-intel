@@ -9,6 +9,24 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 <!-- Cowork appends new entries at the top, below this comment line -->
 
+## 2026-07-05
+
+**Updated by:** Cowork scheduled task
+**Files updated:** releases.md (SDK release log only)
+**Summary:** Checked anthropic.com/news, platform.claude.com release notes, claude.com/pricing, and the five monitored GitHub repos for anything new since the July 4 update. No new product, pricing, or model announcements found. Confirmed anthropic-sdk-python reached v0.116.0 and anthropic-sdk-typescript reached sdk-v0.110.0 (both Jul 2, adding an `agent-memory-2026-07-22` beta header) — added to releases.md. Also confirmed anthropics/model-spec has no GitHub Releases page (404) and anthropics/anthropic-cookbook has been renamed to anthropics/claude-cookbooks with no Releases used; noting this so future runs don't re-check a dead URL pattern. Pricing, models.md, and platforms.md content from the July 4 update was spot-checked against the live claude.com/pricing page and still matches.
+**Upstream releases checked:** anthropics/anthropic-sdk-python (v0.116.0), anthropics/anthropic-sdk-typescript (sdk-v0.110.0), anthropics/claude-code (v2.1.201, no new release since Jul 3), anthropics/model-spec (no releases page), anthropics/claude-cookbooks (no releases used)
+
+---
+
+## 2026-07-04
+
+**Updated by:** Cowork scheduled task (applied by Claude Code after manual review)
+**Files updated:** models.md, pricing.md, platforms.md, releases.md
+**Summary:** Consolidated catch-up covering June 29 through July 4 — the actual last real update was June 28 (an earlier raw.githubusercontent.com fetch had returned a stale cached copy showing May 14, which caused several prior runs to miscalculate the gap; a fresh git clone confirmed June 28 as the true baseline). Fable 5 and Mythos 5 access (suspended June 12, 2026 by a US export control directive) was restored July 1 following the lift of export controls June 30, with an improved cyber safety classifier; Claude Sonnet 5 launched June 30 as the new default model for Free/Pro (also available on Max, Team, Enterprise, Claude Code, and the Claude Platform) at introductory pricing $2/$10 per MTok through Aug 31, 2026; Claude Science (AI workbench for scientists) launched June 30 in beta; fast mode for Opus 4.6 was removed June 29; Claude Code reached v2.1.201 (Claude in Chrome now GA, subagents run in background by default, default permission mode changed to "Manual", AskUserQuestion no longer auto-continues).
+**Upstream releases checked:** anthropics/claude-code (v2.1.184–v2.1.201), anthropics/anthropic-sdk-python (through v0.116.0), anthropics/anthropic-sdk-typescript (through sdk v0.110.0), anthropics/model-spec (no releases page), anthropics/anthropic-cookbook (renamed to claude-cookbooks, no releases), anthropic.com/news, claude.com/pricing, platform.claude.com release notes
+
+---
+
 ## 2026-06-28
 
 **Updated by:** Claude Code (manual apply from Cowork scheduled task output)
