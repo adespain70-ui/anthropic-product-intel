@@ -9,6 +9,15 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 <!-- Cowork appends new entries at the top, below this comment line -->
 
+## 2026-07-28
+
+**Updated by:** Cowork scheduled task
+**Files updated:** pricing.md, models.md, platforms.md, releases.md
+**Summary:** Catch-up update covering July 6–28 (last update was July 5): Claude Opus 5 launched July 24 ($5/$25, 1M context default and max, 128K output, new default on Claude Max and default Opus model in Claude Code v2.1.219, effort ladder now low/medium/high/xhigh/max); fast mode removed for Opus 4.7 (July 24, now errors); legacy Workbench and experimental prompt tools sunset August 17 (announced July 17); Claude for Teachers launched July 14; Enterprise user management Admin API beta (July 14); new `model_context_window_exceeded` stop reason (July 23); mid-conversation tool changes beta and server-side fallback default mode (July 24); Economic Index connector (July 22); API key expiration support (July 8); Fable 5 plan access updated on pricing page (Pro via usage credits, Max 50% of weekly limits); pricing page now lists only Standard and Batch service tiers. Also caveated the raw.githubusercontent.com staleness issue again: initial raw fetches this run returned May 14 cached copies; fresh git clone confirmed July 5 as the true baseline (same failure mode documented in the 2026-07-04 entry — future runs should verify baseline from a git clone, not raw URLs).
+**Upstream releases checked:** anthropics/anthropic-sdk-python (v0.117.0–v0.120.0), anthropics/anthropic-sdk-typescript (sdk v0.112.x–v0.115.0), anthropics/claude-code (v2.1.219, v2.1.220), anthropics/model-spec (no releases page), anthropics/claude-cookbooks (no releases). Pricing verified against live claude.com/pricing; API changes verified against platform.claude.com release notes (top entry July 24).
+
+---
+
 ## 2026-07-05
 
 **Updated by:** Cowork scheduled task

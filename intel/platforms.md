@@ -2,7 +2,7 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-07-04
+**Last updated:** 2026-07-28
 **Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com, https://claude.com/solutions/small-business
 
 ---
@@ -37,6 +37,7 @@
 - **Effort control (launched May 28, 2026):** a control alongside the model selector lets users choose how much effort Claude puts into a response; higher effort thinks more deeply, lower effort responds faster and uses limits more slowly. Available on all plans
 - Voice mode, incognito chats, user preferences
 - **Claude Sonnet 5 (launched June 30, 2026)** is now the default model for Free and Pro plans
+- **Claude Opus 5 (launched July 24, 2026)** is now the default model on Claude Max and the strongest model on Pro
 
 **Microsoft 365 integrations (GA as of May 14, 2026):**
 - Claude in Excel, Word, PowerPoint (GA)
@@ -74,12 +75,16 @@
 - Subagents now run in the background by default (v2.1.198), so Claude keeps working while they run
 - Default permission mode changed from "default" to "Manual" across CLI, `--help`, VS Code, and JetBrains (v2.1.200, July 3); `AskUserQuestion` dialogs no longer auto-continue by default (opt into an idle timeout via `/config`)
 - Org admins can now set an organization default model, shown as "Org default" in `/model` (v2.1.196, June 29)
+- **Claude Opus 5 is now the default Opus model** (v2.1.219, July 24) — 1M context, fast mode at $10/$50 per MTok
+- `sandbox.network.strictAllowlist` setting (v2.1.219+): deny non-allowlisted hosts for sandboxed commands without prompting
+- `DirectoryAdded` hook (v2.1.219+): fires after `/add-dir` or SDK `register_repo_root` registers a new working directory mid-session
+- Dynamic workflows now default to a medium size guideline (aim for fewer than 15 agents); configurable via `workflowSizeGuideline` setting or Dynamic workflow size in `/config` (v2.1.219+)
 
 **Plans:** Pro, Max (5x/20x), Team, Enterprise. (Verify current seat-level Claude Code entitlements on the live pricing page.)
 
 **Install:** `npm install -g @anthropic-ai/claude-code` (requires Node.js)
 **Docs:** https://code.claude.com/docs/en/overview
-**Latest version (as of 2026-07-04):** v2.1.201
+**Latest version (as of 2026-07-28):** v2.1.220 (July 25 — bug fixes and reliability improvements)
 
 ---
 
@@ -182,6 +187,14 @@ Claude for Small Business is a plugin bundle of connectors and ready-to-run agen
 - Claude SMB Tour: free half-day workshops in 10 US cities starting May 14, 2026 (Chicago, Tulsa, Dallas, Hamilton Township, Baton Rouge, Birmingham, Salt Lake City, Baltimore, San Jose, Indianapolis)
 
 **More info:** https://claude.com/solutions/small-business
+
+---
+
+## Claude for Teachers (launched July 14, 2026)
+
+A Claude product for K-12 educators, announced July 14, 2026. Listed among Claude solutions at https://claude.com/solutions/teachers.
+
+**Source:** https://www.anthropic.com/news/claude-for-teachers
 
 ---
 

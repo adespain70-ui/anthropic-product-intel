@@ -2,7 +2,7 @@
 
 # Claude Pricing — Anthropic Product Intel
 
-**Last updated:** 2026-07-04
+**Last updated:** 2026-07-28
 **Source:** https://claude.com/pricing (always verify live)
 
 ---
@@ -20,7 +20,9 @@
 
 *Note: The current pricing page lists Claude Code and Cowork as included on Team (standard and premium) seats. Verify seat-level entitlements before relying on this for a specific deployment.
 
-**Fable 5 access (updated July 2026):** Fable 5/Mythos 5 access, suspended June 12–30, 2026 by a US export control directive, was restored July 1, 2026. Fable 5 is included for up to 50% of weekly usage limits through July 7, 2026 on Pro, Max, Team, and select Enterprise plans; after that, usage draws from usage credits. Standard Enterprise seats have no included Fable 5 allowance without usage credits enabled.
+**Fable 5 access (as of July 28, 2026, per live pricing page):** Pro — via usage credits; Max 5x and Max 20x — included for up to 50% of weekly limits. (The post-restoration promo that included Fable 5 on Pro/Team plans ended July 7, 2026.)
+
+**Claude Opus 5 (launched July 24, 2026):** Now the default model on Claude Max and the strongest model on Pro. API pricing $5/$25 per MTok, same as Opus 4.8.
 
 **Claude Sonnet 5 (launched June 30, 2026):** Now the default model on Free and Pro plans; also available on Max, Team, Enterprise, Claude Code, and the Claude Platform. Introductory API pricing: $2/MTok input, $10/MTok output through August 31, 2026; standard pricing $3/$15 after.
 
@@ -37,6 +39,7 @@
 | Model | Input (per 1M tokens) | Output (per 1M tokens) | Cache Write | Cache Read |
 |---|---|---|---|---|
 | Claude Fable 5 | $10.00 | $50.00 | $12.50 | $1.00 |
+| Claude Opus 5 (launched Jul 24, 2026) | $5.00 | $25.00 | $6.25 | $0.50 |
 | Claude Opus 4.8 | $5.00 | $25.00 | $6.25 | $0.50 |
 | Claude Sonnet 5 | $2.00 (intro, through Aug 31 2026; then $3.00) | $10.00 (intro, then $15.00) | $2.50 | $0.20 |
 | Claude Sonnet 4.6 | $3.00 | $15.00 | $3.75 | $0.30 |
@@ -50,13 +53,13 @@ Prompt-caching prices reflect 5-minute TTL; extended (1-hour) caching available 
 - Batch API (Message Batches): 50% discount
 - Prompt caching: up to 90% cost reduction
 - US-only inference (data residency): 1.1x pricing for input and output
-- Fast mode (Opus 4.8): up to 2.5x faster at 2x standard pricing
+- Fast mode (Opus 5 and Opus 4.8): up to 2.5x faster at 2x standard pricing ($10/$50). Fast mode removed from Opus 4.6 (June 29, 2026) and Opus 4.7 (July 24, 2026)
 
 **Claude Platform feature pricing:**
 - Managed Agents: $0.08 per session-hour for active runtime (standard token rates also apply)
 - Web search: $10 per 1K searches (plus input/output tokens)
 - Code execution: 50 free hours/day per org, then $0.05 per hour per container
-- Service tiers available: Priority, Standard, Batch
+- Service tiers listed on the live pricing page (July 2026): Standard and Batch. (Priority Tier is no longer shown there; Sonnet 5 does not support Priority Tier)
 
 **Rate limits (updated June 26, 2026):** Sonnet 4.6 and Haiku 4.5 rate limits raised to match Opus 4.8. Tiers renamed to **Start**, **Build**, and **Scale** (previously had different names). Always verify current limits at https://platform.claude.com/docs/en/about-claude/rate-limits
 

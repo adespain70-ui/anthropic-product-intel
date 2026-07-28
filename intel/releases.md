@@ -2,12 +2,76 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-07-05
+**Last updated:** 2026-07-28
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview
 
 ---
 
-## June 2026
+## July 2026
+
+**July 27, 2026**
+- **Anthropic publishes its position on open-weights models** — https://www.anthropic.com/news/position-open-weights-models
+- **Cognizant partnership expanded** — bringing Claude to Cognizant's enterprise clients
+
+**July 25, 2026**
+- **Claude Code v2.1.220** — bug fixes and reliability improvements
+
+**July 24, 2026**
+- **Claude Opus 5 launched** (`claude-opus-5`) — step-change improvement for the Opus tier
+  - $5/$25 per MTok (same as Opus 4.8); 1M context (default and max); 128K max output; thinking on by default; fast mode up to 2.5x faster at 2x pricing
+  - New SOTA on Frontier-Bench and GDPval-AA; close to Fable 5 at half the price; remains behind Mythos 5 on cybersecurity
+  - New default model on Claude Max; strongest model on Pro; available on Claude API, Bedrock, Google Cloud, Microsoft Foundry
+  - Breaking change: disabling thinking only allowed at effort `high` or below; effort ladder `low`/`medium`/`high`/`xhigh`/`max`
+- **Fast mode removed for Opus 4.7** — `speed: "fast"` on `claude-opus-4-7` now returns an error (no silent fallback); migrate to Opus 5 or Opus 4.8
+- **Mid-conversation tool changes (beta)** — add/remove tools between turns while preserving prompt cache, on Fable 5, Mythos 5, Opus 4.8, Opus 5 (`mid-conversation-tool-changes-2026-07-01` header); `fallbacks` parameter gains a `"default"` server-side mode (beta, `server-side-fallback-2026-07-01` header)
+- **Claude Code v2.1.219** — Opus 5 as default Opus model (1M context, fast mode $10/$50); `sandbox.network.strictAllowlist` setting; `DirectoryAdded` hook; `workflowSizeGuideline` setting (dynamic workflows default to medium, fewer than 15 agents); `mcp_server_errors` in headless stream-json init; nested subagent forwarding in stream-json; removed Opus 4.7 from `/fast` (now applies to Opus 5 and Opus 4.8)
+- SDKs add `claude-opus-5`: anthropic-sdk-python v0.120.0, anthropic-sdk-typescript sdk v0.115.0 (plus tool addition/removal blocks, `tool_change` events, expanded fallback credit token types)
+
+**July 23, 2026**
+- New stop reason `model_context_window_exceeded` added to the API (SDKs: python v0.119.0, typescript sdk v0.114.0)
+
+**July 22, 2026**
+- **Anthropic Economic Index connector** — ask Claude about the Economic Index dataset directly (https://www.anthropic.com/news/anthropic-economic-index-connector)
+- **Economic Futures Research Fund research agenda published**
+- Managed Agents: `effort` settable in agent model config; `version` optional on agent updates (optimistic concurrency); webhooks expanded to environment and memory store lifecycle; sessions can be seeded with `initial_events` on `POST /v1/sessions`; session thread event streams support `event_deltas[]`
+
+**July 21, 2026**
+- Anthropic donates another $20 million to Public First Action
+
+**July 20, 2026**
+- Applications open for Anthropic's AI for Science rare disease research grants
+
+**July 17, 2026**
+- **Legacy Workbench sunset announced** — access to the legacy Workbench (platform.claude.com/workbench) ends August 17, 2026; saved prompts, variables, and evals are not carried over (export from the banner or Organizational Settings); experimental prompt tools APIs (`/v1/experimental/generate_prompt`, `/improve_prompt`, `/templatize_prompt`) retire the same day
+
+**July 16, 2026**
+- SDK support for dreaming and MCP Tunnels (anthropic-sdk-python v0.117.0)
+
+**July 15, 2026**
+- Mid-conversation system messages available with no beta header on Fable 5, Mythos 5, and Opus 4.8 (Claude API, Bedrock, Google Cloud)
+
+**July 14, 2026**
+- **Claude for Teachers launched** — Claude product for K-12 educators
+- Claude Enterprise (claude.ai) user management via Admin API in beta: list/look up members, change roles, remove members, manage invites and groups (`ce-user-management-2026-07-13` beta header for group/custom-role requests)
+- Anthropic commits $10 million to Canadian AI research
+
+**July 10, 2026**
+- Dreams (research preview) adds support for Claude Fable 5 and Claude Sonnet 5
+- Access Transparency docs expanded for `cmek_preserve` events
+
+**July 9, 2026**
+- **"Inviting hard questions"** — Anthropic asks the public for their hardest questions about AI, committing to show its work addressing them
+- UST case study: bringing Claude to physical AI
+
+**July 8, 2026**
+- API keys and Admin API keys can now be created with expiration dates in the Console (preset, custom, or never); Admin API exposes `expires_at`; email warning before expiry for keys living 7+ days
+
+**July 6, 2026**
+- **"The Making of Claude Code"** feature published — inside story of Claude Code's development
+
+---
+
+## Late June – early July 2026
 
 **July 3, 2026**
 - **Claude Code v2.1.200** — default permission mode changed from "default" to "Manual" across the CLI, `--help`, VS Code, and JetBrains; `AskUserQuestion` dialogs no longer auto-continue by default (opt into an idle timeout via `/config`)
@@ -172,8 +236,8 @@
 
 ## SDK Releases (June–July 2026)
 
-- **anthropic-sdk-python:** v0.108.0 (Fable 5 / Mythos 5 support), v0.109.0 (Managed Agents deployments + env-var credentials), v0.109.1 (`frontier_llm` refusal category); v0.106.0 marked Opus 4.1 deprecated; v0.112.0 (Jun 24, system.message streaming events); v0.113.0 (Jun 29, `20260318` web fetch/search tool support); v0.114.0 (Jun 30, `claude-sonnet-5` support); v0.115.0/v0.115.1 (Jun 30–Jul 1, Managed Agents event-delta streaming, agent overrides, reverse pagination, vault credential injection scoping, webhook events); v0.116.0 (Jul 2, `agent-memory-2026-07-22` beta header)
-- **anthropic-sdk-typescript:** sdk v0.103.0 (Fable 5 / Mythos 5 support), v0.104.0 (Managed Agents deployments), v0.104.1 (`frontier_llm` refusal category); sdk v0.106.0 (Jun 24, system.message streaming events); sdk v0.107.0 (Jun 29, `20260318` web fetch/search tools); sdk v0.108.0 (Jun 30, `claude-sonnet-5` support); sdk v0.109.0 (Jun 30, Managed Agents event/pagination/webhook features); sdk v0.110.0 (Jul 2, `agent-memory-2026-07-22` beta header). Companion `bedrock-sdk`, `aws-sdk`, and `vertex-sdk` packages track the same cadence with platform-specific fixes.
+- **anthropic-sdk-python:** v0.108.0 (Fable 5 / Mythos 5 support), v0.109.0 (Managed Agents deployments + env-var credentials), v0.109.1 (`frontier_llm` refusal category); v0.106.0 marked Opus 4.1 deprecated; v0.112.0 (Jun 24, system.message streaming events); v0.113.0 (Jun 29, `20260318` web fetch/search tool support); v0.114.0 (Jun 30, `claude-sonnet-5` support); v0.115.0/v0.115.1 (Jun 30–Jul 1, Managed Agents event-delta streaming, agent overrides, reverse pagination, vault credential injection scoping, webhook events); v0.116.0 (Jul 2, `agent-memory-2026-07-22` beta header); v0.117.0 (Jul 16, dreaming + MCP Tunnels support); v0.117.1 (Jul 21, new refusal category, AWS credential fix); v0.118.0 (Jul 22, Managed Agents model effort/initial session events/threads delta streaming); v0.119.0 (Jul 23, `model_context_window_exceeded` stop reason); v0.120.0 (Jul 24, `claude-opus-5`, tool_change events, expanded fallback credit types)
+- **anthropic-sdk-typescript:** sdk v0.103.0 (Fable 5 / Mythos 5 support), v0.104.0 (Managed Agents deployments), v0.104.1 (`frontier_llm` refusal category); sdk v0.106.0 (Jun 24, system.message streaming events); sdk v0.107.0 (Jun 29, `20260318` web fetch/search tools); sdk v0.108.0 (Jun 30, `claude-sonnet-5` support); sdk v0.109.0 (Jun 30, Managed Agents event/pagination/webhook features); sdk v0.110.0 (Jul 2, `agent-memory-2026-07-22` beta header); sdk v0.112.x (Jul 16–21, docs and fixes); sdk v0.113.0 (Jul 22, Managed Agents model effort/initial session events/threads delta streaming); sdk v0.114.0 (Jul 23, `model_context_window_exceeded` stop reason); sdk v0.115.0 (Jul 24, `claude-opus-5`, tool_change events). Companion `bedrock-sdk`, `aws-sdk`, and `vertex-sdk` packages track the same cadence with platform-specific fixes.
 
 **Note:** https://github.com/anthropics/model-spec has no releases published on its Releases page (checked Jul 5, 2026 — page returns 404, repo may not use GitHub Releases). https://github.com/anthropics/anthropic-cookbook has been renamed to `claude-cookbooks` and does not use GitHub Releases either; check the repo's commit history directly for updates instead of the releases feed.
 
@@ -184,8 +248,9 @@
 | Model | Action | Date |
 |---|---|---|
 | Claude Opus 4.6 fast mode | **Removed** | June 29, 2026 |
+| Claude Opus 4.7 fast mode | **Removed** (`speed: "fast"` now errors) | July 24, 2026 |
 | Claude Opus 4.1 (`claude-opus-4-1`) | Deprecated June 5, 2026 | API retirement August 5, 2026 |
-| Claude Opus 4.7 fast mode | Deprecated June 25, 2026 | Removal July 24, 2026 |
+| Legacy Workbench + experimental prompt tools APIs | Sunset announced July 17, 2026 | Access ends August 17, 2026 |
 | Claude Sonnet 4 (`claude-sonnet-4-20250514`) | **Retired** | June 15, 2026 |
 | Claude Opus 4 (`claude-opus-4-20250514`) | **Retired** | June 15, 2026 |
 
