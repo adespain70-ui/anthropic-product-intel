@@ -9,6 +9,15 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 <!-- Cowork appends new entries at the top, below this comment line -->
 
+## 2026-08-22
+
+**Updated by:** Cowork scheduled task
+**Files updated:** pricing.md, models.md, platforms.md, releases.md
+**Summary:** Catch-up update covering July 28–August 22 (last real update was July 28). API/platform changes: Python SDK v1.0 (Aug 20, httpx→httpx2, Python 3.10+, removes legacy Text Completions API and temperature/top_p/top_k on Messages); computer use tool GA as `computer_toolset_20260801` and new browser use tool `browser_toolset_20260801` (Aug 19); Files API, Agent Skills/Skills API, and Admin API user-management all GA with beta headers dropped (Aug 19); Managed Agents session budgets (new `budget_reached` stop reason), advisor role, `inference_geo`, and GitHub-repo skills (Aug 7); Compliance API remote (Aug 3) and local (Aug 11) Cowork/Claude Code session transcripts in beta; inference hooks beta and **Opus 4.1 API retirement** (Aug 5); `anthropic-workspace-id` response header (Aug 11); Workbench renamed to Playground in the Console (Aug 18); Console session viewer redesign (Aug 19). Pricing: **Claude Sonnet 5's introductory $2/$10 per MTok was made permanent (Aug 10) — the scheduled Sept 1 increase to $3/$15 is cancelled**, so pricing.md and models.md were corrected. News: cybersecurity-eval incidents post (Jul 30), Tino Cuéllar named Chief Global Affairs Officer (Aug 4), Fable 5 biology safeguards (Aug 7), text watermark explainer (Aug 14). Claude Code advanced to v2.1.239 (Aug 21) — notable: todo/task-tracking tools removed by default on Opus 4.8/Sonnet 5/Fable 5/Mythos 5+ (v2.1.233, `CLAUDE_CODE_ENABLE_TODO_TOOLS=1` to restore), subagent forking on by default and `@`-mention cross-session messaging (v2.1.232), GitLab support (v2.1.232–234), `ANTHROPIC_DEFAULT_MODEL` env var (v2.1.236), and a built-in "Concise" output style (v2.1.237). Note: the three monitored `releases.atom` feeds returned empty this run (recurring issue) — Claude Code versions were verified against the official code.claude.com changelog and the Python SDK v1.0 against the Claude Platform release notes; pricing verified against the live claude.com/pricing page.
+**Upstream releases checked:** anthropics/anthropic-sdk-python (through v1.0.0, Aug 20), anthropics/anthropic-sdk-typescript (through sdk v0.115.0), anthropics/claude-code (v2.1.221–v2.1.239 via code.claude.com/docs/en/changelog), anthropics/model-spec (no releases page), anthropics/claude-cookbooks (no releases). API changes verified against platform.claude.com release notes (top entry Aug 20).
+
+---
+
 ## 2026-07-28
 
 **Updated by:** Cowork scheduled task
