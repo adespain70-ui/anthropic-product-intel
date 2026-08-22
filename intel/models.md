@@ -2,21 +2,21 @@
 
 # Claude Models — Anthropic Product Intel
 
-**Last updated:** 2026-07-28
+**Last updated:** 2026-08-22
 **Source:** https://platform.claude.com/docs/en/about-claude/models/overview
 
 ---
 
-> **NEW (July 24, 2026):** Claude Opus 5 launched — a step-change improvement for the Opus tier, now the default model on Claude Max and the default Opus model in Claude Code. See "Key Model Details" below.
+> **Latest (July 24, 2026):** Claude Opus 5 launched — a step-change improvement for the Opus tier, now the default model on Claude Max and the default Opus model in Claude Code. See "Key Model Details" below.
 
 ---
 
-## Current Recommended Models (July 2026)
+## Current Recommended Models (August 2026)
 
 | Model | API Model ID | Tier | Context Window | Max Output | Best For |
 |---|---|---|---|---|---|
 | Claude Fable 5 | `claude-fable-5` | Frontier (Mythos-class) | 1M tokens | 128K tokens | Anthropic's most capable widely released model; long-horizon agentic work, research |
-| Claude Opus 5 | `claude-opus-5` | Flagship — **new, launched Jul 24** | 1M tokens (default and max) | 128K tokens | Complex agentic coding, knowledge work, computer use; close to Fable 5 at half the price; default on Max |
+| Claude Opus 5 | `claude-opus-5` | Flagship (launched Jul 24) | 1M tokens (default and max) | 128K tokens | Complex agentic coding, knowledge work, computer use; close to Fable 5 at half the price; default on Max |
 | Claude Opus 4.8 | `claude-opus-4-8` | Previous flagship | 1M tokens | 128K tokens | Still available; cybersecurity work needing fewer guardrails; Fable 5 fallback model |
 | Claude Sonnet 5 | `claude-sonnet-5` | Balanced/agentic | 1M tokens | 128K tokens | Default model for Free and Pro; strong agentic coding and knowledge work at lower cost than Opus |
 | Claude Sonnet 4.6 | `claude-sonnet-4-6` | Balanced (previous default) | 1M tokens | 128K tokens | Still available; superseded by Sonnet 5 as the default |
@@ -51,6 +51,7 @@
 
 ### Claude Fable 5 / Claude Mythos 5 (launched June 9, 2026; suspended Jun 12–Jun 30, restored Jul 1, 2026)
 - Access was suspended June 12, 2026 by a US government export control directive after a reported safeguard bypass (Amazon researchers found a prompt that surfaced a routine, low-risk cyber task). Export controls were lifted June 30; Fable 5 became available again globally July 1 with an improved safety classifier that blocks the reported technique in over 99% of cases. Mythos 5 was restored for approved US organizations June 26.
+- Anthropic published follow-ups on Fable 5's safeguards: **"Improving Fable 5's biology safeguards" (August 7, 2026)** and earlier cyber-safeguard/jailbreak-framework posts.
 - "Mythos-class" — a tier above the Opus class in capability
 - Fable 5 and Mythos 5 are the **same underlying model**; the difference is safeguards. Fable 5 is the safe, generally available version; Mythos 5 has some safeguards lifted and is restricted
 - State-of-the-art on nearly all tested benchmarks; exceptional at software engineering, knowledge work, vision, and scientific research
@@ -61,7 +62,6 @@
 - Pricing: $10/MTok input, $50/MTok output (less than half the price of Mythos Preview)
 - 30-day data retention required for all traffic on Mythos-class models (not used for training)
 - Mythos 5: restricted to Project Glasswing partners (cyber safeguards lifted), soon select biology researchers; broader trusted access program planned
-- **Post-restoration promo:** Fable 5 included for up to 50% of weekly usage limits through July 7, 2026 on Pro, Max, Team, and select Enterprise plans; after that, usage draws from usage credits
 - Anthropic and Amazon/Microsoft/Google (other Project Glasswing partners) are drafting a shared industry framework to score jailbreak severity on four criteria: capability gain, breadth of capability gain, ease of weaponization, and discoverability
 
 ### Claude Opus 5 (launched July 24, 2026)
@@ -75,6 +75,7 @@
 - Meaningful improvement over Opus 4.8 for scientific research (notably organic chemistry +10.2pp and protein-function prediction +7.7pp on Anthropic's internal benchmarks)
 - New default model on Claude Max; strongest model available on Claude Pro; default Opus model in Claude Code (v2.1.219+)
 - Available on Claude API, Amazon Bedrock, Google Cloud, Microsoft Foundry
+- Supported by the new `computer_toolset_20260801` (computer use, GA) and `browser_toolset_20260801` (browser use) toolsets as of Aug 19, 2026
 - SDK support: anthropic-sdk-python v0.120.0, anthropic-sdk-typescript sdk v0.115.0 (both Jul 24)
 
 ### Claude Opus 4.8 (launched May 28, 2026; superseded by Opus 5 on July 24, 2026)
@@ -91,8 +92,8 @@
 - Default model for Free and Pro plans; available on Max, Team, Enterprise, Claude Code, and the Claude Platform (`claude-sonnet-5`)
 - 1M token context window, 128K max output tokens
 - Adaptive thinking is on by default and is the only thinking mode — manual extended thinking (`thinking: {type: "enabled", budget_tokens: N}`) and non-default `temperature`/`top_p`/`top_k` both return 400 errors
-- New tokenizer: produces roughly 1.0–1.35x more tokens than Sonnet 4.6 for the same text (intro pricing set to be roughly cost-neutral despite this)
-- Pricing: introductory $2/MTok input, $10/MTok output through August 31, 2026; standard $3/$15 after
+- New tokenizer: produces roughly 1.0–1.35x more tokens than Sonnet 4.6 for the same text
+- Pricing: $2/MTok input, $10/MTok output. This was introductory pricing scheduled to rise to $3/$15 on September 1, 2026, but **Anthropic made $2/$10 the standard price on August 10, 2026** — the increase will not occur.
 - Ships with the same cyber safeguards as Opus 4.7/4.8 (less strict than Fable 5's, since Anthropic judged Sonnet 5's cyber risk to be low)
 - Safety: lower rates of hallucination, sycophancy, and misaligned behavior than Sonnet 4.6 in Anthropic's testing; still higher misalignment rate than Opus 4.8 and Mythos 5 on their automated behavioral audit
 - Claude Code: shipped as the default model in v2.1.197 (June 30); v2.1.201 (July 3) stopped using the mid-conversation system role for harness reminders in Sonnet 5 sessions
@@ -123,7 +124,7 @@
 | Model | Status |
 |---|---|
 | Claude Opus 4.6 fast mode | **Removed June 29, 2026** — requests now run at standard speed/pricing instead of erroring. Migrate to Opus 4.8 fast mode |
-| Claude Opus 4.1 (`claude-opus-4-1`) | Deprecated June 5, 2026; API retirement scheduled August 5, 2026. $15/$75 pricing |
+| Claude Opus 4.1 (`claude-opus-4-1-20250805`) | **Retired August 5, 2026** — API requests now return an error. Was deprecated June 5, 2026. Upgrade to Opus 5 (researchers can request access via the External Researcher Access Program) |
 | Claude Opus 4.7 fast mode | **Removed July 24, 2026** — `speed: "fast"` on `claude-opus-4-7` now returns an error (no silent fallback). Migrate to Opus 5 or Opus 4.8 fast mode |
 | Claude Sonnet 4 (`claude-sonnet-4-20250514`) | **Retired June 15, 2026** (migrate to Sonnet 4.6 or Sonnet 5) |
 | Claude Opus 4 (`claude-opus-4-20250514`) | **Retired June 15, 2026** (migrate to Opus 4.8) |
@@ -131,7 +132,7 @@
 | Claude Haiku 3.5 | Retired (upgrade to Haiku 4.5) |
 | Claude Haiku 3 | Retired April 20, 2026 (upgrade to Haiku 4.5) |
 
-Legacy models still listed on the pricing page: Opus 4.7, Opus 4.6, Opus 4.5, Opus 4.1, Opus 4, Sonnet 4.5, Sonnet 4.
+Legacy models still listed on the pricing page: Opus 4.7, Opus 4.6, Opus 4.5, Opus 4.1, Opus 4, Sonnet 4.5, Sonnet 4. (Opus 4.1 is retired on the API as of Aug 5, 2026 but still appears in the legacy price table at $15/$75.)
 
 ---
 

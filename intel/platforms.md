@@ -2,8 +2,8 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-07-28
-**Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://support.claude.com, https://claude.com/solutions/small-business
+**Last updated:** 2026-08-22
+**Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://code.claude.com/docs/en/changelog, https://support.claude.com, https://claude.com/solutions/small-business
 
 ---
 
@@ -14,7 +14,7 @@
 | **Primary use** | Conversation, writing, research, artifacts | Agentic coding across your codebase | Desktop task and file automation for knowledge workers |
 | **Interface** | Web, iOS, Android, desktop app | Terminal, VS Code, JetBrains, desktop app, web, iOS | Desktop app (macOS and Windows); mobile dispatch on Pro and Max |
 | **Tools** | Web search, artifacts, MCP apps, skills | Bash, file system, git, MCP servers, CI/CD, skills, dynamic workflows | Local files, connectors (Slack, Chrome, QuickBooks, PayPal, HubSpot, Canva, DocuSign, etc.), computer use (research preview) |
-| **Subagents** | No | Yes (parallel sub-agents; can nest up to 5 levels deep; background agents) | Yes (parallel sub-agents for complex tasks) |
+| **Subagents** | No | Yes (parallel sub-agents; can nest up to 5 levels deep; background agents; forking on by default) | Yes (parallel sub-agents for complex tasks) |
 | **Scheduled tasks** | No | No | Yes (via /schedule; desktop app must stay open) |
 | **Effort control** | Yes (alongside model selector; all plans) | Yes (`low`/`medium`/`high`/`xhigh`) | Yes (alongside model selector; all plans) |
 | **Who it's for** | General use, all skill levels | Software developers | Non-technical knowledge workers: analysts, ops, legal, finance, researchers, small business owners |
@@ -58,33 +58,36 @@
 - CLAUDE.md context files: persistent project-level instructions
 - **Dynamic workflows (research preview, launched May 28, 2026):** Claude plans the work, runs hundreds of parallel subagents in a single session, then verifies its outputs before reporting back. Enables codebase-scale migrations across hundreds of thousands of lines. Available in Claude Code for Enterprise, Team, and Max plans
 - Agent Teams / sub-agents: spawn parallel sub-agents; as of v2.1.172 sub-agents can spawn their own sub-agents up to 5 levels deep
+- **Subagent forking on by default (v2.1.232+):** a `subagent_type: "fork"` subagent inherits the full conversation and prompt cache, and non-teammate agent spawns in interactive sessions run in the background by default
+- **Cross-session messaging (v2.1.232+):** type `@` in the prompt to mention another Claude session by name; Claude uses `SendMessage` to reach that session directly
 - Background agents: run tasks while you work on something else
 - MCP server integration: databases, APIs, CI/CD pipelines
-- Git integration: commits, PRs, branch management
+- Git integration: commits, PRs, branch management. **GitLab support (v2.1.232–234, Aug 2026):** merge request URL support for `--worktree` and `claude agents` (MRs shown as `!N`), MR badge in footer/status line, GitLab support in plugin marketplaces, and GitLab token redaction
 - Extended context: 1M tokens on Max, Team Premium, Enterprise
 - Effort levels: `low` / `medium` / `high` / `xhigh`
 - `fallbackModel` setting (v2.1.166+): configure up to three fallback models tried in order when the primary is overloaded or unavailable
 - `--safe-mode` flag (v2.1.169+): start with all customizations disabled for troubleshooting
 - `opusplan` alias: Opus for planning, auto-switches to Sonnet for execution
-- `/config key=value` (v2.1.181+): set any setting from the prompt without opening `/config` menu (e.g. `/config thinking=false`, `/config effort=high`); works in interactive, `-p`, and Remote Control; `/config --help` lists all shorthands
-- `Tool(param:value)` permission rules (v2.1.178+): match a tool's input parameters in permission rules, e.g. `Agent(model:opus)` to block Opus subagents, `Bash(command:rm*)` to restrict dangerous commands
-- Auto mode safety (v2.1.183+): destructive git commands (`git reset --hard`, `git checkout -- .`, `git clean -fd`, `git stash drop`, `git commit --amend` on external commits) and IaC destroy commands (`terraform/pulumi/cdk destroy`) are blocked unless user explicitly requested them
+- `/config key=value` (v2.1.181+): set any setting from the prompt without opening `/config` menu
+- `Tool(param:value)` permission rules (v2.1.178+): match a tool's input parameters, e.g. `Agent(model:opus)` to block Opus subagents
+- Auto mode safety (v2.1.183+): destructive git and IaC destroy commands are blocked unless the user explicitly requested them
+- **`ANTHROPIC_DEFAULT_MODEL` env var (v2.1.236+):** sets the model new sessions start on
+- **Built-in "Concise" output style (v2.1.237+):** Claude leads with results and skips preamble/narration; select under Output style in `/config`
+- **Todo/task-tracking tools removed by default on newer models (v2.1.233+):** `TaskCreate`/`Get`/`Update`/`List` and `TodoWrite` are no longer available by default on Opus 4.8, Sonnet 5, Fable 5, Mythos 5, and newer models; set `CLAUDE_CODE_ENABLE_TODO_TOOLS=1` to restore them
 - Bundled Bun runtime: 1.4 (upgraded v2.1.181)
-- **Claude Sonnet 5 is now the default model in Claude Code** (v2.1.197, June 30), with native 1M context and the same intro pricing as elsewhere
-- **Claude in Chrome is now generally available** (v2.1.198, July 2), out of beta
-- Subagents now run in the background by default (v2.1.198), so Claude keeps working while they run
-- Default permission mode changed from "default" to "Manual" across CLI, `--help`, VS Code, and JetBrains (v2.1.200, July 3); `AskUserQuestion` dialogs no longer auto-continue by default (opt into an idle timeout via `/config`)
-- Org admins can now set an organization default model, shown as "Org default" in `/model` (v2.1.196, June 29)
-- **Claude Opus 5 is now the default Opus model** (v2.1.219, July 24) — 1M context, fast mode at $10/$50 per MTok
-- `sandbox.network.strictAllowlist` setting (v2.1.219+): deny non-allowlisted hosts for sandboxed commands without prompting
-- `DirectoryAdded` hook (v2.1.219+): fires after `/add-dir` or SDK `register_repo_root` registers a new working directory mid-session
-- Dynamic workflows now default to a medium size guideline (aim for fewer than 15 agents); configurable via `workflowSizeGuideline` setting or Dynamic workflow size in `/config` (v2.1.219+)
+- **Claude Sonnet 5 is the default model in Claude Code** (v2.1.197, June 30), with native 1M context
+- **Claude in Chrome is generally available** (v2.1.198, July 2), out of beta
+- Subagents run in the background by default (v2.1.198)
+- Default permission mode changed from "default" to "Manual" across CLI, `--help`, VS Code, and JetBrains (v2.1.200, July 3); `AskUserQuestion` dialogs no longer auto-continue by default
+- Org admins can set an organization default model, shown as "Org default" in `/model` (v2.1.196)
+- **Claude Opus 5 is the default Opus model** (v2.1.219, July 24) — 1M context, fast mode at $10/$50 per MTok
+- `sandbox.network.strictAllowlist`, `DirectoryAdded` hook, and `workflowSizeGuideline` settings (v2.1.219+)
 
 **Plans:** Pro, Max (5x/20x), Team, Enterprise. (Verify current seat-level Claude Code entitlements on the live pricing page.)
 
 **Install:** `npm install -g @anthropic-ai/claude-code` (requires Node.js)
 **Docs:** https://code.claude.com/docs/en/overview
-**Latest version (as of 2026-07-28):** v2.1.220 (July 25 — bug fixes and reliability improvements)
+**Latest version (as of 2026-08-22):** v2.1.239 (August 21, 2026 — `/cost` includes the 1.1x US-only-inference premium for data-residency workspaces; fullscreen renderer offered on Bedrock/Vertex/Foundry; `/claude-api upgrade` migrates Python `anthropic` 0.x→1.x)
 
 ---
 
@@ -107,6 +110,8 @@
 
 **Human oversight model:** Cowork shows the plan before acting and waits for approval before consequential steps. You control which folders and connectors it can access.
 
+**Enterprise compliance (Aug 2026):** For Claude Enterprise orgs, the Compliance API now returns transcripts of Cowork sessions — both remote sessions started on claude.ai web/mobile (beta, Aug 3) and local sessions running on users' machines (beta, Aug 11, which also covers Claude Code local sessions). Inference hooks (beta, Aug 5) can hold each governed Cowork/Claude Code/claude.ai prompt for an org security server's allow/deny verdict before inference.
+
 **Limitations:**
 - Desktop app must remain open and computer must be awake for scheduled tasks to run
 - Memory only persists within Projects (not standalone sessions)
@@ -119,16 +124,21 @@
 
 ---
 
+## Claude Platform (API) — recent developer-facing changes (Aug 2026)
+
+- **Computer use tool out of beta (Aug 19):** now `computer_toolset_20260801` (no beta header; batch actions, `zoom` on by default). **Browser use tool launched (Aug 19):** `browser_toolset_20260801` drives an app-hosted browser via its accessibility tree, forms, and tabs. Both support Fable 5, Mythos 5, Opus 5, Sonnet 5, and Opus 4.8.
+- **Files API, Agent Skills / Skills API, and Admin API user-management all went GA (Aug 19)** — their beta headers (`files-api-2025-04-14`, `skills-2025-10-02`, `ce-user-management-2026-07-13`) are no longer required.
+- **Workbench renamed to Playground (Aug 18)** in the Claude Console — shows the full SDK request and API response for each run; supports every Messages API parameter and includes feature templates. (The separate *legacy* Workbench and experimental prompt-tools APIs were sunset Aug 17.)
+- **Console session viewer redesigned (Aug 19)** with a timeline minimap, transcript grouped by model request, and an Inspector panel.
+- **Managed Agents (Aug 7–19):** session `budget` caps (new `budget_reached` stop reason), `advisor` roster role, `inference_geo` control, skills loaded from a mounted GitHub repo, `web_search`/`web_fetch` domain restrictions, and memory stores on self-hosted sandboxes.
+
+---
+
 ## Claude Tag / @Claude (launched June 23, 2026)
 
 **Access:** Available in Slack (Enterprise and Team beta)
 
 `@Claude` lets users mention Claude directly in any Slack channel or DM without leaving Slack. Claude reads the full thread and responds inline. Replaces the previous "Claude in Slack" connector.
-
-**Key details:**
-- Mention `@Claude` anywhere in Slack to start or extend a conversation
-- Claude has access to the surrounding thread for context
-- Available on Enterprise and Team plans (beta)
 
 **Source:** https://www.anthropic.com/news/introducing-claude-tag
 
@@ -147,7 +157,7 @@ Claude Science is an AI workbench for scientists: a single research environment 
 - Manages compute on the user's own infrastructure (laptop, HPC cluster over SSH) or scales on demand via Modal; sensitive datasets don't have to leave the systems they're already on
 - Connects to NVIDIA's BioNeMo Agent Toolkit (Evo 2, Boltz-2, OpenFold3) and 60+ scientific databases (UniProt, PDB, Ensembl, ClinVar, ChEMBL, GEO, etc.)
 - Discounted Team seats available for academic/nonprofit research labs
-- Applications open through July 15, 2026 for an "AI for Science" program: up to 50 projects get up to $30,000 in Anthropic credits plus Modal compute credits; projects run Sept 1–Dec 1, 2026
+- AI for Science credit program applications ran through July 15, 2026 (up to 50 projects, up to $30,000 in Anthropic credits plus Modal compute; projects run Sept 1–Dec 1, 2026)
 
 **Source:** https://www.anthropic.com/news/claude-science-ai-workbench
 
@@ -167,24 +177,13 @@ Claude for Small Business is a plugin bundle of connectors and ready-to-run agen
 - **DocuSign** — send contracts for signature, track status, file executed copies
 - Google Workspace and Microsoft 365 (via existing integrations)
 
-**15 agentic workflows include:**
-- Plan payroll with confidence
-- Close the month with fewer errors
-- Get a business pulse (cash position, sales trend, pipeline, commitments)
-- Run a campaign (analysis → strategy → Canva assets → HubSpot send)
-- Chase overdue invoices
-- Analyze margins by product
-- Prepare for tax season
-- Review contracts
-- Triage leads
-
-**15 skills** cover repeatable tasks owners identified as their biggest time drains.
+**15 agentic workflows include:** plan payroll, close the month, get a business pulse, run a campaign (analysis → strategy → Canva assets → HubSpot send), chase overdue invoices, analyze margins by product, prepare for tax season, review contracts, triage leads.
 
 **Trust model:** Owner initiates all tasks; approves plans before execution; existing permissions in connected tools are respected; no training on data by default (Team/Enterprise).
 
 **Learning resources:**
 - Free "AI Fluency for Small Business" course (with PayPal): https://anthropic.skilljar.com/ai-fluency-for-small-businesses
-- Claude SMB Tour: free half-day workshops in 10 US cities starting May 14, 2026 (Chicago, Tulsa, Dallas, Hamilton Township, Baton Rouge, Birmingham, Salt Lake City, Baltimore, San Jose, Indianapolis)
+- Claude SMB Tour: free half-day workshops in 10 US cities starting May 14, 2026
 
 **More info:** https://claude.com/solutions/small-business
 
@@ -214,7 +213,7 @@ A dedicated security product available on Enterprise plans. Targets incident res
 | **Who it's for** | Non-technical knowledge workers | Software developers |
 | **Primary tasks** | File management, reports, research, scheduled workflows | Coding, git, tests, CI/CD, dynamic workflows |
 | **Technical requirement** | None | Comfortable with terminal |
-| **Subagents** | Yes | Yes (nested up to 5 levels) |
+| **Subagents** | Yes | Yes (nested up to 5 levels; forking on by default) |
 | **Scheduled tasks** | Yes | No |
 | **Computer use** | Yes (research preview) | No |
 

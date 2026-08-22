@@ -2,7 +2,7 @@
 
 # Claude Pricing — Anthropic Product Intel
 
-**Last updated:** 2026-07-28
+**Last updated:** 2026-08-22
 **Source:** https://claude.com/pricing (always verify live)
 
 ---
@@ -14,23 +14,23 @@
 | Free | $0 | No | No | Rolling usage limits; no credit card required |
 | Pro | $17/mo annual ($200 up front) or $20/mo monthly | Yes | Yes | More usage than Free; includes Claude Code + Cowork |
 | Max | From $100/mo | Yes | Yes | Choose 5x or 20x more usage than Pro; priority access |
-| Team Standard | $20/seat/mo annual ($25 monthly) | Yes* | Yes | Teams of 5–150; mix Standard + Premium allowed |
+| Team Standard | $20/seat/mo annual ($25 monthly) | Yes* | Yes | Teams of 2–150; mix Standard + Premium allowed |
 | Team Premium | $100/seat/mo annual ($125 monthly) | Yes | Yes | 5x more usage than standard seats |
 | Enterprise | $20/seat + usage at API rates (contact sales) | Yes | Yes | SSO, SCIM, audit logs, HIPAA-ready, custom retention, Claude Security (beta) |
 
 *Note: The current pricing page lists Claude Code and Cowork as included on Team (standard and premium) seats. Verify seat-level entitlements before relying on this for a specific deployment.
 
-**Fable 5 access (as of July 28, 2026, per live pricing page):** Pro — via usage credits; Max 5x and Max 20x — included for up to 50% of weekly limits. (The post-restoration promo that included Fable 5 on Pro/Team plans ended July 7, 2026.)
+**Fable 5 access (per live pricing page):** Pro — via usage credits; Max 5x and Max 20x — included for up to 50% of weekly limits. (The post-restoration promo that included Fable 5 on Pro/Team plans ended July 7, 2026.)
 
 **Claude Opus 5 (launched July 24, 2026):** Now the default model on Claude Max and the strongest model on Pro. API pricing $5/$25 per MTok, same as Opus 4.8.
 
-**Claude Sonnet 5 (launched June 30, 2026):** Now the default model on Free and Pro plans; also available on Max, Team, Enterprise, Claude Code, and the Claude Platform. Introductory API pricing: $2/MTok input, $10/MTok output through August 31, 2026; standard pricing $3/$15 after.
+**Claude Sonnet 5 (launched June 30, 2026):** Now the default model on Free and Pro plans; also available on Max, Team, Enterprise, Claude Code, and the Claude Platform. API pricing **$2/MTok input, $10/MTok output — this is now the standard price**. (It was introductory pricing scheduled to rise to $3/$15 on September 1, 2026, but Anthropic cancelled that increase on August 10, 2026.)
 
 **Important:** Claude paid plans and the Claude API/Console are separate products with separate billing. A Pro subscription does not include API access.
 
 **Extra usage:** Pro and Max subscribers can enable pay-as-you-go extra usage / usage credits after hitting plan limits.
 
-**Education plan:** University-wide plans available with student/faculty access, academic research/learning mode, and dedicated API credits.
+**Education plan:** University-wide plans available with student/faculty access, academic research/learning mode, and dedicated API credits. (No public dollar figure on the pricing page.)
 
 ---
 
@@ -41,13 +41,13 @@
 | Claude Fable 5 | $10.00 | $50.00 | $12.50 | $1.00 |
 | Claude Opus 5 (launched Jul 24, 2026) | $5.00 | $25.00 | $6.25 | $0.50 |
 | Claude Opus 4.8 | $5.00 | $25.00 | $6.25 | $0.50 |
-| Claude Sonnet 5 | $2.00 (intro, through Aug 31 2026; then $3.00) | $10.00 (intro, then $15.00) | $2.50 | $0.20 |
+| Claude Sonnet 5 | $2.00 | $10.00 | $2.50 | $0.20 |
 | Claude Sonnet 4.6 | $3.00 | $15.00 | $3.75 | $0.30 |
 | Claude Haiku 4.5 | $1.00 | $5.00 | $1.25 | $0.10 |
 
 Prompt-caching prices reflect 5-minute TTL; extended (1-hour) caching available separately.
 
-**Legacy model API pricing (still listed):** Opus 4.7, 4.6, 4.5 at $5/$25; Opus 4.1 and Opus 4 at $15/$75; Sonnet 4.5 and Sonnet 4 at $3/$15.
+**Legacy model API pricing (still listed):** Opus 4.7, 4.6, 4.5 at $5/$25; Opus 4.1 and Opus 4 at $15/$75; Sonnet 4.5 and Sonnet 4 at $3/$15. Note: Opus 4.1 (`claude-opus-4-1-20250805`) was **retired on the API August 5, 2026** — requests now return an error even though the price still appears in the legacy table.
 
 **Discounts & options:**
 - Batch API (Message Batches): 50% discount
@@ -59,7 +59,7 @@ Prompt-caching prices reflect 5-minute TTL; extended (1-hour) caching available 
 - Managed Agents: $0.08 per session-hour for active runtime (standard token rates also apply)
 - Web search: $10 per 1K searches (plus input/output tokens)
 - Code execution: 50 free hours/day per org, then $0.05 per hour per container
-- Service tiers listed on the live pricing page (July 2026): Standard and Batch. (Priority Tier is no longer shown there; Sonnet 5 does not support Priority Tier)
+- Service tiers listed on the live pricing page: **Standard** and **Batch** (batch = 50% discount). Priority Tier is no longer shown there; Sonnet 5 does not support Priority Tier.
 
 **Rate limits (updated June 26, 2026):** Sonnet 4.6 and Haiku 4.5 rate limits raised to match Opus 4.8. Tiers renamed to **Start**, **Build**, and **Scale** (previously had different names). Always verify current limits at https://platform.claude.com/docs/en/about-claude/rate-limits
 
@@ -69,8 +69,8 @@ Prompt-caching prices reflect 5-minute TTL; extended (1-hour) caching available 
 
 ## Enterprise Notes
 
-- Pricing model: $20/seat plus usage charged at API rates (usage scales with model and task)
+- Pricing model: $20/seat plus usage charged at API rates (usage scales with model and task); billed annually
 - Includes: role-based access, SCIM, audit logs, compliance API, custom data retention controls, network-level access control, IP allowlisting, HIPAA-ready offering, Claude Security (beta)
-- Self-serve Enterprise (annual billing) and sales-assisted Enterprise both available
+- Self-serve Enterprise (annual billing) and sales-assisted Enterprise both available; default-model context window is 500K on Enterprise
 - Training on customer data: none by default on Team and Enterprise
 - **Contact:** https://claude.com/contact-sales
