@@ -19,7 +19,7 @@
 | Team Premium | $100/seat/mo annual ($125 monthly) | Yes | Yes | 5x more usage than Standard seats; Fable up to 50% of weekly limits |
 | Enterprise | $20/seat + usage at API rates (20-seat min; contact sales) | Yes | Yes | SSO, SCIM, audit logs, Compliance API, HIPAA-ready, custom retention, Claude Security (beta) |
 
-> **Plan change (2026):** The former "Max 20x" tier is now branded **Ultra ($200/mo)**, and **Max** is the $100/mo 5x tier. Both include Fable (up to 50% of weekly limits) and a monthly API credit.
+> **Plan change (2026):** The $200 tier is now branded **Ultra** (its checkout still uses the old `max_20x` plan ID). Ultra gives **10x Pro weekly usage with no 5-hour limit**, not 20x; **Max** is the $100/mo 5x tier. Both include Fable (up to 50% of weekly limits) and a monthly API credit. Verified against claude.com/pricing 2026-11-02.
 
 **New — monthly API credits for subscribers (rolled out ~Oct 7, 2026):** Max includes **$100/mo**, Ultra **$200/mo**, and Team **up to $500/mo pooled** across users, for building on the Claude Platform (any model). These are separate from subscription chat usage. See https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers
 
