@@ -2,8 +2,119 @@
 
 # Anthropic Releases & Announcements — Product Intel
 
-**Last updated:** 2026-08-22
+**Last updated:** 2026-11-02
 **Source:** https://www.anthropic.com/news, https://platform.claude.com/docs/en/release-notes/overview, https://code.claude.com/docs/en/changelog
+
+---
+
+## October 2026
+
+**October 31, 2026**
+- **Claude Code v2.1.316** — adds `CLAUDE_CODE_DISABLE_ULTRATHINK`, `CLAUDE_CODE_SUBAGENT_EFFORT` (default effort for subagents), pooled group budgets on the Claude apps gateway, and a Code Review findings-by-severity analytics card
+
+**October 30, 2026**
+- **Opus 4.8 fast mode deprecated** — removal scheduled November 30, 2026; after that, `speed: "fast"` on `claude-opus-4-8` returns an error with no fallback. Migrate to Opus 5.5 fast mode
+
+**October 29, 2026**
+- **Usage and Cost Analytics API (beta)** launched (`analytics-usage-cost-2026-08-24` header) with `/v1/organizations/analytics/usage` and `/cost`; the older Usage and Cost API and Enterprise Analytics report endpoints are now legacy (still supported)
+
+**October 28, 2026**
+- **Max request size raised 32 MB → 128 MB** for the Messages API and Token Counting API on the first-party Claude API
+
+**October 27, 2026**
+- **Expanded GSA partnership** — 40% discount on Claude Enterprise, Claude for Government, and the Claude API for government partners — https://www.anthropic.com/news/expanding-partnership-gsa
+- **Early progress on accelerating drug development with Claude** — research partnerships with six drug-development organizations — https://www.anthropic.com/research/early-progress-drug-development
+
+**October 26, 2026**
+- **Anthropic files S-1 with the SEC for a proposed IPO** (Class A common stock) — https://www.anthropic.com/news/s1-sec
+
+**October 23, 2026**
+- **Claude Tag API (beta)** for Enterprise orgs (`experimental-claude-tag-2026-10-21` header) to manage Claude Tag settings on Slack channels/workspaces
+- SDK releases: Python SDK v2.3.0, TypeScript sdk-v1.3.0 (add Claude Tag endpoints); message-threads API support added in Python v2.2.0 / TS sdk-v1.2.0
+
+**October 22, 2026**
+- **Claude Models on Google Cloud (Anthropic managed)** launched — the Anthropic-operated Claude API reached through a Google Cloud project, billed via Google Cloud Marketplace; Opus 5.5 fast mode available there
+- **Donating Agent Skills to the Agentic AI Foundation** — the open Agent Skills standard (adopted by 70+ agent platforms) donated to the foundation — https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation
+- **Open call for guest investigators in the life sciences** — https://www.anthropic.com/news/open-call-guest-investigators-life-sciences
+
+**October 21, 2026**
+- **API version `2026-10-21` released** (migration guide available), with new major SDK/CLI versions that default to it: **Python SDK 2.0.0, TypeScript SDK 1.0.0**, C# 13.0.0, Go 2.0.0, Java 3.0.0, PHP 1.0.0, Ruby 2.0.0, `ant` CLI 2.0.0 — now **Apache 2.0** licensed (was MIT), with breaking changes independent of API version
+- Added `enforcement_status`/`enforcement_actions` to user profiles
+
+**October 20, 2026**
+- **Inference hooks out of beta** for Claude Enterprise orgs
+- **User profiles** launched (tell Anthropic which end customer each API request is for, so enforcement can target one customer not the whole org); **organization webhooks** added to the Admin API (beta, `webhooks-2026-10-07`); org admins can turn **web fetch** off or set allowed/blocked domains in the Console
+
+**October 18, 2026**
+- **Investing in the public benefit** — committing a portion of Anthropic's shares to the new Anthropic Public Benefit Fund — https://www.anthropic.com/news/public-benefit-fund
+
+**October 15, 2026**
+- **An update on independent evaluators** — giving METR employee-like access; early discussions with Hugging Face and others — https://www.anthropic.com/news/an-update-on-independent-evaluators
+- Models API adds `capabilities.thinking.types.between_tools`; Compliance API returns members' claude.ai Instructions and Cowork Global instructions (beta); **Opus 5.5 fast mode out of research preview** (no beta header; default fast-mode rate limit in Start/Build/Scale)
+
+**October 14, 2026**
+- **Anthropic opens a Singapore office and signs an MOU** with the Government of Singapore — https://www.anthropic.com/news/singapore-office-opening
+- **Preparing for the 2026 US midterms** — election safeguards update — https://www.anthropic.com/news/2026-us-midterms
+- **OpenTelemetry export (beta)** for tracing Messages API and Managed Agents sessions; Managed Agents scheduled deployments on Claude Platform on AWS
+
+**October 12, 2026**
+- **Strengthening defenses against distillation attacks** — distillation rate reduced by more than 90% — https://www.anthropic.com/news/distillation-defenses
+
+**October 9, 2026**
+- Managed Agents can use **dynamic workflows** (beta, `managed-agents-2026-04-01`) — an agent writes a workflow that runs many agents in phases
+
+**October 8, 2026**
+- **2026 Usage Policy update** — https://www.anthropic.com/news/2026-usage-policy-update
+- **Anthropic Cyber Mission** — long-term commitment to securing critical systems — https://www.anthropic.com/news/anthropic-cyber-mission
+- **Genesis Mission commitment** — $150M over three years to the federal Genesis Mission — https://www.anthropic.com/news/genesis-mission-commitment
+- Compliance API now returns chats from the unified Claude experience and can download Claude Docs as Word files (beta)
+
+**October 7, 2026**
+- **Claude Haiku 5.5 launched** (`claude-haiku-5-5`) — fastest, most capable small model; 1M context, 128K output, first Haiku with adjustable effort; tiered pricing (~75% cheaper to run on average than Haiku 4.5)
+- **Sonnet 5.5 cache reads cut 50%** ($0.20 → $0.10 per MTok)
+- **Monthly API credits for Max ($100), Ultra ($200), and Team (up to $500 pooled)** subscribers begin rolling out
+- Python/TypeScript SDKs add beta classes for browser use and computer use tools
+
+**October 6, 2026**
+- **Expanding the Cyber Verification Program** — advanced cyber capabilities and reduced blocking for qualifying security professionals — https://www.anthropic.com/news/cyber-verification-program
+- Models API adds `capabilities.server_tools`
+
+**October 2, 2026**
+- **Claude Frontier Academy** — $100M to train 10,000 Frontier Deployed Engineers by end of 2027 — https://www.anthropic.com/news/claude-frontier-academy
+
+**October 1, 2026**
+- **Barclays scales Claude** across global operations — https://www.anthropic.com/news/barclays-scales-claude
+- Models API adds a `line` field (group models without parsing IDs); Dreams (research preview) supports Opus 5.5, Fable 5.1, Sonnet 5.5
+
+---
+
+## September 2026
+
+**September 28, 2026**
+- **Claude Sonnet 5.5 launched** (`claude-sonnet-5-5`) — clear upgrade over Sonnet 5, 30%+ faster, up to 30% cheaper per task; $2/$10 per MTok; 1M context, 128K output; first Sonnet with cyber safeguards/fallbacks and preserved thinking. Available on Claude API, Bedrock, AWS, Google Cloud, Microsoft Foundry — https://www.anthropic.com/claude-sonnet-5-5
+
+**September 24, 2026**
+- Resumed billing for refusals that arrive before any output in the `bio`, `frontier_llm`, and `reasoning_extraction` categories; Compliance API local-session endpoints out of beta for Claude for Microsoft 365
+
+**September 23, 2026**
+- Cache diagnostics out of beta on the Claude API
+
+**September 22, 2026**
+- **Claude Opus 5.5 launched** (`claude-opus-5-5`) — Anthropic's new leading model; performs near Fable 5.1 on most work at 40% lower cost than Opus 5; $4/$20 per MTok, cache read $0.20; 1M context, 128K output; thinking can't be disabled; Fable-5.1-class safeguards; strongest alignment scores to date. First release after Dario Amodei's "pace the frontier" post — https://www.anthropic.com/claude-opus-5-5
+- Tools can be defined inside a mid-conversation system message (beta, `inline-tools-2026-09-15`)
+
+**September 18, 2026**
+- **Partnering with Accenture on embedded evaluation** — both expect to invest at least $1B over five years in independent frontier-AI evaluation — https://www.anthropic.com/news/accenture-embedded-evaluation
+- Compliance API local-session endpoints return Claude in Chrome transcripts (beta)
+
+**September 17, 2026**
+- **Life Sciences Verification Program (LSVP)** — vetted life-science professionals get Mythos/Opus/Sonnet access with biology-permissive safeguards — https://www.anthropic.com/news/life-sciences-verification-program
+
+**September 14, 2026**
+- Messages API compaction on demand (beta, `compact-2026-09-04`)
+
+**September 1, 2026**
+- **Claude Fable 5.1 launched** (`claude-fable-5-1`), alongside **Claude Mythos 5.1** (`claude-mythos-5-1`) for Project Glasswing participants — successors to Fable 5 / Mythos 5; $10/$50 per MTok with cache reads cut to $0.25; 1M context, 128K output; preserved-thinking anti-distillation safeguards (accounts created on/after Aug 31, 2026). Available on Claude API, Bedrock, AWS, Google Cloud, Microsoft Foundry
 
 ---
 

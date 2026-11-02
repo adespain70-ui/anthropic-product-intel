@@ -9,6 +9,15 @@ Each entry notes which files changed and a one-line summary of what changed.
 
 <!-- Cowork appends new entries at the top, below this comment line -->
 
+## 2026-11-02
+
+**Updated by:** Cowork scheduled task
+**Files updated:** pricing.md, models.md, platforms.md, releases.md
+**Summary:** Large catch-up update covering Aug 22–Nov 2 (last update was Aug 22). Models: the **Claude 5.5 family** launched — **Opus 5.5** (`claude-opus-5-5`, Sep 22, leading model, $4/$20, 40% cheaper to run than Opus 5, thinking can't be disabled), **Sonnet 5.5** (`claude-sonnet-5-5`, Sep 28, $2/$10, cache read cut to $0.10 on Oct 7, `between_tools` thinking), **Haiku 5.5** (`claude-haiku-5-5`, Oct 7, tiered pricing ~75% cheaper to run, first Haiku with effort control), plus **Fable 5.1 / Mythos 5.1** (`claude-fable-5-1` / `claude-mythos-5-1`, Sep 1, cache read $0.25, preserved-thinking anti-distillation). Deprecations: Sonnet 4.5 retires Nov 30; Opus 4.8 fast mode deprecated Oct 30 (removal Nov 30). Pricing/plans: the Max 20x tier is now **Ultra ($200)** and **Max** is the $100 5x tier; **monthly API credits** for Max ($100)/Ultra ($200)/Team (up to $500 pooled); new API pricing table for all 5.5 models. Platform/API: API version 2026-10-21 with major SDK bumps (Python SDK 2.0.0→2.3.0, TS SDK 1.0.0→sdk-v1.3.0, now Apache 2.0); user profiles, inference hooks GA, OpenTelemetry export, Usage & Cost Analytics API, compaction on demand, message threads, request size 32→128 MB; Claude Models on Google Cloud (Anthropic managed); Claude Tag API. Claude Code advanced to **v2.1.316** (Oct 31) with cloud/Remote Control sessions, Code Review analytics, and the Claude apps gateway. Also: LSVP (Sep 17) and expanded Cyber Verification Program (Oct 6); Anthropic S-1/IPO filing (Oct 26), Public Benefit Fund (Oct 18), GSA 40% gov discount (Oct 27), Singapore office (Oct 14), Claude Frontier Academy (Oct 2). Pricing verified against the live claude.com/pricing page; model/API facts verified against platform.claude.com release notes; Claude Code via code.claude.com/changelog; SDK versions via the GitHub release atom feeds (which returned data this run).
+**Upstream releases checked:** anthropics/anthropic-sdk-python (through v2.3.0, Oct 23), anthropics/anthropic-sdk-typescript (through sdk-v1.3.0, Oct 23), anthropics/claude-code (through v2.1.316, Oct 31, via code.claude.com/changelog), anthropics/model-spec (no releases page), anthropics/claude-cookbooks (no releases). API changes verified against platform.claude.com release notes (top entry Oct 30).
+
+---
+
 ## 2026-08-22
 
 **Updated by:** Cowork scheduled task

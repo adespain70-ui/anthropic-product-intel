@@ -2,8 +2,8 @@
 
 # Claude Platforms — Anthropic Product Intel
 
-**Last updated:** 2026-08-22
-**Sources:** https://claude.com/, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://code.claude.com/docs/en/changelog, https://support.claude.com, https://claude.com/solutions/small-business
+**Last updated:** 2026-11-02
+**Sources:** https://claude.com/, https://claude.com/pricing, https://claude.com/product/cowork, https://code.claude.com/docs/en/overview, https://code.claude.com/docs/en/changelog, https://platform.claude.com/docs/en/release-notes/overview, https://support.claude.com, https://claude.com/solutions/small-business
 
 ---
 
@@ -18,8 +18,8 @@
 | **Scheduled tasks** | No | No | Yes (via /schedule; desktop app must stay open) |
 | **Effort control** | Yes (alongside model selector; all plans) | Yes (`low`/`medium`/`high`/`xhigh`) | Yes (alongside model selector; all plans) |
 | **Who it's for** | General use, all skill levels | Software developers | Non-technical knowledge workers: analysts, ops, legal, finance, researchers, small business owners |
-| **Plan required** | Any (Free has limits) | Pro, Max, Team, or Enterprise | Pro, Max, Team, or Enterprise |
-| **Key differentiator** | Projects, artifacts, MCP connectors, skills | CLAUDE.md context files, dynamic workflows, Agent Teams, 1M context on Max+ | Plugins, scheduled tasks, Projects with memory, mobile dispatch, computer use |
+| **Plan required** | Any (Free has limits) | Pro, Max, Ultra, Team, or Enterprise | Pro, Max, Ultra, Team, or Enterprise |
+| **Key differentiator** | Projects, artifacts, MCP connectors, skills, Claude Design/Docs/Slides/Dashboards | CLAUDE.md context files, dynamic workflows, Agent Teams, cloud sessions, Code Review, 1M context on Max+ | Plugins, scheduled tasks, Projects with memory, mobile dispatch, computer use |
 
 ---
 
@@ -34,10 +34,11 @@
 - Skills: reusable workflow instructions installed per account
 - Web search, deep research mode, image generation (via tools)
 - Memory: stores key facts across conversations (enabled in Settings)
+- **Creation surfaces:** Claude Design, Claude Docs, and Claude Slides (all plans); **Claude Dashboards (beta)** on Pro and up; **Claude Motion (beta)** (limited availability). Claude Science on Pro and up
 - **Effort control (launched May 28, 2026):** a control alongside the model selector lets users choose how much effort Claude puts into a response; higher effort thinks more deeply, lower effort responds faster and uses limits more slowly. Available on all plans
 - Voice mode, incognito chats, user preferences
-- **Claude Sonnet 5 (launched June 30, 2026)** is now the default model for Free and Pro plans
-- **Claude Opus 5 (launched July 24, 2026)** is now the default model on Claude Max and the strongest model on Pro
+- Claude in Chrome and Claude for Microsoft 365 available on Pro and up
+- **Claude 5.5 model family (Sep–Oct 2026):** Opus 5.5 is Anthropic's new leading model; Sonnet 5.5 is the fast balanced-tier model; Haiku 5.5 is the small/fast model. Opus requires Pro or above; Sonnet and Haiku are available on all plans; Fable is available via usage credits (Pro) or up to 50% of weekly limits (Max/Ultra/Team Premium). (Verify the exact default-model mapping per plan on the live site, as defaults shift with releases.)
 
 **Microsoft 365 integrations (GA as of May 14, 2026):**
 - Claude in Excel, Word, PowerPoint (GA)
@@ -80,14 +81,19 @@
 - Subagents run in the background by default (v2.1.198)
 - Default permission mode changed from "default" to "Manual" across CLI, `--help`, VS Code, and JetBrains (v2.1.200, July 3); `AskUserQuestion` dialogs no longer auto-continue by default
 - Org admins can set an organization default model, shown as "Org default" in `/model` (v2.1.196)
-- **Claude Opus 5 is the default Opus model** (v2.1.219, July 24) — 1M context, fast mode at $10/$50 per MTok
+- **Claude Opus 5 is the default Opus model** (v2.1.219, July 24) — superseded in the 5.5 era; **Opus 5.5 (Sep 22), Sonnet 5.5 (Sep 28), and Haiku 5.5 (Oct 7) are now available in Claude Code**, with fast mode for Opus 5.5
 - `sandbox.network.strictAllowlist`, `DirectoryAdded` hook, and `workflowSizeGuideline` settings (v2.1.219+)
+- **Cloud sessions and Remote Control sessions (Sep–Oct 2026):** run Claude Code sessions in the cloud or drive a session remotely; a "Catching up…" indicator shows while messages sync when you switch back
+- **Code Review (`/code-review`, `/ultrareview`):** findings cards (grouped by severity) in Claude Desktop and on the web, plus a Code Review analytics page with findings-by-severity trends
+- **Claude apps gateway:** managed-login controls including layered policy mode, pooled group budgets (one monthly budget shared across a group), and Bedrock guardrail input tagging
+- New env vars: `CLAUDE_CODE_SUBAGENT_EFFORT` (default subagent effort), `CLAUDE_CODE_DISABLE_ULTRATHINK`, plus Cowork cloud-session auto-mode handling
+- **Opus 4.8 fast mode deprecated (Oct 30, 2026; removal Nov 30)** — migrate to Opus 5.5 to keep the speedup
 
-**Plans:** Pro, Max (5x/20x), Team, Enterprise. (Verify current seat-level Claude Code entitlements on the live pricing page.)
+**Plans:** Pro, Max, Ultra, Team, Enterprise — Claude Code is included in all paid plans and shares the plan's usage pool. (Verify current seat-level entitlements on the live pricing page.)
 
 **Install:** `npm install -g @anthropic-ai/claude-code` (requires Node.js)
 **Docs:** https://code.claude.com/docs/en/overview
-**Latest version (as of 2026-08-22):** v2.1.239 (August 21, 2026 — `/cost` includes the 1.1x US-only-inference premium for data-residency workspaces; fullscreen renderer offered on Bedrock/Vertex/Foundry; `/claude-api upgrade` migrates Python `anthropic` 0.x→1.x)
+**Latest version (as of 2026-11-02):** v2.1.316 (October 31, 2026). Recent themes: cloud/Remote Control sessions, Code Review analytics, Claude apps gateway (pooled budgets, layered policies), subagent effort control, Claude Tag admin, and GitLab support carried forward from v2.1.233+
 
 ---
 
@@ -118,14 +124,27 @@
 - No session sharing between users
 - Computer use is in research preview
 
-**Plans:** Pro, Max (5x/20x), Team, Enterprise. Cowork consumes usage limits faster than standard chat.
+**Plans:** Pro, Max, Ultra, Team, Enterprise. Cowork consumes usage limits faster than standard chat. The Compliance API can now return Cowork Global instructions and download Claude Docs as Word files (beta, Enterprise).
 
 **Getting started:** https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
 
 ---
 
-## Claude Platform (API) — recent developer-facing changes (Aug 2026)
+## Claude Platform (API) — recent developer-facing changes (Aug–Oct 2026)
 
+**September–October 2026:**
+- **New API version `2026-10-21`** (Oct 21) with new major SDK/CLI versions defaulting to it: Python SDK 2.0.0, TypeScript SDK 1.0.0, C# 13.0.0, Go 2.0.0, Java 3.0.0, PHP 1.0.0, Ruby 2.0.0, `ant` CLI 2.0.0 — now Apache 2.0 licensed (was MIT). Latest point releases (Oct 23): Python SDK v2.3.0, TS sdk-v1.3.0. Added message-threads API support
+- **Monthly API credits for Max/Ultra/Team subscribers** (Oct 7) — $100 / $200 / up to $500 pooled, for building on the Claude Platform
+- **User profiles** (Oct 20) — attribute each API request to an end customer so enforcement targets one customer, not the whole org; **inference hooks out of beta**; **organization webhooks** (beta); org admins can disable web fetch in the Console
+- **OpenTelemetry export** (beta, Oct 14) for Messages API and Managed Agents; SDKs emit spans natively
+- **Usage and Cost Analytics API** (beta, Oct 29); **max request size raised 32 MB → 128 MB** (Oct 28)
+- **Managed Agents dynamic workflows** (beta, Oct 9); scheduled deployments on AWS (Oct 14); `auto` permission policy (Sep 10)
+- **Compaction on demand** (beta, Sep 14); cache diagnostics GA (Sep 23); mid-conversation inline tool definitions (beta, Sep 22)
+- **Models API** gains `line`, `capabilities.server_tools`, and `capabilities.thinking.types` (`disabled`, `between_tools`) fields (Oct)
+- **Preserved thinking** anti-distillation: thinking blocks are bound to the producing account/model on Fable 5.1, Opus 5.5, and Sonnet 5.5 (accounts created on/after Aug 31, 2026)
+- **Claude Models on Google Cloud (Anthropic managed)** launched (Oct 22); **Claude Tag API** (beta, Oct 23)
+
+**August 2026:**
 - **Computer use tool out of beta (Aug 19):** now `computer_toolset_20260801` (no beta header; batch actions, `zoom` on by default). **Browser use tool launched (Aug 19):** `browser_toolset_20260801` drives an app-hosted browser via its accessibility tree, forms, and tabs. Both support Fable 5, Mythos 5, Opus 5, Sonnet 5, and Opus 4.8.
 - **Files API, Agent Skills / Skills API, and Admin API user-management all went GA (Aug 19)** — their beta headers (`files-api-2025-04-14`, `skills-2025-10-02`, `ce-user-management-2026-07-13`) are no longer required.
 - **Workbench renamed to Playground (Aug 18)** in the Claude Console — shows the full SDK request and API response for each run; supports every Messages API parameter and includes feature templates. (The separate *legacy* Workbench and experimental prompt-tools APIs were sunset Aug 17.)
@@ -201,7 +220,18 @@ A Claude product for K-12 educators, announced July 14, 2026. Listed among Claud
 
 A dedicated security product available on Enterprise plans. Targets incident response acceleration, agentic vulnerability operations, and code review automation. PwC production deployments report security response times reduced from hours to minutes.
 
-**Access:** Enterprise plan only (contact sales)
+**Access:** Enterprise plan only (contact sales). Claude Security now has access to Claude Mythos 5.1.
+
+---
+
+## Verification Programs (2026)
+
+For high-capability safeguarded domains, Anthropic runs verification programs that grant vetted professionals more permissive access:
+
+- **Life Sciences Verification Program (LSVP)** (Sep 17, 2026) — vetted academic labs, startups, and pharmaceutical companies get Mythos/Opus/Sonnet access with biology-permissive safeguards for the full breadth of life-science work. https://www.anthropic.com/news/life-sciences-verification-program
+- **Cyber Verification Program** (expanded Oct 6, 2026) — verified cybersecurity practitioners get advanced cyber capabilities and reduced blocking classifiers, now with tiered access including Claude Mythos models and Opus 5.5 / Sonnet 5.5. https://www.anthropic.com/news/cyber-verification-program
+
+Newer frontier-class models (Fable 5.1, Opus 5.5, and to a lesser degree Sonnet 5.5 and Haiku 5.5) ship with cybersecurity, biology, and distillation safeguards that transparently fall back to a less-capable model on flagged requests; these programs are how trusted users work past those safeguards for legitimate work.
 
 ---
 
